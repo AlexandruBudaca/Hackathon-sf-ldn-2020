@@ -1,0 +1,17 @@
+{
+    "name": "see-the-future",
+    "version": "1.0.0",
+    "description": "See the future",
+    "main": "server.js",
+    "scripts": {
+        "start": "nodemon server.js"
+    },
+    "dependencies": {
+        "dotenv": "^8.0.0",
+        "express": "^4.16.4",
+        "mongodb": "^3.2.6"
+    },
+    "devDependencies": {
+        "nodemon": "^1.19.1"
+    }
+}
