@@ -5,21 +5,21 @@ CYF x Capgemini  - See the Future (SF)
 The template link on Netlify
  https://modest-hamilton-265580.netlify.com/
  
-Prerequisites 
+##Prerequisites
 
 Node.js
 MongoDB Atlas account
 
  
-Quick Start after cloning repo
+###Quick Start after cloning repo
  
-Install dependencies for server
+#Install dependencies for server
 npm install
 
-Run the client & server with concurrently
+#Run the client & server with concurrently
 npm run dev
 
-Run the Express server only
+#Run the Express server only
 npm run server
 
-Server runs on http://localhost:5000 and client on http://localhost:3000
+Server runs on http://localhost:3000
