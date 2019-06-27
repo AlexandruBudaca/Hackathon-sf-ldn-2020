@@ -1,5 +1,4 @@
-if (process.env.NODE_ENV === 'production') {
-  module.exports = require('./keys_prod');
-} else {
-  module.exports = require('./keys_dev');
-}
+module.exports = {
+//MongoDB  dummy data user info
+  mongoURI: 'mongodb+srv://db-sf-ivi:seethefuture@cluster0-s9p6q.mongodb.net/test?retryWrites=true&w=majority'
+};
