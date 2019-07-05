@@ -14,6 +14,12 @@ const PostSchema = new Schema({
   name: {
     type: String
   },
+  friendsName: {
+    type: String
+  },
+  bestName: { 
+    type: String
+  }
 });
 
 module.exports = Post = mongoose.model('post', PostSchema);

@@ -19,7 +19,8 @@ router.post('/',(req,res) =>  {
   const newPost = new Post({
     user: req.body.user,
     // text: req.body.text,
-    name: req.body.name
+    friendsName: req.body.friendsName,
+    bestName: req.body.bestName
   })
   newPost.save().then(Post => res.json(Post));
 
