@@ -1,0 +1,63 @@
+.questions{
+ display: flex;
+ flex-direction: column;
+  border: 2px solid;
+  padding: 1rem;
+}
+
+.questions h2{
+  margin: auto;
+}
+
+.faq{
+  margin-top: 1.5rem;
+  border: 2px solid;
+  padding: 1rem;
+}
+
+.question{
+  margin: 1rem 0;
+}
+
+.tutorials{ 
+  display: flex;
+  flex-direction: column;
+  border: 2px solid;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.subMain{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .5rem;
+  height: 200px;
+ 
+}
+
+.subMainBox_content{
+  max-height: 100%;
+  overflow: hidden;
+ text-align: justify;
+}
+
+.tutorials_Box{
+  display: flex;
+
+}
+
+.subMainBox{
+  display: flex;
+  padding: .5rem;
+  flex: 1;
+}
+
+.subMainBox_img{
+  padding-right: .5rem;
+}
+
+.subMainBox_img img{
+  max-height: 100%;
+}
