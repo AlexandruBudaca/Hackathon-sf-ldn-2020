@@ -12,7 +12,7 @@ const Profile = require("../../models/Profile");
 // Validation
 const validatePostInput = require("../../validation/post");
 
-// @route   GET api/posts
+// @route   POST api/posts
 // @desc    Tests post route
 // @access  Public
 
@@ -38,7 +38,7 @@ router.get("/get/", (req, res) => {
 // @desc    Delete user and profile
 // @access  Private
 
-router.delete("/delete/:id", function(request, response) {
+router.delete("/delete/:id", function (request, response) {
   let id;
   try {
     id = new mongodb.ObjectID(request.params.id);
@@ -47,7 +47,7 @@ router.delete("/delete/:id", function(request, response) {
     return;
   }
   const searchObject = { _id: request.params.id };
-  Post.deleteOne(searchObject, function(error, result) {
+  Post.deleteOne(searchObject, function (error, result) {
     if (error) {
       return response.sendStatus(500).send(error);
     } else if (result.deletedCount) {
