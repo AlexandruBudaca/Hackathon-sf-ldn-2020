@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom'
-// import LazyCarousel from './Carousel'
 import LazyCarousel from './Carousel'
+import imgSrc from '../../images/cyf_brand.png'
 import './index.css';
 
 class LandingPage extends Component {
   render() {
     return (<main className="main">
       <section className="carousel">
-        <h2>Carousel</h2>
+        <div className="imgBlk"><img src={imgSrc} /></div>
         <LazyCarousel />
       </section>
-      <section className="About">
-        <h2>ABOUT US</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <section className="info">
+        <section className="About">
+          <h2>ABOUT US</h2>
+          <p>Many of the students on the CodeYourFuture course are unfamiliar with the world of software development within the UK and many have never held a technical job role before. See the Future is a way for students and graduates of the CodeYourFuture course to be matched with a range of opportunities provided by local businesses. This could be anything from a few hours of shadowing a professional developer or a tour of their office, all the way through to a student’s first technical job role
+        </p>
 
-      </section>
-      <section className="ourStudent">
-        <h2>Our Students</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </section>
+        <section className="ourStudent">
+          <h2>Our Students</h2>
+          <p>CodeYourFuture provides an 8-month, full stack, web development bootcamp for asylum seekers, refugees and people from other disadvantaged backgrounds. Our students come from a huge range of backgrounds and varying levels of experience, but join together and form a community around a common interest in tech and coding. Many of our graduates have gone on to work in a range of roles such as both front and back end developer roles, at companies including the Financial Times, the BBC and Ticketmaster.</p>
+        </section>
+
       </section>
     </main>
     )

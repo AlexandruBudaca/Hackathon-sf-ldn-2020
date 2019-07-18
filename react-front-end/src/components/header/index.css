@@ -6,10 +6,11 @@
   height: auto;
   justify-content: space-between;
   align-items: center;
-  background: #3E442B;
+  /* background: #3E442B; */
+  background: #3f3f3f;
 }
 
-.searchBar{
+/* .searchBar{
   width: 30%;
   text-align: center;
 }
@@ -19,11 +20,12 @@
 }
 .input_btn{
     padding: .5rem;
+} */
+
+.nav{
+  width: 30%;
 }
-.title{
-  min-width: 30%;
-  text-align: center;
-}
+
 
 .nav, .footer{
  width: auto;
@@ -31,19 +33,18 @@
 }
 
 .footer{
- background: #3E442B;
+   background: #3f3f3f;
   padding: 1rem;
-  
 }
 .footer p{
   font-size: .8rem;
-
 }
 
 .nav ul{
   width: auto;
    padding: 0;
   display: flex;
+   color: #3f3f3f;
 }
 
 .nav ul li{
@@ -51,7 +52,11 @@
   margin: .5rem;
   padding-left: .5rem;
   border-left: 1px solid;
-   
+    color: white;
+}
+
+.nav ul li:hover{
+  color: #d12f2f;
 }
 
 @media only screen and (max-width: 800px) {
@@ -71,11 +76,5 @@
 @media only screen and (min-width: 801px) and (max-width: 1200px) {
 .nav{
   width: 50%;
-}
-.searchBar{
-  width: 300%;
-}
-.title{
-  width: 40%;
 }
 }

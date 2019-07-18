@@ -1,0 +1,84 @@
+.mainRegister{
+  min-height: 80vh;
+  line-height: 3rem;
+  text-align: center;
+  padding: 1rem;
+  background: #c2c1c1
+}
+
+.registerForm{
+  width: auto;
+  margin: auto;
+}
+
+form ul input {
+  margin: .5rem auto;
+ padding: .5rem;
+}
+
+form ul li{
+  list-style-type: none;
+}
+
+label input{
+  width: 60%;
+  font-size: 20px;
+}
+
+.btn{
+ border: none;
+ border-radius: 10px;
+  width: 80px;
+  padding: 1rem 0;
+}
+
+.interestArea label{
+    width: 60%;
+    margin: auto;
+display: flex;
+border: 1px solid #3f3f3f;
+}
+
+.interestArea label p{
+flex: 4;
+text-align: right;
+}
+.interestArea label input{
+  flex: 1;
+}
+
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  padding: 10px;
+  margin: auto;
+}
+
+.select{
+  padding: .5rem;
+}
+
+.btn:hover{
+ background:  #d12f2f;
+ color: white;
+}
+
+h3{
+  margin: 1rem 0;
+}
+
+.imgBlk{
+  width: 300px;
+  height: 100px;
+  margin: auto;
+
+}
+
+.imgBlk img{
+  max-width: 100%;
+}

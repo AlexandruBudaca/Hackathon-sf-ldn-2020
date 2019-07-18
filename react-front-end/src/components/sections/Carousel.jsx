@@ -16,23 +16,23 @@ class LazyCarousel extends Component {
       carouselInfos: [
         {
           imgSrc: cyf_picture01,
-          legend: 'image 1'
+          legend: 'CYF Leadership'
         },
         {
           imgSrc: cyf_picture02,
-          legend: 'image 2'
+          legend: 'CYF at BBC Scotland'
         },
         {
           imgSrc: cyf_picture03,
-          legend: 'image 3'
+          legend: 'CYF course'
         },
         {
           imgSrc: cyf_picture04,
-          legend: 'image 3'
+          legend: 'CYF Ticketmaster session'
         },
         {
           imgSrc: cyf_picture05,
-          legend: 'image 4'
+          legend: 'CYF brain in action'
         }
       ]
 
@@ -44,7 +44,7 @@ class LazyCarousel extends Component {
       <Carousel>
         {carouselInfos.map(carouselBlock =>
           <div className="imgBox">
-            <img src={carouselBlock.imgSrc} />
+            <img src={carouselBlock.imgSrc} alt="image carousel" />
             <p className="legend">{carouselBlock.legend}</p>
           </div>
         )}

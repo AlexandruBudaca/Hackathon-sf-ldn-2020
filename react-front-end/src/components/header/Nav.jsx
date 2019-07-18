@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+
 import './index.css';
 
 function Nav() {
@@ -10,16 +11,22 @@ function Nav() {
           <Link to="/" className="navStyle"><li>Home</li></Link>
           <Link to="/listOfCompanies" className="navStyle"> <li>Companies</li></Link>
           <Link to="/opportunities" className="navStyle"><li>Opportunities</li></Link>
-          <Link to="/tips" className="navStyle"><li>Tips &amp; FAQ</li></Link>
+          <Link to="/tips" className="navStyle"><li>Tips & FAQ</li></Link>
         </ul>
       </nav>
-      <h1 className="title">See The Future</h1>
-      <div className="searchBar">
+
+      {/* <div className="searchBar">
         <form action="#">
           <input className="input_Search" type="text" placeholder="Search.." name="search" />
           <button className="input_btn" type="submit"><i class="fa fa-search"></i></button>
         </form>
-      </div>
+      </div> */}
+      <nav className="nav">
+        <ul>
+          <Link to="/signIn" className="navStyle"><li>Sign in</li></Link>
+          <Link to="/signUp" className="navStyle"><li>Sign up</li></Link>
+        </ul>
+      </nav>
     </header>
 
   );
