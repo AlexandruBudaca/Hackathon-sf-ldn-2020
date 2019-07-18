@@ -17,6 +17,9 @@ MongoDB Atlas account
 # Install dependencies for server
 npm install
 
+# Install dependencies for front end (inside 'react-front-end' folder)
+npm install
+
 # Run the Express server only
 npm run server
 
