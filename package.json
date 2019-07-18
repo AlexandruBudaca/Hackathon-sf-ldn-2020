@@ -19,6 +19,7 @@
         "express": "^4.16.4",
         "gravatar": "^1.6.0",
         "jsonwebtoken": "^8.2.0",
+        "lodash": "^4.17.14",
         "mongodb": "^3.2.7",
         "mongoose": "^5.0.12",
         "morgan": "^1.9.0",
