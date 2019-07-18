@@ -23,5 +23,12 @@ npm install
 # Run the Express server only
 npm run server
 
-# Server runs on http://localhost:3000
+# Run the React client (front-end) only
+npm run server
+
+# Run the client & server (full application)
+npm run dev
+
+
+# Server runs on http://localhost:5000 and client on http://localhost:3000
 ```
