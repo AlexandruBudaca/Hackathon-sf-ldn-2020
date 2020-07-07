@@ -9,7 +9,7 @@ function Nav() {
       <nav className="nav">
         <ul>
           <Link to="/" className="navStyle">
-            <li>Home</li>
+            <li>Home2</li>
           </Link>
           <Link to="/listOfCompanies" className="navStyle">
             {" "}
