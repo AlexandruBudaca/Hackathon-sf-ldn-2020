@@ -37,7 +37,7 @@ const ListOfCompanies = () => {
   return (
     <section className="companiesSection">
       <h2>List of Companies</h2>
-      {this.state.companies.map((company, index) => {
+      {companies.map((company, index) => {
         return (
           <article className="company_details">
             <div className="company_logo">
