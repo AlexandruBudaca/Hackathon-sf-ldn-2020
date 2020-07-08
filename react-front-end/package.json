@@ -1,7 +1,7 @@
 {
   "name": "react-front-end",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "lodash": "^4.17.14",
     "lodash.template": "^4.5.0",
