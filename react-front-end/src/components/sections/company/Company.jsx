@@ -4,11 +4,8 @@ import { Link } from 'react-router-dom';
 import './index.css'
 import Opportunities from '../Opportunities';
 
-class Company extends Component {
-  constructor(props) {
-    super(props);
-    this.state = ({
-      companyInfos: {
+const Company =()=>{
+  const [company, setCompany] = useState({
         name: 'Capgemini',
         Industry: 'Tech',
         Leadership: 'Tell me',
@@ -35,21 +32,10 @@ class Company extends Component {
           {
             Title: 'Analyst', skills: ['nodejs', 'java', 'bla bla'],
             role: 'bla bla bla'
-          }
-        ]
-      }
-    })
-  }
+          }]})
+  
 
 
-  render() {
-    const { name,
-      Industry,
-      Leadership,
-      Size,
-      about,
-      video,
-      opportunities } = this.state.companyInfos
     return (
       <section className="company">
         <section className="optional">
@@ -58,10 +44,10 @@ class Company extends Component {
         <section className="mainContent">
           <section className="comp_profile">
             <div className="imag"></div>
-            <div className="fieldInfo"><span>Company Name : </span><span className="bold">{name}</span></div>
-            <div className="fieldInfo"><span>Industry : </span><span className="bold">{Industry}</span></div>
-            <div className="fieldInfo"><span>Leadership : </span><span className="bold">{Leadership}</span></div>
-            <div className="fieldInfo"><span>Company Size : </span><span className="bold">{Size}</span></div>
+            <div className="fieldInfo"><span>Company Name : </span><span className="bold">{company.name}</span></div>
+            <div className="fieldInfo"><span>Industry : </span><span className="bold">{company.Industry}</span></div>
+            <div className="fieldInfo"><span>Leadership : </span><span className="bold">{company.Leadership}</span></div>
+            <div className="fieldInfo"><span>Company Size : </span><span className="bold">{company.Size}</span></div>
           </section>
           <section className="comp_general">
             <section className="aboutUs">
