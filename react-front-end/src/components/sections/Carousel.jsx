@@ -40,8 +40,8 @@ class LazyCarousel extends Component {
     const { carouselInfos } = this.state;
     return (
       <Carousel>
-        {carouselInfos.map((carouselBlock) => (
-          <div className="imgBox">
+        {carouselInfos.map((carouselBlock, index) => (
+          <div className="imgBox" key={index}>
             <img src={carouselBlock.imgSrc} alt="carousel" />
             <p className="legend">{carouselBlock.legend}</p>
           </div>
