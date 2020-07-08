@@ -1,55 +1,61 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-import './index.css'
-import Opportunities from '../Opportunities';
+import "./index.css";
+// import Opportunities from '../Opportunities';
 
 class Company extends Component {
   constructor(props) {
     super(props);
-    this.state = ({
+    this.state = {
       companyInfos: {
-        name: 'Capgemini',
-        Industry: 'Tech',
-        Leadership: 'Tell me',
-        Size: 'Tell me',
-        about: 'a long text here.....',
-        video: 'https://www.youtube.com/watch?v=MGuehquIp8g',
+        name: "Capgemini",
+        Industry: "Tech",
+        Leadership: "Tell me",
+        Size: "Tell me",
+        about: "a long text here.....",
+        video: "https://www.youtube.com/watch?v=MGuehquIp8g",
         opportunities: [
           {
-            Title: 'Junior Dev', skills: ['nodejs', 'java', 'bla bla'],
-            role: 'bla bla bla'
+            Title: "Junior Dev",
+            skills: ["nodejs", "java", "bla bla"],
+            role: "bla bla bla",
           },
           {
-            Title: 'senior Dev', skills: ['nodejs', 'java', 'bla bla'],
-            role: 'bla bla bla'
+            Title: "senior Dev",
+            skills: ["nodejs", "java", "bla bla"],
+            role: "bla bla bla",
           },
           {
-            Title: 'Analyst', skills: ['nodejs', 'java', 'bla bla'],
-            role: 'bla bla bla'
+            Title: "Analyst",
+            skills: ["nodejs", "java", "bla bla"],
+            role: "bla bla bla",
           },
           {
-            Title: 'Analyst', skills: ['nodejs', 'java', 'bla bla'],
-            role: 'bla bla bla'
+            Title: "Analyst",
+            skills: ["nodejs", "java", "bla bla"],
+            role: "bla bla bla",
           },
           {
-            Title: 'Analyst', skills: ['nodejs', 'java', 'bla bla'],
-            role: 'bla bla bla'
-          }
-        ]
-      }
-    })
+            Title: "Analyst",
+            skills: ["nodejs", "java", "bla bla"],
+            role: "bla bla bla",
+          },
+        ],
+      },
+    };
   }
 
-
   render() {
-    const { name,
+    const {
+      name,
       Industry,
       Leadership,
       Size,
       about,
       video,
-      opportunities } = this.state.companyInfos
+      opportunities,
+    } = this.state.companyInfos;
     return (
       <section className="company">
         <section className="optional">
@@ -58,10 +64,22 @@ class Company extends Component {
         <section className="mainContent">
           <section className="comp_profile">
             <div className="imag"></div>
-            <div className="fieldInfo"><span>Company Name : </span><span className="bold">{name}</span></div>
-            <div className="fieldInfo"><span>Industry : </span><span className="bold">{Industry}</span></div>
-            <div className="fieldInfo"><span>Leadership : </span><span className="bold">{Leadership}</span></div>
-            <div className="fieldInfo"><span>Company Size : </span><span className="bold">{Size}</span></div>
+            <div className="fieldInfo">
+              <span>Company Name : </span>
+              <span className="bold">{name}</span>
+            </div>
+            <div className="fieldInfo">
+              <span>Industry : </span>
+              <span className="bold">{Industry}</span>
+            </div>
+            <div className="fieldInfo">
+              <span>Leadership : </span>
+              <span className="bold">{Leadership}</span>
+            </div>
+            <div className="fieldInfo">
+              <span>Company Size : </span>
+              <span className="bold">{Size}</span>
+            </div>
           </section>
           <section className="comp_general">
             <section className="aboutUs">
@@ -73,14 +91,13 @@ class Company extends Component {
               <div className="theVideo">
                 <video id="samp" max-width="640" max-height="480" controls>
                   <source src={video} type="video/mp4" />
-
                 </video>
               </div>
             </section>
             <section className="opp_section">
               <h2>Opportunities</h2>
               <section className="opportunities">
-                {opportunities.map((Opportunity, index) =>
+                {opportunities.map((Opportunity, index) => (
                   <Link to={"/Opportunity"} className="link_Opportunity">
                     <div key={index} className="SingleOpp">
                       <h3>{Opportunity.Title}</h3>
@@ -88,15 +105,14 @@ class Company extends Component {
                       <p>{Opportunity.role}</p>
                     </div>
                   </Link>
-                )}
+                ))}
               </section>
             </section>
           </section>
         </section>
       </section>
-    )
+    );
   }
-
 }
 
-export default Company
+export default Company;
