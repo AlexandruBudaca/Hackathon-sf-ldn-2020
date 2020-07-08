@@ -1,7 +1,7 @@
 {
-  "name": "react-front-end",
+  "name": "see-the-future",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "dependencies": {
     "lodash": "^4.17.14",
     "lodash.template": "^4.5.0",
