@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './index.css'
 
-class ListOfOpportunities extends Component {
-  constructor(props) {
-    super(props);
-    this.state = ({
-      companies: [
+const ListOfOpportunities =()=> {
+  const [companies, setCompanies]= useState ({[
         {
           name: 'pasta',
           imgSrc: 'https://via.placeholder.com/150',
@@ -28,21 +25,9 @@ class ListOfOpportunities extends Component {
         {
           name: 'pasta', imgSrc: 'https://via.placeholder.com/150', description: 'Many desktop publishing packages and web page editors now useas their default model text, and a search for  will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', numberOfOffers: 4, publishedOn: '12 april 2019',
           applyBy: '12 may 2019'
-        },
-      ]
-    })
-  }
+        }])
 
-  // componentDidMount() {
-  //   fetch('')
-  //     .then(data => data.json()
-  //       .then(this.setState({
-  //      companies: data
-  //    })))
-  // }
-
-  render() {
-    const { name, description, numberOfOffers, publishedOn, applyBy } = this.state.companies;
+  
     return (
       <section className="companiesSection">
         <h2>List of Opportunities</h2>
@@ -67,7 +52,7 @@ class ListOfOpportunities extends Component {
               </article>
             </Link>
           )
-        })}
+        }])}
       </section>
     )
   }

@@ -85,9 +85,9 @@ const Company = () => {
               {company.opportunities.map((Opportunity, index) => (
                 <Link to={"/Opportunity"} className="link_Opportunity">
                   <div key={company.index} className="SingleOpp">
-                    <h3>{company.Opportunity.Title}</h3>
-                    <p>{company.Opportunity.skills}</p>
-                    <p>{company.Opportunity.role}</p>
+                    <h3>{Opportunity.Title}</h3>
+                    <p>{Opportunity.skills}</p>
+                    <p>{Opportunity.role}</p>
                   </div>
                 </Link>
               ))}
