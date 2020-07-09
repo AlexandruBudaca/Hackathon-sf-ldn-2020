@@ -41,7 +41,7 @@ class Registration extends Component {
       body: JSON.stringify(this.state.form),
       headers: { "Content-Type": "application/json" },
     }).then((res) => {
-      //Clearing Form
+      //Clearing
       this.setState({
         title: "",
         firstName: "",
