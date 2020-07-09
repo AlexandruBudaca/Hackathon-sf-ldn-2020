@@ -16,6 +16,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+      <div>minko test</div>
         <Nav />
         <Switch>
           <Route path="/" exact component={LandingPage} />
