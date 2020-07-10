@@ -8,6 +8,7 @@ import ListOfCompanies from './components/sections/companies/ListOfCompanies'
 import Company from './components/sections/company/Company'
 import ListOfOpportunities from './components/sections/Opportunities'
 import Opportunity from './components/sections/Opportunity'
+
 import Graduates from './components/sections/Graduates'
 import Tips from './components/sections/tips/Tips'
 import SignIn from './components/register/SignIn'
