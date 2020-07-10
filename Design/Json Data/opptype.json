@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "type": "Full Time"
+  },
+  {
+    "id": 2,
+    "type": "Part Time"
+  },
+  {
+    "id": 3,
+    "type": "Contract"
+  },
+  {
+    "id": 4,
+    "type": "Temporary"
+  },
+  {
+    "id": 5,
+    "type": "Voluntary"
+  },
+  {
+    "id": 6,
+    "type": "Apprenticeship"
+  }
+]
