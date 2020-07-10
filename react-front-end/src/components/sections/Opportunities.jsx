@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './index.css'
 
 const ListOfOpportunities =()=> {
-  const [companies, setCompanies]= useState ({[
+  const [companies, setCompanies]= useState ([
         {
           name: 'pasta',
           imgSrc: 'https://via.placeholder.com/150',
@@ -52,10 +52,10 @@ const ListOfOpportunities =()=> {
               </article>
             </Link>
           )
-        }])}
+        })}
       </section>
     )
   }
-}
+
 
 export default ListOfOpportunities
