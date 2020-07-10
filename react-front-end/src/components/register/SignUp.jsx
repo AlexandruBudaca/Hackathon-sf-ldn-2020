@@ -36,7 +36,7 @@ class Registration extends Component {
       form: [{ title, firstName, lastName, email, jobInterest }],
     });
     event.preventDefault();
-    fetch(`https://sf-hackaton2020.herokuapp.com/api/posts`, {
+    fetch(`https://alex-sf-mongo.herokuapp.com/api/posts`, {
       method: "POST",
       body: JSON.stringify(this.state.form),
       headers: { "Content-Type": "application/json" },
