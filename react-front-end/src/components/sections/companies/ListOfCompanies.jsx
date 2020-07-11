@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
-let companiesData = require("../../../MockData/Companies.json");
+let companiesData = require("../../../MockData/companies.json");
 const ListOfCompanies = () => {
   const [companies, setCompanies] = useState(companiesData);
 
