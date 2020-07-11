@@ -1,38 +1,9 @@
 import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
-
+let companiesData = require("../../../MockData/Companies.json");
 const ListOfCompanies = () => {
-  const [companies, setCompanies] = useState([
-    {
-      name: "pasta",
-      imgSrc: "https://via.placeholder.com/150",
-      description:
-        "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for  will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-      numberOfOffers: 4,
-    },
-    {
-      name: "pasta",
-      imgSrc: "https://via.placeholder.com/150",
-      description:
-        "Many desktop publishing packages and web page editors now useas their default model text, and a search for  will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-      numberOfOffers: 4,
-    },
-    {
-      name: "pasta",
-      imgSrc: "https://via.placeholder.com/150",
-      description:
-        "Many desktop publishing packages and web page editors now useas their default model text, and a search for  will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-      numberOfOffers: 4,
-    },
-    {
-      name: "pasta",
-      imgSrc: "https://via.placeholder.com/150",
-      description:
-        "Many desktop publishing packages and web page editors now useas their default model text, and a search for  will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-      numberOfOffers: 4,
-    },
-  ]);
+  const [companies, setCompanies] = useState(companiesData);
 
   return (
     <section className="companiesSection">
