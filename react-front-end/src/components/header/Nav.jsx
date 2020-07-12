@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import imgSrc from "../../images/cyf_brand.png";
 import './index.css';
-
+import Separator from '../Separator'
 
 function Nav() {
   return (
@@ -18,20 +18,13 @@ function Nav() {
           <Link to="/opportunities" className="navStyle"><li className='simpleNavList'>Opportunities</li></Link>
           <Link to="/Graduates" className="navStyle"><li className='simpleNavList' >Graduates</li></Link>
           <Link to="/tips" className="navStyle"><li className='simpleNavList'>Tips & FAQ</li></Link>
-        </ul>
-       
-      </nav>
-      <p className='superTitle'>Opportunities</p>
-        <div className='separator'>separdthdh</div>
-      </div>
-
-        
-      <nav className="nav">
-        <ul>
           <Link to="/signIn" className="navStyle"><li>Sign in</li></Link>
           <Link to="/signUp" className="navStyle"><li>Sign up</li></Link>
         </ul>
+       
       </nav>
+      
+      </div>
     </header>
 
   );

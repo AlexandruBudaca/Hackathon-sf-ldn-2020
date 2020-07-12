@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './index.css'
-
+import Separator from '../Separator'
 const Graduates =()=> {
   const [students, setStudents]= useState ([
         {
@@ -29,33 +29,12 @@ const Graduates =()=> {
 
   
     return (
+      <section className="companiesSection">
+      <Separator category="graduates"/>
         <h1>i am student</h1>
-    //   <section className="companiesSection">
-    //     <h2>Graduate students</h2>
-    //     {students.map((student, index) => {
-    //       return (
-    //         <Link to="/Opportunity" className="company_link">
-    //           <article className="company_details opportunity_details">
-    //             <div className="company_logo">
-    //               <img src={student.imgSrc} />
-    //             </div>
-    //             <div className="company_content">
-    //               <div className="name_descrip">
-    //                 <p><span>Student's Name: </span> <span className="bold">{student.name}</span></p>
 
-    //               </div>
-    //               <div className="comapny_descript"><span className="bold">Job Description : </span><span>{student.description}</span></div>
-    //               <div className="application_Date">
-    //                 <div><span>Published on : </span><span className="bold">{student.publishedOn}</span></div>
-    //                 <div><span>Apply By : </span><span className="bold">{student.applyBy}</span></div>
-    //               </div>
-    //             </div>
-    // //           </article>
-    //         </Link>
-    //       )
-    //     })}
-    //   </section>
-    // )
+   <h2>Graduate students</h2>
+   </section>
     )}
 
 

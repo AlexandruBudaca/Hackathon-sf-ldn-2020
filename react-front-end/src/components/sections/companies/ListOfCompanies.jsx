@@ -1,16 +1,20 @@
 import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
+import Separator from '../../../components/Separator'
+
 let companiesData = require("../../../MockData/companies.json");
 const ListOfCompanies = () => {
   const [companies, setCompanies] = useState(companiesData);
 
   return (
     <section className="companiesSection">
-      <h2>List of Companies</h2>
+         <Separator category="list of companies"/>
+
       {companies.map((company, index) => {
         return (
           <article className="company_details">
+         
             <div className="company_logo">
               <img src={company.imgSrc} />
             </div>

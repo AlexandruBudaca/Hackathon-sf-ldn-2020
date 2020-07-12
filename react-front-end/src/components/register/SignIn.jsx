@@ -45,7 +45,7 @@ class SignIn extends Component {
   render() {
     return (
       <section className="mainRegister">
-        <div className="imgBlk"><img src={imgSrc} /></div>
+
 
         <h3>Sign In</h3>
         <form onSubmit={this.handleSubmit} className="registerForm">

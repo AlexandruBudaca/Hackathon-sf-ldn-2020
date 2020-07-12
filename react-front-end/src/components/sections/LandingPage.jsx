@@ -6,10 +6,10 @@ import "./index.css";
 const LandingPage = () => {
   return (
     <main className="main">
-      <section className="carousel">
-       
-        <LazyCarousel />
-      </section>
+     
+      <div className='superRedSeparator'></div>
+ 
+  
       <section className="info">
         <section className="About">
           <h2>ABOUT US</h2>

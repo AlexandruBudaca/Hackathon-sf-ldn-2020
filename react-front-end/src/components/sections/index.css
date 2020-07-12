@@ -7,28 +7,29 @@
  color: #3f3f3f;
 }
 .superTitle{
-  position: absolute;
 width: 699px;
 height: 81px;
-left: 91px;
+left: 10vw;
 top: 206px;
-
-font-family: Open Sans;
+color:#3F3F3F;
+font-family: 'Open Sans', sans-serif;
 font-style: normal;
-font-weight: bold;
+font-weight: bolder;
 font-size: 60px;
 line-height: 82px;
+z-index:1;
 
 }
 .separator{
-  position: absolute;
-width: 720px;
-height: 30px;
-left: -12px;
-top: 226px;
-
+width: 40vw;
+height: 3vh;
+margin-left: 5vw;
+margin-top: -3vh;
+margin-bottom: 15vh;
+z-index: -1;
 background: #FF8B8B;
 }
+
 .imgBlk{
   width: 200px;
   height: 80px;
@@ -53,6 +54,16 @@ background: #FF8B8B;
  width: 100%;
  text-align: center;
  padding: 1rem 0;
+
+}
+.superRedSeparator{
+width: 100vw;
+height: 3vh;
+margin-left: 0vw;
+margin-top: 15vh;
+margin-bottom: 15vh;
+z-index: -1;
+background:#D12F2F;
 
 }
 

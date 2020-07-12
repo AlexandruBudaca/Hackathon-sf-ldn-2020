@@ -5,7 +5,7 @@ export default function Searchbar() {
         <div className="searchBar">
         <form action="#">
           <input className="input_Search" type="text" placeholder="Search.." name="search" />
-          <button className="input_btn" type="submit"><i class="fa fa-search"></i></button>
+          <button className="input_btn" type="submit"><i className="fa fa-search"></i></button>
         </form>
       </div> 
     )

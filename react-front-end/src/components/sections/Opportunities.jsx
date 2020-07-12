@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './index.css'
 import Searchbar from'../Searchbar'
+import Separator from '../Separator'
 const ListOfOpportunities =()=> {
   const [companies, setCompanies]= useState ([
         {
@@ -30,7 +31,7 @@ const ListOfOpportunities =()=> {
   
     return (
       <section className="companiesSection">
-      
+      <Separator category="opportunities"/>
         {companies.map((company, index) => {
           return (
             <Link to="/Opportunity" className="company_link">
