@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 import LazyCarousel from "./Carousel";
-import imgSrc from "../../images/cyf_brand.png";
+
 import "./index.css";
 
 const LandingPage = () => {
   return (
     <main className="main">
       <section className="carousel">
-        <div className="imgBlk">
-          <img src={imgSrc} />
-        </div>
+       
         <LazyCarousel />
       </section>
       <section className="info">

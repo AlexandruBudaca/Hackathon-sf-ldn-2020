@@ -6,7 +6,29 @@
  justify-content: space-between;
  color: #3f3f3f;
 }
+.superTitle{
+  position: absolute;
+width: 699px;
+height: 81px;
+left: 91px;
+top: 206px;
 
+font-family: Open Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 60px;
+line-height: 82px;
+
+}
+.separator{
+  position: absolute;
+width: 720px;
+height: 30px;
+left: -12px;
+top: 226px;
+
+background: #FF8B8B;
+}
 .imgBlk{
   width: 200px;
   height: 80px;

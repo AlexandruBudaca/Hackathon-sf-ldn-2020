@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './index.css'
-
+import Searchbar from'../Searchbar'
 const ListOfOpportunities =()=> {
   const [companies, setCompanies]= useState ([
         {
@@ -30,10 +30,11 @@ const ListOfOpportunities =()=> {
   
     return (
       <section className="companiesSection">
-        <h2>List of Opportunities</h2>
+      
         {companies.map((company, index) => {
           return (
             <Link to="/Opportunity" className="company_link">
+               <Searchbar/>
               <article className="company_details opportunity_details">
                 <div className="company_logo">
                   <img src={company.imgSrc} />
