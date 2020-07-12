@@ -1,12 +1,17 @@
 import React, { Component } from "react";
-import LazyCarousel from "./Carousel";
-import seefuture from '/seefuture.gif';
+import seethefuture from '../../../src/seefuture (1).gif';
 import "./index.css";
 
 const LandingPage = () => {
   return (
     <main className="main">
-     <img src={seefuture}/>
+      <div className='firstIntro'>
+        <section className='introSection'>
+          <p className='introHeader'>See the future</p>
+          <p className ="introtext">Envision the day-to-day requirements of your future career</p>
+        </section>
+     <img className='badBusinessPeopleWithBulb' src={seethefuture}/>
+     </div>
       <div className='superRedSeparator'></div>
   
       <section className="info">
