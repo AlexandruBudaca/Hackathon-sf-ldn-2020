@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import LazyCarousel from "./Carousel";
-
+import seefuture from '/seefuture.gif';
 import "./index.css";
 
 const LandingPage = () => {
   return (
     <main className="main">
-     
+     <img src={seefuture}/>
       <div className='superRedSeparator'></div>
- 
   
       <section className="info">
         <section className="About">
