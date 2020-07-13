@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import seethefuture from '../../../src/seefuture (1).gif';
 import studentpic from '../../../src/students.jpg';
 import "./index.css";
@@ -43,5 +44,6 @@ const LandingPage = () => {
     </main>
   );
 };
+
 
 export default LandingPage;

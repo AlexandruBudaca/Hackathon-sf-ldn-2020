@@ -1,4 +1,7 @@
+
 import React, { Component, useState } from "react";
+
+
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import "./index.css";
@@ -7,6 +10,7 @@ import cyf_picture02 from "../../images/cyf_picture02.jpg";
 import cyf_picture03 from "../../images/cyf_picture03.jpg";
 import cyf_picture04 from "../../images/cyf_picture04.jpg";
 import cyf_picture05 from "../../images/cyf_picture05.jpg";
+
 
 const LazyCarousel = () => {
   const [carouselInfos, setCarouselInfos] = useState([
@@ -43,5 +47,7 @@ const LazyCarousel = () => {
     </Carousel>
   );
 };
+
+
 
 export default LazyCarousel;

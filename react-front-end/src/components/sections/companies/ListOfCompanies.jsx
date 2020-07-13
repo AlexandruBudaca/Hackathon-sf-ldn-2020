@@ -1,9 +1,11 @@
+
 import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
 import Separator from '../../../components/Separator'
 
 let companiesData = require("../../../MockData/companies.json");
+        
 const ListOfCompanies = () => {
 const [companies, setCompanies] = useState(companiesData);
   return (
@@ -42,5 +44,7 @@ const [companies, setCompanies] = useState(companiesData);
     </section>
   );
 };
+
+    
 
 export default ListOfCompanies;

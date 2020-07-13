@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import './index.css'
+import "./index.css";
 // import './index.css'
-import imgSrc from '../../images/cyf_brand.png'
-
+import imgSrc from "../../images/cyf_brand.png";
 
 class SignIn extends Component {
   constructor() {
@@ -10,15 +9,15 @@ class SignIn extends Component {
     this.state = {
       email: "",
       password: "",
-      form: []
+      form: [],
     };
   }
-  handleChange = event => {
+  handleChange = (event) => {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     const { email, password } = this.state;
     //Data Validation
     if (!email.includes("@")) {
@@ -26,19 +25,19 @@ class SignIn extends Component {
     }
     //Creating JSON form to send to DB
     this.setState({
-      form: [{ email, password }]
+      form: [{ email, password }],
     });
     event.preventDefault();
     //Post Request
     fetch(`#`, {
       method: "POST",
       body: JSON.stringify(this.state.form),
-      headers: { "Content-Type": "application/json" }
-    }).then(res => {
+      headers: { "Content-Type": "application/json" },
+    }).then((res) => {
       //Clearing Form
       this.setState({
         email: "",
-        password: ""
+        password: "",
       });
     });
   };
@@ -46,23 +45,25 @@ class SignIn extends Component {
     return (
       <section className="mainRegister">
 
+        <div className="imgBlk">
+          <img src={imgSrc} alt="imgBlk" />
+        </div>
 
         <h3>Sign In</h3>
         <form onSubmit={this.handleSubmit} className="registerForm">
           <ul>
             <li>
               <label>
-
                 <input
                   name="email"
                   type="text"
                   placeholder="Email Address"
-                  onChange={this.handleChange} />
+                  onChange={this.handleChange}
+                />
               </label>
             </li>
             <li>
               <label>
-
                 <input
                   name="password"
                   type="password"
@@ -72,7 +73,9 @@ class SignIn extends Component {
               </label>
             </li>
           </ul>
-          <button className="btn" type="submit">Log In</button>
+          <button className="btn" type="submit">
+            Log In
+          </button>
         </form>
       </section>
     );
