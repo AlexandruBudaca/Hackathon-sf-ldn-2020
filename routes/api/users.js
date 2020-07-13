@@ -12,7 +12,7 @@ const Post = require("../../models/Post");
 // @route   GET api/users
 // @desc    Tests users route
 // @access  Public
-router.get("/", (req, res) => res.json({ msg: "Users Works" }));
+//router.get('/', (req, res) => res.json({ msg: 'Users Works' }));
 
 // router.get('/',(req,res) =>  {
 //   User.find()
