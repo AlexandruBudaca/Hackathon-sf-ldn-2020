@@ -2,11 +2,27 @@
   min-height: 80vh;
   line-height: 2.5rem;
   padding: 1rem;
-  background: #fdfdfd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+
+  background: #c2c1c1
+}
+.ourStudent{
+  /* Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum . */
+/* comment */
+display:flex;
+flex-direction: column;
+width:50%;
+align-items: flex-start;
+
+font-family: Open Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 35px;
+/* or 175% */
+letter-spacing: 0.05em;
+
+color: #000000;
+
 
 }
 
