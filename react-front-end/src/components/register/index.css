@@ -40,8 +40,8 @@ label input{
 }
 
 .interestArea label{
-    width: 60%;
-    margin: auto;
+width: 60%;
+margin: auto;
 display: flex;
 border: 1px solid #3f3f3f;
 }
