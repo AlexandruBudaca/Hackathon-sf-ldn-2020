@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import imgSrc from "../../images/cyf_brand.png";
 import "./index.css";
 import SelectNewOpportunity from "./SelectNewOpportunity";
-import { roles, types } from "./dummyData/roles";
+// import roles from "./dummyData/roles";
 // import './index.css'
 /* 
 Registration is a shorter home to fill for users to sign up 
@@ -77,13 +77,12 @@ const NewOpportunityForm = () => {
                 <SelectNewOpportunity
                   label={"Role:"}
                   handleChange={handleChange}
-                  data={roles}
+                  // data={roles}
                 />
                 {
                   <SelectNewOpportunity
                     label={"Type:"}
                     handleChange={handleChange}
-                    data={types}
                   />
                 }
                 {/* <SelectNewOpportunity

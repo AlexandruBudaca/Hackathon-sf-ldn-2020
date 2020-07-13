@@ -16,11 +16,11 @@ const SelectNewOpportunity = ({ handleChange, label, data }) => {
           onChange={handleChange}
           required
         >
-          <option defaultValue="">Select your option</option>
+          {/* <option defaultValue="">Select your option</option>
           {data.map((role) => (
             <option value={role.role} key={role.id}>
               {role.role}
-            </option>
+            </option> */}
           ))}
         </select>
       </label>
