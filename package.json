@@ -3,6 +3,9 @@
     "version": "1.0.0",
     "description": "See the future",
     "main": "server.js",
+    "engines": {
+        "node": "12.18.2"
+    },
     "scripts": {
         "start": "node server.js",
         "server": "nodemon server.js",
@@ -19,7 +22,7 @@
         "express": "^4.16.4",
         "gravatar": "^1.6.0",
         "jsonwebtoken": "^8.2.0",
-        "lodash": "^4.17.14",
+        "lodash": "^4.17.19",
         "mongodb": "^3.2.7",
         "mongoose": "^5.0.12",
         "morgan": "^1.9.0",
