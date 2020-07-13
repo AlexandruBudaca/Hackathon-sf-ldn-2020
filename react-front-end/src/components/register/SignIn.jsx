@@ -33,12 +33,12 @@ class SignIn extends Component {
     fetch(`#`, {
       method: "POST",
       body: JSON.stringify(this.state.form),
-      headers: { "Content-Type": "application/json" }
-    }).then(res => {
+      headers: { "Content-Type": "application/json" },
+    }).then((res) => {
       //Clearing Form
       this.setState({
         email: "",
-        password: ""
+        password: "",
       });
     });
   };

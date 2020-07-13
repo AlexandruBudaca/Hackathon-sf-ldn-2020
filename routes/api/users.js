@@ -70,7 +70,7 @@ router.post("/login", (req, res) => {
           });
         }
         if (result) {
-          const token = jwt.sign(
+          let token = jwt.sign(
             {
               email: user[0].email,
               userId: user[0]._id,
