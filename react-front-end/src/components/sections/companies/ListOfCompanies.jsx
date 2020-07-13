@@ -5,8 +5,7 @@ import Separator from '../../../components/Separator'
 
 let companiesData = require("../../../MockData/companies.json");
 const ListOfCompanies = () => {
-  const [companies, setCompanies] = useState(companiesData);
-
+const [companies, setCompanies] = useState(companiesData);
   return (
     <section className="companiesSection">
          <Separator category="list of companies"/>

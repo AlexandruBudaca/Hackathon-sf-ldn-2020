@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import seethefuture from '../../../src/seefuture (1).gif';
+import studentpic from '../../../src/students.jpg';
 import "./index.css";
 
 const LandingPage = () => {
@@ -15,22 +16,19 @@ const LandingPage = () => {
       <div className='superRedSeparator'></div>
   
       <section className="info">
-        <section className="About">
-          <h2>ABOUT US</h2>
+        <img src={studentpic}/>
+        
+        <section className="ourStudent">
+          <h2>Our Students</h2>
           <p>
-            Many of the students on the CodeYourFuture course are unfamiliar
+          Many of the students on the CodeYourFuture course are unfamiliar
             with the world of software development within the UK and many have
             never held a technical job role before. See the Future is a way for
             students and graduates of the CodeYourFuture course to be matched
             with a range of opportunities provided by local businesses. This
             could be anything from a few hours of shadowing a professional
             developer or a tour of their office, all the way through to a
-            student’s first technical job role
-          </p>
-        </section>
-        <section className="ourStudent">
-          <h2>Our Students</h2>
-          <p>
+            student’s first technical job role.
             CodeYourFuture provides an 8-month, full stack, web development
             bootcamp for asylum seekers, refugees and people from other
             disadvantaged backgrounds. Our students come from a huge range of

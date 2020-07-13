@@ -22,7 +22,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={LandingPage} />
           <Route path="/company" exact component={Company} />
-          <Route path="/listOfCompanies" exact component={ListOfCompanies} />
+          <Route path="/listOfCompanies" exact component={ListOfCompanies}  />
           <Route path="/listOfCompanies" exact component={ListOfCompanies} />
           <Route path="/Graduates" exact component={Graduates} />
           <Route path="/opportunity" exact component={Opportunity} />
