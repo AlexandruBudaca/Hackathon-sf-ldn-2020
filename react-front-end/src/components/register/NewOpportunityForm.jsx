@@ -12,7 +12,7 @@ bio, occupation, img.
 */
 const NewOpportunityForm = () => {
   const [form, setForm] = useState({
-    title: "",
+    title: "ALEX",
     firstName: "",
     lastName: "",
     email: "",
