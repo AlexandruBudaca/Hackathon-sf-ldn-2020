@@ -44,6 +44,7 @@ class SignIn extends Component {
   render() {
     return (
       <section className="mainRegister">
+
         <div className="imgBlk">
           <img src={imgSrc} alt="imgBlk" />
         </div>

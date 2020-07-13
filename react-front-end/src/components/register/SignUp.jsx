@@ -70,9 +70,11 @@ class Registration extends Component {
     const { title, firstName, lastName, email } = this.state;
     return (
       <section className="mainRegister">
+
         <div className="imgBlk">
           <img src={imgSrc} alt="" />
         </div>
+
 
         <h3>Registration Form</h3>
         <form onSubmit={this.handleSubmit}>
