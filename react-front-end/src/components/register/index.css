@@ -1,125 +1,112 @@
-.mainRegister{
+.mainRegister {
   min-height: 80vh;
-  line-height: 3rem;
-  text-align: center;
+  line-height: 2.5rem;
   padding: 1rem;
-  background: #c2c1c1
-}
-.ourStudent{
-  /* Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum . */
-
-display:flex;
-flex-direction: column;
-width:50%;
-align-items: flex-start;
-
-font-family: Open Sans;
-font-style: normal;
-font-weight: normal;
-font-size: 20px;
-line-height: 35px;
-/* or 175% */
-letter-spacing: 0.05em;
-
-color: #000000;
-
+  background: #fdfdfd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
 }
-.info{
-  display:flex;
-  flex-direction:column;
+
+.div-form {
+  width: 800px;
+  height: 500px;
+  background: linear-gradient(0deg, #FAFAFA, #FAFAFA);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.registerForm{
+.div-form button {
+  margin-top: 50px;
+  padding: 10px;
+  background-color: #259654;
+}
+
+
+.registerForm {
   width: auto;
   margin: auto;
 }
 
 form ul input {
   margin: .5rem auto;
- padding: .5rem;
+  padding: .5rem;
 }
 
-form ul li{
+form ul li {
   list-style-type: none;
-  
 }
 
-label input{
+label input {
   width: 60%;
   font-size: 20px;
 }
-.simpleNavList{
-  display: flex;
-  color: #3f3f3f;
-  text-decoration: none;
 
-}
-.btn{
- border: none;
- border-radius: 10px;
+.btn {
+  border: none;
+  border-radius: 10px;
   width: 80px;
   padding: 1rem 0;
 }
 
-.interestArea label{
-width: 60%;
-margin: auto;
-display: flex;
-border: 1px solid #3f3f3f;
+.interestArea label {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  border: 1px solid #3f3f3f;
 }
 
-.interestArea label p{
-flex: 4;
-text-align: right;
+.interestArea label p {
+  flex: 4;
+  text-align: right;
 }
-.interestArea label input{
+
+.interestArea label input {
   flex: 1;
 }
 
-input[type=checkbox]
-{
+input[type=checkbox] {
   /* Double-sized Checkboxes */
-  -ms-transform: scale(2); /* IE */
-  -moz-transform: scale(2); /* FF */
-  -webkit-transform: scale(2); /* Safari and Chrome */
-  -o-transform: scale(2); /* Opera */
+  -ms-transform: scale(2);
+  /* IE */
+  -moz-transform: scale(2);
+  /* FF */
+  -webkit-transform: scale(2);
+  /* Safari and Chrome */
+  -o-transform: scale(2);
+  /* Opera */
   transform: scale(2);
   padding: 10px;
   margin: auto;
 }
 
-.select{
+.select {
+  width: 300px;
   padding: .5rem;
 }
 
-.btn:hover{
- background:  #d12f2f;
- color: orange;
+.btn:hover {
+  background: #d12f2f;
+  color: white;
 }
 
-h3{
+h3 {
   margin: 1rem 0;
 }
 
-.imgBlk{
-  display:flex;
-  justify-items: start;
-  width: 300px;
+.imgBlk {
   height: 100px;
-  margin: 0;
-
-}
-.brandbox{
-display:flex;
-flex-direction: row;
-width:110%;
-justify-content: space-around;
-color:orange;
-align-items: center;
-
+  margin-left: 100px;
 }
 
-.imgBlk img{
+.imgBlk img {
   max-width: 100%;
+}
+
+.selects label {
+  text-align: left;
 }

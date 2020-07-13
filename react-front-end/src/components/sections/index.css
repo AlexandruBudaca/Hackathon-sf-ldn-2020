@@ -6,29 +6,6 @@
  justify-content: space-between;
  color: #3f3f3f;
 }
-.superTitle{
-width: 699px;
-height: 81px;
-left: 10vw;
-top: 206px;
-color:#3F3F3F;
-font-family: 'Open Sans', sans-serif;
-font-style: normal;
-font-weight: bolder;
-font-size: 60px;
-line-height: 82px;
-z-index:1;
-
-}
-.separator{
-width: 40vw;
-height: 3vh;
-margin-left: 5vw;
-margin-top: -3vh;
-margin-bottom: 15vh;
-z-index: -1;
-background: #FF8B8B;
-}
 
 .imgBlk{
   width: 200px;
@@ -48,66 +25,13 @@ background: #FF8B8B;
 .imgBox img{
   max-height: 100%;
   object-fit: cover;
+ 
 }
+.carousel{
+ width: 100%;
+ text-align: center;
+ padding: 1rem 0;
 
-.superRedSeparator{
-width: 100vw;
-height: 3vh;
-margin-left: 0vw;
-margin-top: 15vh;
-margin-bottom: 15vh;
-z-index: -1;
-background:#D12F2F;
-
-}
-.introSection{
-  display:flex;
-  justify-items: left;
-}
-.firstIntro{
-  display:flex;
-  flex-direction:row;
-  width:100%;
-  justify-items: stretch;
-}
-.introtext{
-  /* Envision the day-to-day requirements of your future career */
-font-family: Open Sans;
-font-style: normal;
-font-weight: 300;
-font-size: 35px;
-line-height: 48px;
-
-color: #3F3F3F;
-
-
-}
-.introHeader{
-/* See the future */
-
-
-font-family: Open Sans;
-font-style: normal;
-font-weight: bold;
-font-size: 70px;
-line-height: 95px;
-align-self: flex-start;
-color: #D12F2F;
-
-
-}
-.introSection{
-  display:flex;
-  flex-direction: column;
-  margin-left: 5vw;
-  width:50%;
-  align-items: center;
-}
-.badBusinessPeopleWithBulb{
-  align-self: flex-end;
-  margin-right:6vw;
-  width:30vw;
-  height:auto;
 }
 
 .info{

@@ -22,7 +22,14 @@
   color: black;
 }
 
+.navStyle, .title{
+  color: white;
+}
 
+.link_Opportunity:hover{
+  background: gray;
+  color: white;
+}
 
 .comp_profile{
   width: 30%;
@@ -31,7 +38,15 @@
     border: 2px solid;
     padding: .5rem;
 }
-
+.imag{
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  margin-bottom: 4rem;
+  border-radius: 50%;
+  border: 2px solid;
+  background: gray;
+}
 
 .comp_general{
   width: 65%;
