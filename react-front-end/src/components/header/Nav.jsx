@@ -16,6 +16,7 @@ function Nav() {
       <nav className="nav">
         <ul>
 
+
           <Link to="/" className="navStyle"><li className='simpleNavList'>Home</li></Link>
           <Link to="/listOfCompanies" className="navStyle"> <li className='simpleNavList'>Companies</li></Link>
           <Link to="/opportunities" className="navStyle"><li className='simpleNavList'>Opportunities</li></Link>

@@ -10,14 +10,14 @@
         "start": "node server.js",
         "server": "nodemon server.js",
         "client": "npm start --prefix react-front-end",
-        "dev": "concurrently \"npm run server\" \"npm run client\"",
-        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+        "dev": "concurrently \"npm run server\" \"npm run client\""
     },
     "dependencies": {
         "bcryptjs": "^2.4.3",
         "body-parser": "^1.18.2",
         "concurrently": "^3.5.1",
         "connect": "^3.7.0",
+        "cors": "^2.8.5",
         "dotenv": "^8.0.0",
         "express": "^4.16.4",
         "gravatar": "^1.6.0",
