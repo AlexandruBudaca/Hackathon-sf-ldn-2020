@@ -36,12 +36,12 @@ class Registration extends Component {
       form: [{ title, firstName, lastName, email, jobInterest }],
     });
     event.preventDefault();
-    fetch(`#`, {
+    fetch(`https://sf-hackaton2020.herokuapp.com/api/posts`, {
       method: "POST",
       body: JSON.stringify(this.state.form),
       headers: { "Content-Type": "application/json" },
     }).then((res) => {
-      //Clearing Form
+      //Clearing
       this.setState({
         title: "",
         firstName: "",
@@ -70,9 +70,11 @@ class Registration extends Component {
     const { title, firstName, lastName, email } = this.state;
     return (
       <section className="mainRegister">
+
         <div className="imgBlk">
           <img src={imgSrc} alt="" />
         </div>
+
 
         <h3>Registration Form</h3>
         <form onSubmit={this.handleSubmit}>
