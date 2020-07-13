@@ -35,8 +35,8 @@ function Nav() {
           <Link to="/signIn" className="navStyle">
             <li>Sign in</li>
           </Link>
-          <Link to="/signUp" className="navStyle">
-            <li>Sign up</li>
+          <Link to="/NewOpportunity" className="navStyle">
+            <li>New Opportunity</li>
           </Link>
         </ul>
       </nav>

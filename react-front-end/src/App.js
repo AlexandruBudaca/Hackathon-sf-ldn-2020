@@ -1,16 +1,16 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './App.css';
-import Nav from './components/header/Nav'
-import Footer from './components/footer/footer'
-import LandingPage from './components/sections/LandingPage'
-import ListOfCompanies from './components/sections/companies/ListOfCompanies'
-import Company from './components/sections/company/Company'
-import Opportunities from './components/sections/Opportunities'
-import Opportunity from './components/sections/Opportunity'
-import Tips from './components/sections/tips/Tips'
-import SignIn from './components/register/SignIn'
-import SignUp from './components/register/SignUp'
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
+import Nav from "./components/header/Nav";
+import Footer from "./components/footer/footer";
+import LandingPage from "./components/sections/LandingPage";
+import ListOfCompanies from "./components/sections/companies/ListOfCompanies";
+import Company from "./components/sections/company/Company";
+import Opportunities from "./components/sections/Opportunities";
+import Opportunity from "./components/sections/Opportunity";
+import Tips from "./components/sections/tips/Tips";
+import SignIn from "./components/register/SignIn";
+import NewOpportunityForm from "./components/register/NewOpportunityForm";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
           <Route path="/opportunity" exact component={Opportunity} />
           <Route path="/tips" exact component={Tips} />
           <Route path="/signIn" exact component={SignIn} />
-          <Route path="/signUp" exact component={SignUp} />
+          <Route path="/NewOpportunity" exact component={NewOpportunityForm} />
         </Switch>
         <Footer />
       </div>
