@@ -13,6 +13,7 @@ import Graduates from "./components/sections/Graduates";
 import Tips from "./components/sections/tips/Tips";
 import SignIn from "./components/register/SignIn";
 import SignUp from "./components/register/SignUp";
+import NewOpportunityForm from "./components/register/NewOpportunity";
 
 function App() {
   return (
@@ -30,6 +31,11 @@ function App() {
           <Route path="/tips" exact component={Tips} />
           <Route path="/signIn" exact component={SignIn} />
           <Route path="/signUp" exact component={SignUp} />
+          <Route
+            path="/NewOpportunityForm"
+            exact
+            component={NewOpportunityForm}
+          />
         </Switch>
         <Footer />
       </div>
