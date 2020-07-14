@@ -10,7 +10,8 @@
         "start": "node server.js",
         "server": "nodemon server.js",
         "client": "npm start --prefix react-front-end",
-        "dev": "concurrently \"npm run server\" \"npm run client\""
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "heroku-postbuild": "cd client && NPM_CONFIG_PRODUCTION=false npm install && npm run build"
     },
 
     "dependencies": {
