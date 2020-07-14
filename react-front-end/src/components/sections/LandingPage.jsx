@@ -7,22 +7,20 @@ import "./index.css";
 const LandingPage = () => {
   return (
     <main className="main">
-      <h1>HI! MINGO!</h1>
       <div className='firstIntro'>
         <section className='introSection'>
           <p className='introHeader'>See the future</p>
           <p className ="introtext">Envision the day-to-day requirements of your future career</p>
         </section>
-     <img className='badBusinessPeopleWithBulb' src={seethefuture}/>
+     <img className='badBusinessPeopleWithBulb' alt='seethefuture' src={seethefuture}/>
      </div>
       <div className='superRedSeparator'></div>
   
       <section className="info">
-        <img src={studentpic}/>
-        
+        <img className='sudentpic'src={studentpic} alt='CYF students'/>
         <section className="ourStudent">
-          <h2>Our Students</h2>
-          <p>
+          <h2 className='infotitle'>Our Students</h2>
+          <p className='studentPara'>
           Many of the students on the CodeYourFuture course are unfamiliar
             with the world of software development within the UK and many have
             never held a technical job role before. See the Future is a way for
