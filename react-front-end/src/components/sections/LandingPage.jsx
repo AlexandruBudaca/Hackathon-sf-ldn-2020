@@ -7,6 +7,7 @@ import "./index.css";
 const LandingPage = () => {
   return (
     <main className="main">
+      <h1>HI! MINGO!</h1>
       <div className='firstIntro'>
         <section className='introSection'>
           <p className='introHeader'>See the future</p>
