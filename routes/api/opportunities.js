@@ -4,37 +4,40 @@ const mongoose = require("mongoose");
 const mongodb = require("mongodb");
 const passport = require("passport");
 
-// Post model
-const Post = require("../../models/Post");
+// Opportunities model
+const Opportunities = require("../../models/Opportunities");
 // Profile model
 const Profile = require("../../models/Profile");
 
 // Validation
-const validatePostInput = require("../../validation/post");
+const validateOpportunitiesInput = require("../../validation/opportunities");
 
-// @route   GET api/posts
+// @route  POST api/opp
 // @desc    Tests post route
 // @access  Public
 
 router.post("/", (req, res) => {
-  const newPost = new Post({
-    user: req.body.user,
-    // text: req.body.text,
-    friendsName: req.body.friendsName,
-    bestName: req.body.bestName
+  const newOpportunities = new Opportunities({
+    company: req.body.company,
+    role: req.body.role,
+    type: req.body.type,
+    minimum_proficiency: req.body.minimum_proficiency,
+    location: req.body.location,
+    description : req.body.description,
+    date: Date.now()
   });
-  newPost.save().then(Post => res.json(Post));
+  newOpportunities.save().then(Opportunities => res.json(Opportunities));
 });
 
-// @route   GET api/posts/get/
+// @route   GET api/opp
 // @desc    GET all the information from the POST request above
 // @access  Public
 
-router.get("/get/", (req, res) => {
-  Post.find().then(Post => res.json(Post));
+router.get("/", (req, res) => {
+  Opportunities.find().then(Opportunities => res.json(Opportunities));
 });
 
-// @route   DELETE api/posts/delete/id
+// @route   DELETE api/opportunities/delete/id
 // @desc    Delete user and profile
 // @access  Private
 
