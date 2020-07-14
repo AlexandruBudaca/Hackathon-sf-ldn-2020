@@ -19,8 +19,8 @@ const LandingPage = () => {
       <section className="info">
         <img className='sudentpic'src={studentpic} alt='CYF students'/>
         <section className="ourStudent">
-          <h2>Our Students</h2>
-          <p className='studenPara'>
+          <h2 className='infotitle'>Our Students</h2>
+          <p className='studentPara'>
           Many of the students on the CodeYourFuture course are unfamiliar
             with the world of software development within the UK and many have
             never held a technical job role before. See the Future is a way for
