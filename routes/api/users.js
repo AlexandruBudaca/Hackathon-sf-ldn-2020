@@ -7,7 +7,7 @@ const validateLoginInput = require("../../validation/login");
 
 // Load User model
 const User = require("../../models/User");
-const Post = require("../../models/Post");
+const Opportunities = require("../../models/Opportunities");
 
 // @route   GET api/users
 // @desc    Tests users route
