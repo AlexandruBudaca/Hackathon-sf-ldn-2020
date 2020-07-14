@@ -60,8 +60,13 @@ z-index: -1;
 background:#D12F2F;
 
 }
+.signinwrapper{
+  width:50vw;
+  height:1em;
+}
 .introSection{
   display:flex;
+  width:45vw;
   justify-items: left;
 }
 .firstIntro{

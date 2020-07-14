@@ -3,54 +3,15 @@ import "./index.css";
 // import './index.css'
 import imgSrc from "../../images/cyf_brand.png";
 
-class SignIn extends Component {
-  constructor() {
-    super();
-    this.state = {
-      email: "",
-      password: "",
-      form: [],
-    };
-  }
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-  };
-  handleSubmit = (event) => {
-    const { email, password } = this.state;
-    //Data Validation
-    if (!email.includes("@")) {
-      return alert("Please enter Valid email");
-    }
-    //Creating JSON form to send to DB
-    this.setState({
-      form: [{ email, password }],
-    });
-    event.preventDefault();
-    //Post Request
-    fetch(`#`, {
-      method: "POST",
-      body: JSON.stringify(this.state.form),
-      headers: { "Content-Type": "application/json" },
-    }).then((res) => {
-      //Clearing Form
-      this.setState({
-        email: "",
-        password: "",
-      });
-    });
-  };
-  render() {
+const SignIn=()=>{
+  
     return (
       <section className="mainRegister">
 
-        <div className="imgBlk">
-          <img src={imgSrc} alt="imgBlk" />
-        </div>
+       
 
         <h3>Sign In</h3>
-        <form onSubmit={this.handleSubmit} className="registerForm">
+        <form  className="registerForm">
           <ul>
             <li>
               <label>
@@ -58,7 +19,7 @@ class SignIn extends Component {
                   name="email"
                   type="text"
                   placeholder="Email Address"
-                  onChange={this.handleChange}
+          
                 />
               </label>
             </li>
@@ -68,7 +29,7 @@ class SignIn extends Component {
                   name="password"
                   type="password"
                   placeholder="Password"
-                  onChange={this.handleChange}
+        
                 />
               </label>
             </li>
@@ -80,5 +41,5 @@ class SignIn extends Component {
       </section>
     );
   }
-}
+
 export default SignIn;
