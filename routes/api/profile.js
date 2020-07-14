@@ -13,10 +13,10 @@ const Profile = require('../../models/Profile');
 // Load User Model
 const User = require('../../models/User');
 
-// @route   GET api/profile/test
+// @route   GET api/profile
 // @desc    Tests profile route
 // @access  Public
-router.get('/test', (req, res) => res.json({ msg: 'Profile Works' }));
+router.get('/', (req, res) => res.json({ msg: 'Profile Works' }));
 
 // @route   GET api/profile
 // @desc    Get current users profile
