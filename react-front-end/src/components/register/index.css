@@ -71,8 +71,8 @@
 }
 
 .div-form {
-  width: 800px;
-  height: 700px;
+  width: 50vw;
+  min-height: 15rem;
   background: linear-gradient(0deg, #FAFAFA, #FAFAFA);
   display: flex;
   align-items: center;
@@ -96,6 +96,18 @@ form ul input {
   margin-top: 10px;
 }
 
+.landingsign{
+  display:flex;
+  flex-direction:column;
+  width:30vw;
+
+}
+.formline{
+  display:flex;
+  min-width:20vw;
+  justify-content: space-around;
+  margin-top:15px;
+}
 .div-form li label {
   display: flex;
   align-items: flex-start;
@@ -237,14 +249,13 @@ h3 {
   max-width: 100%;
 }
 
-.signHome {
+
+
+.signHome  {
   display: flex;
   flex-direction: column;
-
-}
-
-.signHome form {
   width: 50vw;
+  align-items: center;
 }
 
 .container-SignUp {
