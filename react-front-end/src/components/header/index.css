@@ -39,7 +39,12 @@
 .footer p{
   font-size: .8rem;
 }
-
+.navStyle{
+  list-style-type: none;
+  margin-left:15px;
+  align-items: center;
+  text-decoration: none;
+}
 .nav ul{
   width: auto;
    padding: 0;
