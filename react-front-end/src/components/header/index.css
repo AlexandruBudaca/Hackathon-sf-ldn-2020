@@ -44,6 +44,7 @@
   list-style-type: none;
   margin-left:15px;
   align-items: center;
+  text-decoration: none;
 }
 .nav ul{
   width: auto;
