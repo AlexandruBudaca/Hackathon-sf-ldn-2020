@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-
+import React from "react";
+import SignInHomePage from "../register/SignInOnHomePage";
 import seethefuture from "../../../src/seefuture (1).gif";
 import studentpic from "../../../src/students.jpg";
 import "./index.css";
@@ -21,6 +21,7 @@ const LandingPage = () => {
         />
       </div>
       <div className="superRedSeparator"></div>
+      <SignInHomePage />
 
       <section className="info">
         <img className="sudentpic" src={studentpic} alt="CYF students" />
