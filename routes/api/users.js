@@ -96,12 +96,14 @@ router.post("/login", (req, res) => {
 // @route   GET api/users
 // @desc    Tests users route
 // @access  Public
+
 // router.get('/', (req, res) => res.json({ msg: 'Users Works' }));
 
 router.get("/", (req, res) => {
   User.find().then((users) => res.json(users));
 });
 // @route   DELETE api/users
+
 
 router.delete("/:userId", (req, res) => {
   User.remove({ _id: req.params.userId })

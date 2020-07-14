@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import imgSrc from '../../images/cyf_brand.png'
-import './index.css'
+import imgSrc from "../../images/cyf_brand.png";
+import "./index.css";
 // import './index.css'
 /* 
 Registration is a shorter home to fill for users to sign up 
@@ -17,15 +17,15 @@ class Registration extends Component {
       lastName: "",
       email: "",
       jobInterest: "",
-      form: []
+      form: [],
     };
   }
-  handleChange = event => {
+  handleChange = (event) => {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     const { title, firstName, lastName, email, jobInterest } = this.state;
     //Email validation
     if (!email.includes("@")) {
@@ -33,36 +33,36 @@ class Registration extends Component {
     }
     //Creating JSON data for POST request to DB
     this.setState({
-      form: [{ title, firstName, lastName, email, jobInterest }]
+      form: [{ title, firstName, lastName, email, jobInterest }],
     });
     event.preventDefault();
-    fetch(`#`, {
+    fetch(`https://sf-hackaton2020.herokuapp.com/api/posts`, {
       method: "POST",
       body: JSON.stringify(this.state.form),
-      headers: { "Content-Type": "application/json" }
-    }).then(res => {
-      //Clearing Form
+      headers: { "Content-Type": "application/json" },
+    }).then((res) => {
+      //Clearing
       this.setState({
         title: "",
         firstName: "",
         lastName: "",
         email: "",
-        jobInterest: []
+        jobInterest: [],
       });
     });
   };
-  handleJobInterest = event => {
+  handleJobInterest = (event) => {
     //checks if event is selected. If it is selected it is added to state, it unselected it is filtered out of array.
     if (event.target.checked) {
       this.setState({
-        jobInterest: [...this.state.jobInterest, event.target.value]
+        jobInterest: [...this.state.jobInterest, event.target.value],
       });
     } else {
-      const jobInterest = this.state.jobInterest.filter(job => {
+      const jobInterest = this.state.jobInterest.filter((job) => {
         return job !== event.target.value;
       });
       this.setState({
-        jobInterest: jobInterest
+        jobInterest: jobInterest,
       });
     }
   };
@@ -70,7 +70,11 @@ class Registration extends Component {
     const { title, firstName, lastName, email } = this.state;
     return (
       <section className="mainRegister">
-        <div className="imgBlk"><img src={imgSrc} /></div>
+
+        <div className="imgBlk">
+          <img src={imgSrc} alt="" />
+        </div>
+
 
         <h3>Registration Form</h3>
         <form onSubmit={this.handleSubmit}>
@@ -97,7 +101,6 @@ class Registration extends Component {
             </li>
             <li>
               <label>
-
                 <input
                   placeholder="First Name"
                   name="firstName"
@@ -110,7 +113,6 @@ class Registration extends Component {
             </li>
             <li>
               <label>
-
                 <input
                   placeholder="Last Name"
                   name="lastName"
@@ -123,7 +125,6 @@ class Registration extends Component {
             </li>
             <li>
               <label>
-
                 <input
                   placeholder="Email Address"
                   name="email"
