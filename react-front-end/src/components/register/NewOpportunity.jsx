@@ -72,7 +72,6 @@ const NewOpportunityForm = () => {
       <Separator category={"New Opportunity"} />
       <div>
         <section className="mainRegister">
-          <h3>New Opportunity Form</h3>
           <div className="div-form">
             <form>
               <ul>
