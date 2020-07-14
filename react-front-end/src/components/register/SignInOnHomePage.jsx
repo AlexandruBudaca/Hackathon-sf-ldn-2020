@@ -29,18 +29,22 @@ const SignInHomePage = () => {
   return (
     <div className="container-SignUp">
       <div className="signHome">
-        <h2>Gratuate Signin</h2>
+        
+        <div className="div-form landingsign">
         <form onSubmit={handleSubmit}>
-          <label>
-            Username
+          <div className = "formline">
+          <label>Username </label>
+            
             <input name="username" onChange={handleChange}></input>
-          </label>
+            </div>
+            <div className = "formline">
           <label>
-            Password
+            Password </label>
             <input name="password" onChange={handleChange}></input>
-          </label>
+            </div>
           <button>Sign In</button>
         </form>
+        </div>
         <p>don't you have an account?</p>
         <Link to="/signUp"> Signup here</Link>
       </div>
