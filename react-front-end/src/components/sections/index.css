@@ -110,17 +110,11 @@ color: #D12F2F;
   height:auto;
 }
 
-.info{
-  display: flex;
-}
-.info p{
-  text-align: justify;
-  margin-top: 1rem;
-}
+
 .About, .ourStudent{
-  width: 100%;
+  width: 50%;
    text-align: center;
-    padding: 2rem;
+    padding-left: 2rem;
     line-height: 1.4rem;
 }
 

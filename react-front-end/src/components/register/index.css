@@ -22,12 +22,26 @@ line-height: 35px;
 letter-spacing: 0.05em;
 
 color: #000000;
+}
+.sudentpic{
+  max-width:50vw;
+  object-fit: cover;
+}
+.studentPara{
+font-family: Open Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 35px;
+/* or 175% */
 
+letter-spacing: 0.05em;
 
+color: #000000;
 }
 .info{
   display:flex;
-  flex-direction:column;
+  flex-direction:row;
 }
 
 .registerForm{
