@@ -24,7 +24,7 @@ function Nav(props) {
                 <li className="simpleNavList">Opportunities</li>
               </Link>
             ) : (
-              ""
+              "Opportunities"
             )}
 
             <Link to="/Graduates" className="navStyle">
