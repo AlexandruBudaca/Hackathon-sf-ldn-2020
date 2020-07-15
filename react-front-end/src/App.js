@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Nav from "./components/header/Nav";
@@ -16,12 +16,19 @@ import NewOpportunityForm from "./components/register/NewOpportunity";
 import GraduateRegistration from "./components/register/GraduateRegistration";
 
 function App() {
+  const [isLogin, setIsLogin] = useState(false);
   return (
     <Router>
       <div className="App">
-        <Nav />
+        <Nav isLogin={isLogin} />
         <Switch>
-          <Route path="/" exact component={LandingPage} />
+          <Route
+            path="/"
+            exact
+            render={() => (
+              <LandingPage isLogin={isLogin} setIsLogin={setIsLogin} />
+            )}
+          />
           <Route path="/company" exact component={Company} />
           <Route path="/listOfCompanies" exact component={ListOfCompanies} />
           <Route path="/listOfCompanies" exact component={ListOfCompanies} />
@@ -30,7 +37,7 @@ function App() {
           <Route path="/Opportunities" exact component={ListOfOpportunities} />
           <Route path="/tips" exact component={Tips} />
           <Route path="/signIn" exact component={SignIn} />
-          <Route path="/signUp" exact component={GraduateRegistration} />
+          <Route path="/signUp" exact component={<GraduateRegistration />} />
           <Route
             path="/NewOpportunityForm"
             exact

@@ -6,9 +6,8 @@ import {
   Redirect,
 } from "react-router-dom";
 import { Link } from "react-router-dom";
-import LandingPage from "../sections/LandingPage";
 
-const SignInHomePage = () => {
+const SignInHomePage = ({ isLogin, setIsLogin }) => {
   const [username, setUsername] = useState({
     email: "",
     password: "",
@@ -16,9 +15,6 @@ const SignInHomePage = () => {
   const [token, setToken] = useState({});
   const [authMessage, setAuthMessage] = useState({});
 
-  {
-    console.log(authMessage.message);
-  }
   const handleChange = (e) => {
     const newUsername = {
       ...username,
@@ -26,8 +22,10 @@ const SignInHomePage = () => {
     };
     setUsername(newUsername);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
     fetch("https://ancient-hamlet-95801.herokuapp.com/api/users/login", {
       method: "POST",
       mode: "cors",
@@ -44,6 +42,12 @@ const SignInHomePage = () => {
 
   return (
     <div className="container-SignUp">
+      {authMessage.message === "Auth successful" ? (
+        <Redirect to="/Opportunities" />
+      ) : (
+        ""
+      )}
+      {authMessage.message === "Auth successful" ? setIsLogin(!isLogin) : null}
       <div className="signHome">
         <div className="div-form landingsign">
           <form onSubmit={handleSubmit}>
@@ -60,7 +64,9 @@ const SignInHomePage = () => {
           </form>
         </div>
         <p>don't you have an account?</p>
-        <Link to="/signUp"> Signup here</Link>
+        <Link to="/signUp" className="navStyle">
+          Sign up here
+        </Link>
       </div>
       <div>
         <img src="https://github.com/AlexandruBudaca/Hackaton-sf-ldn-2020/blob/babak/Design/images%20files/Pages%20files/dev-signin.jpg?raw=true" />

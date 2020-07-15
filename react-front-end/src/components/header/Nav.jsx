@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import imgSrc from "../../images/cyf_brand.png";
 import "./index.css";
 
-function Nav() {
+function Nav(props) {
   return (
     <header className="header">
       <div className="brandbox">
@@ -19,9 +19,14 @@ function Nav() {
               {" "}
               <li className="simpleNavList">Companies</li>
             </Link>
-            <Link to="/opportunities" className="navStyle">
-              <li className="simpleNavList">Opportunities</li>
-            </Link>
+            {props.isLogin ? (
+              <Link to="/opportunities" className="navStyle">
+                <li className="simpleNavList">Opportunities</li>
+              </Link>
+            ) : (
+              ""
+            )}
+
             <Link to="/Graduates" className="navStyle">
               <li className="simpleNavList">Graduates</li>
             </Link>
