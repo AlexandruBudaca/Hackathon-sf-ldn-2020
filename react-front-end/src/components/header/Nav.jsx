@@ -30,13 +30,13 @@ function Nav() {
               <li className="simpleNavList">Tips & FAQ</li>
             </Link>
             <Link to="/signIn" className="navStyle">
-              <li>Sign in</li>
+              <li className="simpleNavList">Sign in</li>
             </Link>
             <Link to="/signUp" className="navStyle">
-              <li>Sign up</li>
+              <li className="simpleNavList">Sign up</li>
             </Link>
             <Link to="/NewOpportunityForm" className="navStyle">
-              <li>New Opportunity</li>
+              <li className="simpleNavList">New Opportunity</li>
             </Link>
           </ul>
         </nav>
