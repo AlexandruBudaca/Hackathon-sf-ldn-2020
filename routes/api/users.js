@@ -3,8 +3,8 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const secretKey = require("../../config/keys").JWT_KEY
-const checkAuth = require("../../middleware/check-auth.js")
+const secretKey = require("../../config/keys").JWT_KEY;
+const checkAuth = require("../../middleware/check-auth.js");
 
 // Load Input Validation
 const validateRegisterInput = require("../../validation/register");
@@ -101,11 +101,10 @@ router.post("/login", (req, res) => {
 
 // router.get('/', (req, res) => res.json({ msg: 'Users Works' }));
 
-router.get("/",checkAuth, (req, res) => {
+router.get("/",(req, res) => {
   User.find().then((users) => res.json(users));
 });
 // @route   DELETE api/users
-
 
 router.delete("/:userId", (req, res) => {
   User.remove({ _id: req.params.userId })
