@@ -35,22 +35,18 @@ const GraduateRegistration = () => {
     }
     if (graduate.password !== confirmPassword) {
       alert("Passwords not match!");
-      console.log(graduate);
     } else {
       graduate["password"] = confirmPassword;
-      console.log(graduate);
+      // Creating JSON data for POST request to DB
+
+      fetch(`https://ancient-hamlet-95801.herokuapp.com/api/users/signup`, {
+        method: "POST",
+        body: JSON.stringify(graduate),
+        headers: { "Content-Type": "application/json" },
+      }).then(() => {
+        alert("User Done!");
+      });
     }
-
-    //Creating JSON data for POST request to DB
-
-    // fetch(`https://ancient-hamlet-95801.herokuapp.com//api/users/signup`, {
-    //   method: "POST",
-    //   body: JSON.stringify(graduate),
-    //   headers: { "Content-Type": "application/json" },
-    // }).then(() => {
-
-    //   alert("User Done!");
-    // });
   };
 
   return (
