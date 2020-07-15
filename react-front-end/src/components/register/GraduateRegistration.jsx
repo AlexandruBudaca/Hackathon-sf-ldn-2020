@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Separator from "../Separator";
 import "./index.css";
+import { Link } from "react-router-dom";
 // import './index.css'
 /* 
 Registration is a shorter home to fill for users to sign up 
@@ -16,6 +17,7 @@ const GraduateRegistration = () => {
     password: "",
   });
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [userCreated, setUserCreated] = useState(false);
 
   const confirmPasswordValidation = (event) => {
     setConfirmPassword(event.target.value);
@@ -43,81 +45,88 @@ const GraduateRegistration = () => {
         method: "POST",
         body: JSON.stringify(graduate),
         headers: { "Content-Type": "application/json" },
-      }).then(() => {
-        alert("User Done!");
-      });
+      }).then(setUserCreated(!userCreated));
     }
   };
 
   return (
     <section className="companiesSection">
       <Separator category={"User Registration Form"} />
-      <div>
-        <section className="mainRegister">
-          <div className="div-form">
-            <form onSubmit={handleSubmit}>
-              <ul>
-                <li>
-                  <label>
-                    First name:
-                    <input
-                      className="select"
-                      name="firstName"
-                      onChange={handleChange}
-                      required
-                    ></input>
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    Last name:
-                    <input
-                      className="select"
-                      name="lastName"
-                      onChange={handleChange}
-                      required
-                    ></input>
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    Email:
-                    <input
-                      className="select"
-                      name="email"
-                      onChange={handleChange}
-                      required
-                    ></input>
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    Password:
-                    <input
-                      className="select"
-                      name="password"
-                      onChange={handleChange}
-                      required
-                    ></input>
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    Confirm Password:
-                    <input
-                      className="select"
-                      name="password"
-                      onChange={confirmPasswordValidation}
-                      required
-                    ></input>
-                  </label>
-                </li>
-              </ul>
-              <button>Register</button>
-            </form>
-          </div>
-        </section>
-      </div>
+      {userCreated ? (
+        <div className="singUpBack">
+          Your account was created!
+          <Link to="/" className="backBtnSignUp">
+            Back
+          </Link>
+        </div>
+      ) : (
+        <div>
+          <section className="mainRegister">
+            <div className="div-form">
+              <form onSubmit={handleSubmit}>
+                <ul>
+                  <li>
+                    <label>
+                      First name:
+                      <input
+                        className="select"
+                        name="firstName"
+                        onChange={handleChange}
+                        required
+                      ></input>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      Last name:
+                      <input
+                        className="select"
+                        name="lastName"
+                        onChange={handleChange}
+                        required
+                      ></input>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      Email:
+                      <input
+                        className="select"
+                        name="email"
+                        onChange={handleChange}
+                        required
+                      ></input>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      Password:
+                      <input
+                        className="select"
+                        name="password"
+                        onChange={handleChange}
+                        required
+                      ></input>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      Confirm Password:
+                      <input
+                        className="select"
+                        name="password"
+                        onChange={confirmPasswordValidation}
+                        required
+                      ></input>
+                    </label>
+                  </li>
+                </ul>
+                <button>Register</button>
+              </form>
+            </div>
+          </section>
+        </div>
+      )}
     </section>
   );
 };
