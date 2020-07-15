@@ -37,7 +37,7 @@ function App() {
           <Route path="/Opportunities" exact component={ListOfOpportunities} />
           <Route path="/tips" exact component={Tips} />
           <Route path="/signIn" exact component={SignIn} />
-          <Route path="/signUp" exact component={<GraduateRegistration />} />
+          <Route path="/signUp" exact component={GraduateRegistration} />
           <Route
             path="/NewOpportunityForm"
             exact
