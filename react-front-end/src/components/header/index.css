@@ -23,23 +23,11 @@
 }
 
 .nav{
-  width: 30%;
+  width: auto;
   font-family: Open Sans;
 }
 
 
-.nav, .footer{
- width: auto;
- text-align: center;
-}
-
-.footer{
-   background: #3f3f3f;
-  padding: 1rem;
-}
-.footer p{
-  font-size: .8rem;
-}
 .navStyle{
   list-style-type: none;
   margin-left:15px;
@@ -63,6 +51,7 @@
   display: flex;
   color: #3f3f3f;
   text-decoration: none;
+  white-space: nowrap;
 ;
 }
 
@@ -73,7 +62,7 @@
 
 @media only screen and (max-width: 800px) {
   body {
-    background-color: lightblue;
+    background-color: white;
   }
   .header{
     flex-direction: column;

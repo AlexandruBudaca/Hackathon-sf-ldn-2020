@@ -156,10 +156,7 @@ div.greeting-box:first-child {
   display: block;
 }
 
-.footer-nav {
-  justify-content: space-around;
-  background-color: rgba(255, 140, 26, 0.7);
-}
+
 
 article,
 .main-content__carousel-wrapper,
