@@ -10,8 +10,8 @@
          "start": "node server.js",
          "server": "nodemon server.js",
          "client": "npm start --prefix react-front-end",
-         "dev": "concurrently \"npm run server\" \"npm run client\"",
-         "heroku-postbuild": "npm run build"
+         "dev": "concurrently \"npm run server\" \"npm run client\""
+        
         
     },
 
