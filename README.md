@@ -3,7 +3,7 @@ CYF x Capgemini  - See the Future (SF)
 
 
 The template link on Netlify
-https://seethefuture-hackaton20.netlify.app/
+https://seethefuture.netlify.app/
  
 ## Prerequisites
 
