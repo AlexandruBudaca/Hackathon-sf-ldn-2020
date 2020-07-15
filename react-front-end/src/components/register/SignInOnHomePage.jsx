@@ -1,5 +1,12 @@
 import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import { Link } from "react-router-dom";
+import LandingPage from "../sections/LandingPage";
 
 const SignInHomePage = () => {
   const [username, setUsername] = useState({
@@ -7,6 +14,11 @@ const SignInHomePage = () => {
     password: "",
   });
   const [token, setToken] = useState({});
+  const [authMessage, setAuthMessage] = useState({});
+
+  {
+    console.log(authMessage.message);
+  }
   const handleChange = (e) => {
     const newUsername = {
       ...username,
@@ -26,7 +38,7 @@ const SignInHomePage = () => {
       body: JSON.stringify(username),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setAuthMessage(data));
     e.target.reset();
   };
 
@@ -38,11 +50,11 @@ const SignInHomePage = () => {
             <div className="formline">
               <label>Email </label>
 
-              <input name="email" onChange={handleChange}></input>
+              <input name="email" onChange={handleChange} required></input>
             </div>
             <div className="formline">
               <label>Password </label>
-              <input name="password" onChange={handleChange}></input>
+              <input name="password" onChange={handleChange} required></input>
             </div>
             <button>Sign In</button>
           </form>

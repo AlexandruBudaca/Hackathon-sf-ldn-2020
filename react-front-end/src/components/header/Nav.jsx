@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import imgSrc from "../../images/cyf_brand.png";
 import "./index.css";
-import Separator from "../Separator";
 
 function Nav() {
   return (
@@ -38,7 +37,6 @@ function Nav() {
             <Link to="/signUp" className="navStyle">
               <li className="simpleNavList">Sign up</li>
             </Link>
-            
           </ul>
         </nav>
       </div>
