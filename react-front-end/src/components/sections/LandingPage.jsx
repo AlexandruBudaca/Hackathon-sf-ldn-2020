@@ -5,7 +5,7 @@ import seethefuture from "../../../src/seefuture (1).gif";
 import studentpic from "../../../src/students.jpg";
 import "./index.css";
 
-const LandingPage = () => {
+const LandingPage = ({ isLogin, setIsLogin }) => {
   return (
     <main className="main">
       <div className="firstIntro">
@@ -22,7 +22,7 @@ const LandingPage = () => {
         />
       </div>
       <div className="superRedSeparator"></div>
-      <SignInHomePage />
+      <SignInHomePage isLogin={isLogin} setIsLogin={setIsLogin} />
 
       <section className="info">
         <img className="sudentpic" src={studentpic} alt="CYF students" />
