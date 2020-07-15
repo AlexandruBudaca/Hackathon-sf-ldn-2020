@@ -14,7 +14,6 @@ const SignInHomePage = () => {
     };
     setUsername(newUsername);
   };
-  let some;
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch("https://ancient-hamlet-95801.herokuapp.com/api/users/login", {
