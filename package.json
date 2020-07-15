@@ -7,7 +7,7 @@
         "node": "12.18.2"
     },
     "scripts": {
-         "start": "nodemon server.js",
+         "start": "node server.js",
          "server": "nodemon server.js",
          "client": "npm start --prefix react-front-end",
          "dev": "concurrently \"npm run server\" \"npm run client\""
