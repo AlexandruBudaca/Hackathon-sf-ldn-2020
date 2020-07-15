@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const secretKey = require("../../config/keys").JWT_KEY
 
 // Load Input Validation
 const validateRegisterInput = require("../../validation/register");
@@ -75,7 +76,7 @@ router.post("/login", (req, res) => {
               email: user[0].email,
               userId: user[0]._id,
             },
-            process.env.JWT_KEY,
+            secretKey,
             {
               expiresIn: "1h",
             }
