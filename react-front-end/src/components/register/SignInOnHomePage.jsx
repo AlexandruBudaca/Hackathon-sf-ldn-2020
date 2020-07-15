@@ -21,12 +21,13 @@ const SignInHomePage = () => {
       mode: "cors",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token.token}`,
       },
       body: JSON.stringify(username),
     })
       .then((res) => res.json())
       .then((data) => setToken(data));
-    console.log(token.message);
+    console.log(token);
   };
 
   return (
