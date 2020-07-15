@@ -36,9 +36,9 @@ function Nav(props) {
             <Link to="/NewOpportunityForm" className="navStyle">
               <li className="simpleNavList">New Opportunity</li>
             </Link>
-            <Link to="/signIn" className="navStyle">
+            {/* <Link to="/signIn" className="navStyle">
               <li className="simpleNavList">Sign in</li>
-            </Link>
+            </Link> */}
             <Link to="/signUp" className="navStyle">
               <li className="simpleNavList">Sign up</li>
             </Link>
