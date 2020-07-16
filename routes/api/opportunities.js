@@ -21,12 +21,12 @@ const validateOpportunitiesInput = require("../../validation/opportunities");
 router.post("/", (req, res) => {
   const newOpportunities = new Opportunities({
     company: req.body.company,
-    // role: req.body.role,
-    // type: req.body.type,
-    // minimum_proficiency: req.body.minimum_proficiency,
-    // location: req.body.location,
-    // description : req.body.description,
-    // date: Date.now()
+    role: req.body.role,
+    type: req.body.type,
+    minimum_proficiency: req.body.minimum_proficiency,
+    location: req.body.location,
+    description : req.body.description,
+    date: Date.now()
   });
   newOpportunities.save().then(Opportunities => res.json(Opportunities));
 });
