@@ -45,7 +45,7 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
   };
 
   return (
-    <div className="row">
+    <div className="row signAndImageLanding">
       {authMessage.message === "Authorization successful" ? (
         <Redirect to="/Opportunities" />
       ) : (
@@ -58,7 +58,7 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
       {authMessage.message === "Authorization successful"
         ? setIsLogin(!isLogin)
         : null}
-      <div className="signHome col-6">
+      <div className="signHome col-6 md-col-6 sm-col-12">
         <form onSubmit={handleSubmit}>
           <div className="landingsign col-5 sm-col-12">
             <div className="formline">

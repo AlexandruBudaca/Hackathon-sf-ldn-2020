@@ -23,11 +23,13 @@ function Nav(props) {
               <Link to="/opportunities" className="navStyle">
                 <li className="simpleNavList">Opportunities</li>
               </Link>
-            ) : (
-              <div className="tooltip">
-                Opportunities
-                <span className="tooltiptext">You must log in!</span>
-              </div>
+            ) : (<div></div>
+            // <li className="simpleNavList">
+            //   <div className="tooltip">
+            //     Opportunities
+            //     <span className="tooltiptext">You must log in!</span>
+            //   </div>
+            //   </li>
             )}
 
             <Link to="/Graduates" className="navStyle">

@@ -8,25 +8,28 @@ import "./index.css";
 const LandingPage = ({ isLogin, setIsLogin }) => {
   return (
     <main className="main">
-      <div className="firstIntro">
-        <section className="introSection">
+      <div className="row">
+ <div className="row">
+   <div className='introblock col-6 md-col-6 sm-col-12'>
           <p className="introHeader">See the future</p>
           <p className="introtext">
             Envision the day-to-day requirements of your future career
           </p>
-        </section>
+          </div>
         <img
-          className="badBusinessPeopleWithBulb"
+          className="badBusinessPeopleWithBulb col-4 sm-col-12 md-col-6"
           alt="seethefuture"
           src={seethefuture}
         />
+        </div>
+        
       </div>
       <div className="superRedSeparator"></div>
-      <div className='row rowAligned justified'>
+      <div className='row rowAligned justified signAndImageLanding'>
       <SignInHomePage isLogin={isLogin} setIsLogin={setIsLogin} />
       </div>
       <div className='row rowAligned justified'>
-        <img className="col-6 md-col-6 sm-col-12" src={studentpic} alt="CYF students" />
+        <img className="col-5 md-col-5 sm-col-12" src={studentpic} alt="CYF students" />
         
         <section className="col-6">
           <h2 className="infotitle">Our Students</h2>
