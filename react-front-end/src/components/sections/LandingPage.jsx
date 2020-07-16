@@ -4,12 +4,11 @@ import SignInHomePage from "../register/SignInOnHomePage";
 import seethefuture from "../../../src/seefuture (1).gif";
 import studentpic from "../../../src/students.jpg";
 import "./index.css";
-
 const LandingPage = ({ isLogin, setIsLogin }) => {
   return (
     <main className="main">
-      <div className="row">
- <div className="row">
+      <div className="row landingSecondContainer">
+ <div className="col-12 firstBlock">
    <div className='introblock col-6 md-col-6 sm-col-12'>
           <p className="introHeader">See the future</p>
           <p className="introtext">
@@ -28,12 +27,12 @@ const LandingPage = ({ isLogin, setIsLogin }) => {
       <div className='row rowAligned justified signAndImageLanding'>
       <SignInHomePage isLogin={isLogin} setIsLogin={setIsLogin} />
       </div>
-      <div className='row rowAligned justified'>
-        <img className="col-5 md-col-5 sm-col-12" src={studentpic} alt="CYF students" />
+      <div className='row'>
+        <img className=" studPic col-7 md-col-6 sm-col-12" src={studentpic} alt="CYF students" />
         
-        <section className="col-6">
-          <h2 className="infotitle">Our Students</h2>
-          <p className="col-12">
+        <div className="col-6 md-col-6 sm-col-12">
+          <h2 className="infotitle col-6 sm-col-12">Our Students</h2>
+          <p className="col-6 md-col-6 sm-col-12">
             See the Future is a way for students and graduates of the
             CodeYourFuture course to be matched with a range of opportunities
             provided by local businesses. This could be anything from a few
@@ -47,7 +46,7 @@ const LandingPage = ({ isLogin, setIsLogin }) => {
             Ticketmaster.
           </p>
      
-      </section> </div>
+      </div> </div>
     </main>
   );
 };

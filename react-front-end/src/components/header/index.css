@@ -70,7 +70,10 @@
   cursor: pointer;
 }
 .signAndImageLanding{
+  display:flex;
+  flex-direction:row;
   flex-wrap: wrap;
+  
 }
 .tooltip .tooltiptext {
   visibility: hidden;
