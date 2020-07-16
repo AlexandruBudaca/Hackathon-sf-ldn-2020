@@ -64,11 +64,21 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
             <div className="formline">
               <label>Email </label>
 
-              <input name="email" onChange={handleChange} required></input>
+              <input
+                type="text"
+                name="email"
+                onChange={handleChange}
+                required
+              ></input>
             </div>
             <div className="formline">
               <label>Password </label>
-              <input name="password" onChange={handleChange} required></input>
+              <input
+                type="password"
+                name="password"
+                onChange={handleChange}
+                required
+              ></input>
             </div>
             <button>Sign In</button>
           </div>
