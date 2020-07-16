@@ -29,26 +29,6 @@
   background: #FF8B8B;
 }
 
-.imgBlk {
-  width: 200px;
-  height: 80px;
-  text-align: center;
-  margin: auto;
-}
-
-.imgBlk img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.imgBox {
-  height: 60vh;
-}
-
-.imgBox img {
-  max-height: 100%;
-  object-fit: cover;
-}
 
 .superRedSeparator {
   width:100%;
@@ -67,13 +47,26 @@
 
 .firstIntro {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-items: stretch;
-  justify-content: center;
-  align-items: center;
-}
 
+
+}
+.landingSecondContainer{
+
+}
+.firstBlock{
+  display:flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.studPic{
+  height:auto;
+  background-size: cover;}
 .introtext {
   /* Envision the day-to-day requirements of your future career */
   font-family: Open Sans;
@@ -101,7 +94,22 @@
 
 
 }
-
+@media only screen and (max-width: 600px) {
+  .introHeader {
+    /* See the future */
+  
+  
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 45px;
+    align-self: flex-start;
+    color: #D12F2F;
+  
+  
+  }
+}
 .footMenu {
   font-family: Open Sans;
   font-style: normal;
