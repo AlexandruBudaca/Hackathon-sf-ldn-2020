@@ -69,7 +69,9 @@
   margin-left: 10px;
   cursor: pointer;
 }
-
+.signAndImageLanding{
+  flex-wrap: wrap;
+}
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 150px;

@@ -9,7 +9,7 @@
 }
 
 .mainRegister h3 {
-  margin-right: 500px;
+  margin-right: 50px;
 }
 
 .ourStudent {
@@ -109,7 +109,7 @@ form ul input {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 30vw;
+ 
   align-items: center;
   background-color: #FAFAFA;
   height: 30vh;
@@ -181,15 +181,6 @@ label input {
 .select {
   width: 500px;
   padding: .5rem;
-}
-
-.imgBlk {
-  height: 100px;
-  margin-left: 100px;
-}
-
-.imgBlk img {
-  max-width: 100%;
 }
 
 
@@ -264,7 +255,6 @@ h3 {
 .brandbox {
   display: flex;
   flex-direction: row;
-  width: 110%;
   justify-content: space-around;
   color: orange;
   align-items: center;
@@ -280,16 +270,22 @@ h3 {
 .signHome {
   display: flex;
   flex-direction: column;
-  width: 50vw;
+
   align-items: center;
 }
-
-.container-SignUp {
+.rowAligned{
+  align-items: center;
+}
+.justified{
+  display:flex;
+  justify-content: space-around;
+}
+.-SignUp {
   display: flex;
   align-items: center;
 }
 
-.container-SignUp img {
+.SignUp img {
   width: 637px;
 }
 
