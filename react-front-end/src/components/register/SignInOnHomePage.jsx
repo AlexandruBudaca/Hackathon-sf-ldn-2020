@@ -51,7 +51,7 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
       ) : (
         <div className="popup">
           <span className={popupSignIn ? "show" : "popuptext"}>
-            The email or password is not correct!
+            The email or password is not valid!
           </span>
         </div>
       )}
