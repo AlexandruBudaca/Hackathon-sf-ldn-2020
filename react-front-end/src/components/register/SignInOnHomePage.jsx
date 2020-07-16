@@ -42,12 +42,14 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
 
   return (
     <div className="container-SignUp">
-      {authMessage.message === "Auth successful" ? (
+      {authMessage.message === "Authorization successful" ? (
         <Redirect to="/Opportunities" />
       ) : (
         ""
       )}
-      {authMessage.message === "Auth successful" ? setIsLogin(!isLogin) : null}
+      {authMessage.message === "Authorization successful"
+        ? setIsLogin(!isLogin)
+        : null}
       <div className="signHome">
         <div className="div-form landingsign">
           <form onSubmit={handleSubmit}>
