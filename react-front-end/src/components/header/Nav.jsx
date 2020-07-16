@@ -24,17 +24,20 @@ function Nav(props) {
                 <li className="simpleNavList">Opportunities</li>
               </Link>
             ) : (
-              "Opportunities"
+              <div class="tooltip">
+                Opportunities
+                <span class="tooltiptext">You must log in!</span>
+              </div>
             )}
 
             <Link to="/Graduates" className="navStyle">
               <li className="simpleNavList">Graduates</li>
             </Link>
-            <Link to="/tips" className="navStyle">
+            {/* <Link to="/tips" className="navStyle">
               <li className="simpleNavList">Tips & FAQ</li>
-            </Link>
+            </Link> */}
             <Link to="/NewOpportunityForm" className="navStyle">
-              <li className="simpleNavList">New Opportunity</li>
+              <li className="simpleNavList"> Add new opportunity</li>
             </Link>
             {/* <Link to="/signIn" className="navStyle">
               <li className="simpleNavList">Sign in</li>

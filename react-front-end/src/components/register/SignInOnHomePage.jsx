@@ -14,6 +14,7 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
   });
   const [token, setToken] = useState({});
   const [authMessage, setAuthMessage] = useState({});
+  const [popupSignIn, setPopupSignIn] = useState(false);
 
   const handleChange = (e) => {
     const newUsername = {
@@ -36,7 +37,10 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
       body: JSON.stringify(username),
     })
       .then((res) => res.json())
-      .then((data) => setAuthMessage(data));
+      .then((data) => {
+        setAuthMessage(data);
+        setPopupSignIn(!popupSignIn);
+      });
     e.target.reset();
   };
 
@@ -45,14 +49,18 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
       {authMessage.message === "Authorization successful" ? (
         <Redirect to="/Opportunities" />
       ) : (
-        ""
+        <div className="popup">
+          <span className={popupSignIn ? "show" : "popuptext"}>
+            The email or password is not correct!
+          </span>
+        </div>
       )}
       {authMessage.message === "Authorization successful"
         ? setIsLogin(!isLogin)
         : null}
       <div className="signHome">
-        <div className="div-form landingsign">
-          <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
+          <div className="div-form landingsign">
             <div className="formline">
               <label>Email </label>
 
@@ -63,8 +71,9 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
               <input name="password" onChange={handleChange} required></input>
             </div>
             <button>Sign In</button>
-          </form>
-        </div>
+          </div>
+        </form>
+
         <p>don't you have an account?</p>
         <Link to="/signUp" className="navStyle">
           Sign up here

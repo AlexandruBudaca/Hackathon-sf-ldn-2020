@@ -1,4 +1,4 @@
-.header{
+.header {
   display: flex;
   flex-wrap: wrap;
   padding: 1rem;
@@ -10,72 +10,106 @@
 
 }
 
-.searchBar{
+.searchBar {
   width: 30%;
   text-align: center;
 }
-.input_Search{
+
+.input_Search {
   padding: .5rem;
   width: 60%;
 }
-.input_btn{
-    padding: .5rem;
+
+.input_btn {
+  padding: .5rem;
 }
 
-.nav{
+.nav {
   width: auto;
   font-family: Open Sans;
 }
 
 
-.navStyle{
+.navStyle {
   list-style-type: none;
-  margin-left:15px;
+  margin-left: 15px;
   align-items: center;
   text-decoration: none;
 }
-.nav ul{
+
+.nav ul {
   width: auto;
-   padding: 0;
+  padding: 0;
   display: flex;
-   color: #3f3f3f;
-   text-decoration: none;
+  color: #3f3f3f;
+  text-decoration: none;
 }
 
-.nav ul li{
+.nav ul li {
   font-family: Open Sans;
   font-style: normal;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 33px;
   display: flex;
   color: #3f3f3f;
   text-decoration: none;
   white-space: nowrap;
-;
+  ;
 }
 
-.nav ul li:hover{
+.nav ul li:hover {
   color: #d12f2f;
   text-decoration: none;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: rgb(211, 38, 38);
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  right: -30px;
+  margin-top: 40px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 @media only screen and (max-width: 800px) {
   body {
     background-color: white;
   }
-  .header{
+
+  .header {
     flex-direction: column;
     height: 12rem;
     justify-content: space-around;
   }
-  .searchBar{
-  width: 60%;
-  text-align: center;
+
+  .searchBar {
+    width: 60%;
+    text-align: center;
+  }
 }
-}
+
 @media only screen and (min-width: 801px) and (max-width: 1200px) {
-.nav{
-  width: 50%;
-}
+  .nav {
+    width: 50%;
+  }
 }

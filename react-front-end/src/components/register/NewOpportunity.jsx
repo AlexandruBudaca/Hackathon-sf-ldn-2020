@@ -72,98 +72,100 @@ const NewOpportunityForm = () => {
       <Separator category={"New Opportunity"} />
       <div>
         <section className="mainRegister">
-          <div className="div-form">
-            <form>
-              <ul>
-                <li>
-                  <label>
-                    Company:
-                    <input
-                      className="select"
-                      name="company"
-                      onChange={handleChange}
-                      required
-                    ></input>
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    Role:
-                    <select
-                      className="select"
-                      name="role"
-                      onChange={handleChange}
-                      required
-                    >
-                      <option defaultValue="">Select your option</option>
-                      {roles.map((role) => (
-                        <option key={role.id}>{role.role}</option>
-                      ))}
-                    </select>
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    Type:
-                    <select
-                      className="select"
-                      name="type"
-                      onChange={handleChange}
-                      required
-                    >
-                      <option defaultValue="">Select your option</option>
-                      {types.map((type) => (
-                        <option key={type.id}>{type.type}</option>
-                      ))}
-                    </select>
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    Minimum Proficiency:
-                    <select
-                      className="select"
-                      name="minimum"
-                      onChange={handleChange}
-                      required
-                    >
-                      <option defaultValue="">Select your option</option>
-                      {levels.map((level) => (
-                        <option key={level.id}>{level.name}</option>
-                      ))}
-                    </select>
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    Location:
-                    <select
-                      className="select"
-                      name="location"
-                      onChange={handleChange}
-                      required
-                    >
-                      <option defaultValue="">Select your option</option>
-                      {locations.map((location) => (
-                        <option key={location.id}>{location.city}</option>
-                      ))}
-                    </select>
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    Description:
-                    <textarea
-                      rows="4"
-                      cols="50"
-                      name="description"
-                      onChange={handleChange}
-                    ></textarea>
-                  </label>
-                </li>
-              </ul>
-            </form>
-            <button onClick={handleSubmit}>Submit</button>
+          <div className="div-form-graduates">
+            <div className="div-form">
+              <form>
+                <ul>
+                  <li>
+                    <label>
+                      Company:
+                      <input
+                        className="select"
+                        name="company"
+                        onChange={handleChange}
+                        required
+                      ></input>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      Role:
+                      <select
+                        className="select"
+                        name="role"
+                        onChange={handleChange}
+                        required
+                      >
+                        <option defaultValue="">Select your option</option>
+                        {roles.map((role) => (
+                          <option key={role.id}>{role.role}</option>
+                        ))}
+                      </select>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      Type:
+                      <select
+                        className="select"
+                        name="type"
+                        onChange={handleChange}
+                        required
+                      >
+                        <option defaultValue="">Select your option</option>
+                        {types.map((type) => (
+                          <option key={type.id}>{type.type}</option>
+                        ))}
+                      </select>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      Minimum Proficiency:
+                      <select
+                        className="select"
+                        name="minimum"
+                        onChange={handleChange}
+                        required
+                      >
+                        <option defaultValue="">Select your option</option>
+                        {levels.map((level) => (
+                          <option key={level.id}>{level.name}</option>
+                        ))}
+                      </select>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      Location:
+                      <select
+                        className="select"
+                        name="location"
+                        onChange={handleChange}
+                        required
+                      >
+                        <option defaultValue="">Select your option</option>
+                        {locations.map((location) => (
+                          <option key={location.id}>{location.city}</option>
+                        ))}
+                      </select>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      Description:
+                      <textarea
+                        rows="4"
+                        cols="50"
+                        name="description"
+                        onChange={handleChange}
+                      ></textarea>
+                    </label>
+                  </li>
+                </ul>
+              </form>
+              <button onClick={handleSubmit}>Submit</button>
+            </div>
           </div>
         </section>
       </div>
