@@ -26,7 +26,7 @@ function Nav(props) {
             ) : (
               <div class="tooltip">
                 Opportunities
-                <span class="tooltiptext">You must log in!</span>
+                <span className="tooltiptext">You must log in!</span>
               </div>
             )}
 
