@@ -240,3 +240,7 @@
 .job_descip p {
   margin: 1rem 0;
 }
+
+.opportunity_logo img {
+  width: 20%;
+}
