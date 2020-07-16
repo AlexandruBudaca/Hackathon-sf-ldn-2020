@@ -117,11 +117,9 @@ form ul input {
 
 .formline {
   display: flex;
-  min-width: 20vw;
-  justify-content: space-between;
+  flex-direction: column;
   margin-top: 15px;
   padding: 2px;
-  align-items: center;
 }
 
 .formline input {
@@ -129,6 +127,10 @@ form ul input {
   width: 200px;
 }
 
+.formline label {
+  font-size: 14px;
+
+}
 
 .div-form li label {
   display: flex;
