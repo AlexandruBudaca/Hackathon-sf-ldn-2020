@@ -341,7 +341,7 @@ h3 {
   padding: 8px 0;
   position: absolute;
   z-index: 1;
-  bottom: 100%;
+  bottom: 140px;
   margin-left: 280px;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s
