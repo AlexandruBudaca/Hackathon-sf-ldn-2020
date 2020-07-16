@@ -14,7 +14,7 @@ const [companies, setCompanies] = useState(companiesData);
 
       {companies.map((company, index) => {
         return (
-          <article className="company_details">
+          <article className="company_details" key='id'>
          
             <div className="company_logo">
               <img src={company.imgSrc} />
