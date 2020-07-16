@@ -105,11 +105,14 @@ form ul input {
   margin-top: 10px;
 }
 
-.div-form .landingsign {
+.landingsign {
   display: flex;
   flex-direction: column;
-  width: 30vw;
   justify-content: center;
+  width: 30vw;
+  align-items: center;
+  background-color: #FAFAFA;
+  height: 30vh;
 }
 
 .formline {
@@ -366,4 +369,24 @@ h3 {
   to {
     opacity: 1;
   }
+}
+
+.buttonSignInHome {
+  margin-top: 30px;
+  padding: 10px;
+  background-color: #259654;
+  width: 150px;
+  height: 45px;
+  border: 1px solid #CCCCCC;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 21px;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.buttonSignInHome:hover {
+  background-color: #fff;
+  color: #259654;
 }

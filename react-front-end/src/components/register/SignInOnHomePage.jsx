@@ -60,7 +60,7 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
         : null}
       <div className="signHome">
         <form onSubmit={handleSubmit}>
-          <div className="div-form landingsign">
+          <div className="landingsign">
             <div className="formline">
               <label>Email </label>
 
@@ -80,7 +80,7 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
                 required
               ></input>
             </div>
-            <button>Sign In</button>
+            <button className="buttonSignInHome">Sign In</button>
           </div>
         </form>
 
