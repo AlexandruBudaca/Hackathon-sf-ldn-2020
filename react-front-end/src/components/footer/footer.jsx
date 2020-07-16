@@ -3,22 +3,22 @@ import "../header/index.css";
 import { Link } from "react-router-dom";
 const footer = () => {
   return (
-    <div className="footer">
-      <div className="footerRow">
-        <div className="leftFooterBlock">
+    <div className="col-12 footerCol">
+      <div className="footer row">
+        <div className="leftFooterBlock col-6 md-col-3 sm-col-6">
           <p className="footMenu">About us</p>
           <p className="footMenu">Contact us</p>
           <p className="footMenu">Privacy</p>
         </div>
-        <div className="rightFooterBlock">
+        <div className="rightFooterBlock col-3 md-col-3 sm-col-6">
           <Link className="footMenu" to="/signUp">
             {" "}
             Signup here
           </Link>
           <p className="footMenu">Company sign-in</p>
-        </div>
+        </div> <p className="copyright col-12">Code For Good Hackaton, Copyright July 2020</p>
       </div>
-      <p className="copyright">Code For Good Hackaton, Copyright July 2020</p>
+     
     </div>
   );
 };

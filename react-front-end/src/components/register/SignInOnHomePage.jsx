@@ -58,7 +58,7 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
       {authMessage.message === "Authorization successful"
         ? setIsLogin(!isLogin)
         : null}
-      <div className="signHome">
+      <div className="signHome col-6">
         <form onSubmit={handleSubmit}>
           <div className="landingsign col-5 sm-col-12">
             <div className="formline">

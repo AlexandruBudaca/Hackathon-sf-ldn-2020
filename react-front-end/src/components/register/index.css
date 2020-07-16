@@ -183,15 +183,6 @@ label input {
   padding: .5rem;
 }
 
-.imgBlk {
-  height: 100px;
-  margin-left: 100px;
-}
-
-.imgBlk img {
-  max-width: 100%;
-}
-
 
 .simpleNavList {
   display: flex;
@@ -264,7 +255,6 @@ h3 {
 .brandbox {
   display: flex;
   flex-direction: row;
-  width: 110%;
   justify-content: space-around;
   color: orange;
   align-items: center;
@@ -285,6 +275,10 @@ h3 {
 }
 .rowAligned{
   align-items: center;
+}
+.justified{
+  display:flex;
+  justify-content: space-around;
 }
 .-SignUp {
   display: flex;

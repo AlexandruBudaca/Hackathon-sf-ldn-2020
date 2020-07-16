@@ -7,7 +7,7 @@ import "./index.css";
 
 const LandingPage = ({ isLogin, setIsLogin }) => {
   return (
-    <main className="main container">
+    <main className="main">
       <div className="firstIntro">
         <section className="introSection">
           <p className="introHeader">See the future</p>
@@ -22,15 +22,15 @@ const LandingPage = ({ isLogin, setIsLogin }) => {
         />
       </div>
       <div className="superRedSeparator"></div>
-      <div className='row rowAligned'>
+      <div className='row rowAligned justified'>
       <SignInHomePage isLogin={isLogin} setIsLogin={setIsLogin} />
       </div>
-  
-        <img className="col-6 sm-col-12" src={studentpic} alt="CYF students" />
+      <div className='row rowAligned justified'>
+        <img className="col-6 md-col-6 sm-col-12" src={studentpic} alt="CYF students" />
         
-        <section className="row">
+        <section className="col-6">
           <h2 className="infotitle">Our Students</h2>
-          <p className=" col-6 sm-col-12">
+          <p className="col-12">
             See the Future is a way for students and graduates of the
             CodeYourFuture course to be matched with a range of opportunities
             provided by local businesses. This could be anything from a few
@@ -43,8 +43,8 @@ const LandingPage = ({ isLogin, setIsLogin }) => {
             roles, at companies including the Financial Times, the BBC and
             Ticketmaster.
           </p>
-      
-      </section>
+     
+      </section> </div>
     </main>
   );
 };

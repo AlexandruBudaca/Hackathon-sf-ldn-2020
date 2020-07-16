@@ -5,13 +5,13 @@ import "./index.css";
 
 function Nav(props) {
   return (
-    <header className="header">
-      <div className="brandbox">
-        <div className="imgBlk">
-          <img src={imgSrc} />
-        </div>
+    <header className="header row">
+      <div className="row">
+        
+          <img  className='col-3' src={imgSrc} />
+  
         <nav className="nav col-6">
-          <ul>
+          <ul className='row'>
             <Link to="/" className="navStyle">
               <li className="simpleNavList">Home</li>
             </Link>

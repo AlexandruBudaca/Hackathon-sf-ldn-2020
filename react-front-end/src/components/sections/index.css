@@ -54,7 +54,7 @@
 }
 
 .superRedSeparator {
-  width: 100vw;
+  width:100%;
   height: 3vh;
   margin-left: 0vw;
   margin-top: 10vh;
@@ -113,14 +113,14 @@
   font-size: 20px;
   text-align: left;
   margin-top: 1rem;
-
   color: #FDFDFD;
+  justify-content: space-between;
 }
 
 .leftFooterBlock {
   display: flex;
   flex-direction: column;
-  margin-left: 3.5em;
+  margin-left: 1em;
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
@@ -133,7 +133,7 @@
 .rightFooterBlock {
   display: flex;
   flex-direction: column;
-  margin-left: 40em;
+  margin-left: 1em;
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
@@ -145,14 +145,15 @@
 
 .footer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   background: #3f3f3f;
   padding: 1rem;
+  justify-items: center;
 }
 
-.footerRow {
-  display: flex;
-  flex-direction: row;
+.footerCol {
+align-items:center;
+flex-direction:row;
 }
 
 .copyright {
@@ -162,8 +163,7 @@
   font-size: 16px;
   line-height: 22px;
   align-self: center;
-  margin-top: 5em;
-
+text-align: center;
   color: #FDFDFD;
 }
 
