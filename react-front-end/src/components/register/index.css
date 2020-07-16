@@ -71,7 +71,7 @@
 }
 
 .div-form {
-  width: 50vw;
+  width: 30vw;
   min-height: 15rem;
   background: linear-gradient(0deg, #FAFAFA, #FAFAFA);
   display: flex;
@@ -79,6 +79,15 @@
   justify-content: center;
   flex-direction: column;
 }
+
+.div-form-graduates {
+  width: 50vw;
+  background: linear-gradient(0deg, #FAFAFA, #FAFAFA);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .div-form ul {
   display: flex;
@@ -96,19 +105,27 @@ form ul input {
   margin-top: 10px;
 }
 
-.landingsign {
+.div-form .landingsign {
   display: flex;
   flex-direction: column;
   width: 30vw;
-
+  justify-content: center;
 }
 
 .formline {
   display: flex;
   min-width: 20vw;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 15px;
+  padding: 2px;
+  align-items: center;
 }
+
+.formline input {
+  padding: 3px;
+  width: 200px;
+}
+
 
 .div-form li label {
   display: flex;
@@ -130,6 +147,7 @@ form ul input {
   font-size: 16px;
   line-height: 21px;
   color: #FFFFFF;
+  margin-bottom: 10px;
 }
 
 .div-form button:hover {
@@ -263,6 +281,7 @@ h3 {
 
 .container-SignUp {
   display: flex;
+  align-items: center;
 }
 
 .container-SignUp img {
@@ -284,4 +303,67 @@ h3 {
   text-decoration: none;
   margin-top: 10px;
 
+}
+
+.popup {
+  position: absolute;
+  display: inline-block;
+  cursor: pointer;
+
+}
+
+/* The actual popup (appears on top) */
+.popuptext {
+  visibility: hidden;
+
+}
+
+/* Popup arrow */
+.popup .show::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  margin-left: 280px;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

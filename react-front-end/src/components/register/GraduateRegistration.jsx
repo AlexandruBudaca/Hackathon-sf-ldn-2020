@@ -62,67 +62,69 @@ const GraduateRegistration = () => {
       ) : (
         <div>
           <section className="mainRegister">
-            <div className="div-form">
-              <form onSubmit={handleSubmit}>
-                <ul>
-                  <li>
-                    <label>
-                      First name:
-                      <input
-                        className="select"
-                        name="firstName"
-                        onChange={handleChange}
-                        required
-                      ></input>
-                    </label>
-                  </li>
-                  <li>
-                    <label>
-                      Last name:
-                      <input
-                        className="select"
-                        name="lastName"
-                        onChange={handleChange}
-                        required
-                      ></input>
-                    </label>
-                  </li>
-                  <li>
-                    <label>
-                      Email:
-                      <input
-                        className="select"
-                        name="email"
-                        onChange={handleChange}
-                        required
-                      ></input>
-                    </label>
-                  </li>
-                  <li>
-                    <label>
-                      Password:
-                      <input
-                        className="select"
-                        name="password"
-                        onChange={handleChange}
-                        required
-                      ></input>
-                    </label>
-                  </li>
-                  <li>
-                    <label>
-                      Confirm Password:
-                      <input
-                        className="select"
-                        name="password"
-                        onChange={confirmPasswordValidation}
-                        required
-                      ></input>
-                    </label>
-                  </li>
-                </ul>
-                <button>Register</button>
-              </form>
+            <div className="div-form-graduates">
+              <div className="div-form">
+                <form onSubmit={handleSubmit}>
+                  <ul>
+                    <li>
+                      <label>
+                        First name:
+                        <input
+                          className="select"
+                          name="firstName"
+                          onChange={handleChange}
+                          required
+                        ></input>
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        Last name:
+                        <input
+                          className="select"
+                          name="lastName"
+                          onChange={handleChange}
+                          required
+                        ></input>
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        Email:
+                        <input
+                          className="select"
+                          name="email"
+                          onChange={handleChange}
+                          required
+                        ></input>
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        Password:
+                        <input
+                          className="select"
+                          name="password"
+                          onChange={handleChange}
+                          required
+                        ></input>
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        Confirm Password:
+                        <input
+                          className="select"
+                          name="password"
+                          onChange={confirmPasswordValidation}
+                          required
+                        ></input>
+                      </label>
+                    </li>
+                  </ul>
+                  <button>Register</button>
+                </form>
+              </div>
             </div>
           </section>
         </div>

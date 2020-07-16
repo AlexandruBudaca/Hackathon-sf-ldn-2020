@@ -1,181 +1,214 @@
-.main{
+.main {
   width: 100%;
   min-height: 100vh;
- display: flex;
- flex-direction: column;
- justify-content: space-between;
- color: #3f3f3f;
-}
-.superTitle{
-width: 699px;
-height: 81px;
-left: 10vw;
-top: 206px;
-color:#3F3F3F;
-font-family: 'Open Sans', sans-serif;
-font-style: normal;
-font-weight: bolder;
-font-size: 60px;
-line-height: 82px;
-z-index:1;
-
-}
-.separator{
-width: 40vw;
-height: 3vh;
-margin-left: 5vw;
-margin-top: -3vh;
-margin-bottom: 15vh;
-z-index: -1;
-background: #FF8B8B;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #3f3f3f;
 }
 
-.imgBlk{
+.superTitle {
+  width: 699px;
+  height: 81px;
+  left: 10vw;
+  top: 206px;
+  color: #3F3F3F;
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 60px;
+  line-height: 82px;
+  z-index: 1;
+
+}
+
+.separator {
+  width: 40vw;
+  height: 3vh;
+  margin-left: 5vw;
+  margin-top: -3vh;
+  margin-bottom: 15vh;
+  z-index: -1;
+  background: #FF8B8B;
+}
+
+.imgBlk {
   width: 200px;
   height: 80px;
   text-align: center;
-  margin: auto; 
+  margin: auto;
 }
-.imgBlk img{
+
+.imgBlk img {
   max-width: 100%;
   max-height: 100%;
 }
 
-.imgBox{
+.imgBox {
   height: 60vh;
 }
 
-.imgBox img{
+.imgBox img {
   max-height: 100%;
   object-fit: cover;
 }
 
-.superRedSeparator{
-width: 100vw;
-height: 3vh;
-margin-left: 0vw;
-margin-top: 15vh;
-margin-bottom: 15vh;
-z-index: -1;
-background:#D12F2F;
+.superRedSeparator {
+  width: 100vw;
+  height: 3vh;
+  margin-left: 0vw;
+  margin-top: 10vh;
+  z-index: -1;
+  background: #D12F2F;
 
 }
-.introSection{
-  display:flex;
+
+.introSection {
+  display: flex;
   justify-items: left;
+  margin-top: 100px;
 }
-.firstIntro{
-  display:flex;
-  flex-direction:row;
-  width:100%;
+
+.firstIntro {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
   justify-items: stretch;
+  justify-content: center;
+  align-items: center;
 }
-.introtext{
+
+.introtext {
   /* Envision the day-to-day requirements of your future career */
-font-family: Open Sans;
-font-style: normal;
-font-weight: 300;
-font-size: 35px;
-line-height: 48px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 35px;
+  line-height: 48px;
 
-color: #3F3F3F;
-
-
-}
-.introHeader{
-/* See the future */
-
-
-font-family: Open Sans;
-font-style: normal;
-font-weight: bold;
-font-size: 70px;
-line-height: 95px;
-align-self: flex-start;
-color: #D12F2F;
+  color: #3F3F3F;
 
 
 }
-.footMenu{
+
+.introHeader {
+  /* See the future */
+
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 70px;
+  line-height: 95px;
+  align-self: flex-start;
+  color: #D12F2F;
+
+
+}
+
+.footMenu {
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
   text-align: left;
   margin-top: 1rem;
-  
+
   color: #FDFDFD;
 }
-.leftFooterBlock{
-  display:flex;
-  flex-direction:column;
-  margin-left:3.5em;
-  font-family: Open Sans;
-font-style: normal;
-font-weight: normal;
-font-size: 20px;
-line-height: 27px;
 
-color: #FDFDFD;
-}
-.rightFooterBlock{
-  display:flex;
-  flex-direction:column;
-  margin-left:40em;
+.leftFooterBlock {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3.5em;
   font-family: Open Sans;
-font-style: normal;
-font-weight: normal;
-font-size: 20px;
-line-height: 27px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 27px;
 
-color: #FDFDFD;
+  color: #FDFDFD;
 }
 
-.footer{
-  display:flex;
+.rightFooterBlock {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40em;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 27px;
+
+  color: #FDFDFD;
+}
+
+.footer {
+  display: flex;
   flex-direction: column;
   background: #3f3f3f;
   padding: 1rem;
 }
-.footerRow{
-  display:flex;
-  flex-direction:row;
-}
-.copyright{
-font-family: Open Sans;
-font-style: normal;
-font-weight: normal;
-font-size: 16px;
-line-height: 22px;
-align-self: center;
-margin-top:5em;
 
-color: #FDFDFD;
+.footerRow {
+  display: flex;
+  flex-direction: row;
 }
-.introSection{
-  display:flex;
+
+.copyright {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  align-self: center;
+  margin-top: 5em;
+
+  color: #FDFDFD;
+}
+
+.introSection {
+  display: flex;
   flex-direction: column;
   margin-left: 5vw;
-  width:50%;
+  width: 50%;
   align-items: center;
 }
-.badBusinessPeopleWithBulb{
+
+.badBusinessPeopleWithBulb {
   align-self: flex-end;
-  margin-right:6vw;
-  width:30vw;
-  height:auto;
+  margin-right: 6vw;
+  width: 30vw;
+  height: auto;
 }
 
-
-.About, .ourStudent{
-  width: 50%;
-   text-align: center;
-    padding-left: 2rem;
-    line-height: 1.4rem;
+.info {
+  margin-top: 150px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  margin-bottom: 20vh;
 }
 
+.info img {
+  height: 400px;
+}
 
-.opp_main{
+.About,
+.ourStudent {
+  width: 70vh;
+  text-align: center;
+  padding-left: 2rem;
+  text-align: left;
+
+
+}
+
+.studentText {
+  font-size: 18px;
+}
+
+.opp_main {
   min-height: 60vh;
   width: 80%;
   display: flex;
@@ -187,23 +220,23 @@ color: #FDFDFD;
   margin: 1rem auto;
 }
 
-.apply{
-    background: #3E442B;
-    padding: .5rem 1rem;
-    color: white;
+.apply {
+  background: #3E442B;
+  padding: .5rem 1rem;
+  color: white;
 }
 
-.apply:hover{
-    background: rgb(135, 148, 92);
-   color: rgb(22, 24, 15);
-   cursor: pointer;
+.apply:hover {
+  background: rgb(135, 148, 92);
+  color: rgb(22, 24, 15);
+  cursor: pointer;
 }
 
-.job_descip{
+.job_descip {
   line-height: 1.5rem;
   text-align: justify;
 }
-.job_descip p{
+
+.job_descip p {
   margin: 1rem 0;
 }
-
