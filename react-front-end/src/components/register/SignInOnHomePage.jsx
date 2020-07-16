@@ -45,7 +45,7 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
   };
 
   return (
-    <div className="container-SignUp">
+    <div className="row">
       {authMessage.message === "Authorization successful" ? (
         <Redirect to="/Opportunities" />
       ) : (
@@ -60,7 +60,7 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
         : null}
       <div className="signHome">
         <form onSubmit={handleSubmit}>
-          <div className="landingsign">
+          <div className="landingsign col-5 sm-col-12">
             <div className="formline">
               <label>Email </label>
 
@@ -89,9 +89,9 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
           Sign up here
         </Link>
       </div>
-      <div>
-        <img src="https://github.com/AlexandruBudaca/Hackaton-sf-ldn-2020/blob/babak/Design/images%20files/Pages%20files/dev-signin.jpg?raw=true" />
-      </div>
+    
+        <img className='col-6' src="https://github.com/AlexandruBudaca/Hackaton-sf-ldn-2020/blob/babak/Design/images%20files/Pages%20files/dev-signin.jpg?raw=true" />
+     
     </div>
   );
 };

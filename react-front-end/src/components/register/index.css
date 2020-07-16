@@ -109,7 +109,7 @@ form ul input {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 30vw;
+ 
   align-items: center;
   background-color: #FAFAFA;
   height: 30vh;
@@ -280,16 +280,18 @@ h3 {
 .signHome {
   display: flex;
   flex-direction: column;
-  width: 50vw;
+
   align-items: center;
 }
-
-.container-SignUp {
+.rowAligned{
+  align-items: center;
+}
+.-SignUp {
   display: flex;
   align-items: center;
 }
 
-.container-SignUp img {
+.SignUp img {
   width: 637px;
 }
 

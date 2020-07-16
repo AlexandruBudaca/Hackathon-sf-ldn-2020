@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
+import "./grid.css";
 import Nav from "./components/header/Nav";
 import Footer from "./components/footer/footer";
 import LandingPage from "./components/sections/LandingPage";

@@ -81,7 +81,14 @@ body {
 
 .nav-item:hover {
 }
-
+.container {
+  /* default from breakpoint 0, until another breakpoint overrides it */
+  max-width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
 .main-content {
   justify-content: center;
   height: auto;
@@ -102,59 +109,6 @@ div.greeting-box:first-child {
   background-color: rgba(255, 153, 255, 0.5);
 }
 
-.main-content__carousel-wrapper {
-  height: auto;
-}
-
-.carousel-picture-container {
-  overflow: hidden;
-  width: 100%;
-  max-height: 450px;
-}
-
-.carousel-picture-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.carousel-thumbnails-wrapper {
-  padding: 0;
-  width: 100%;
-  max-height: 150px;
-  overflow: hidden;
-  justify-content: center;
-}
-
-.carousel-thumbnail-container {
-  border: 5px solid orange;
-  width: 25%;
-  max-height: 150px;
-  overflow: hidden;
-}
-
-.carousel-thumbnail-container img {
-  max-width: 100%;
-  display: block;
-  height: auto;
-}
-
-.catalogue-container {
-  justify-content: center;
-  overflow: hidden;
-}
-
-.picture-container {
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-}
-
-.picture-container img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
 
 
 
@@ -168,10 +122,7 @@ article,
   box-sizing: border-box;
 }
 
-.container {
-  display: flex;
-  flex-flow: row wrap;
-}
+
 
 .box {
   height: 150px;

@@ -10,7 +10,7 @@ function Nav(props) {
         <div className="imgBlk">
           <img src={imgSrc} />
         </div>
-        <nav className="nav">
+        <nav className="nav col-6">
           <ul>
             <Link to="/" className="navStyle">
               <li className="simpleNavList">Home</li>
@@ -24,7 +24,7 @@ function Nav(props) {
                 <li className="simpleNavList">Opportunities</li>
               </Link>
             ) : (
-              <div class="tooltip">
+              <div className="tooltip">
                 Opportunities
                 <span className="tooltiptext">You must log in!</span>
               </div>
