@@ -24,7 +24,7 @@ const LandingPage = ({ isLogin, setIsLogin }) => {
         
       </div>
       <div className="superRedSeparator"></div>
-      <div className='row rowAligned justified signAndImageLanding'>
+      <div className='row rowAlignen'>
       <SignInHomePage isLogin={isLogin} setIsLogin={setIsLogin} />
  
     

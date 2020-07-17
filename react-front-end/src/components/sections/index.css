@@ -50,8 +50,11 @@
 
 
 }
-.landingSecondContainer{
-
+.alignRight{
+  align-self:right;
+}
+.navRow{
+  justify-content:space-evenly ;
 }
 .firstBlock{
   display:flex;
@@ -75,7 +78,7 @@
   font-weight: 300;
   font-size: 35px;
   line-height: 48px;
-
+  padding-bottom:3em;
   color: #3F3F3F;
 
 
