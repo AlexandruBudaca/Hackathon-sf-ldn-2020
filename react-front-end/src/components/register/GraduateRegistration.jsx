@@ -36,10 +36,10 @@ const GraduateRegistration = () => {
     if (!graduate.email.includes("@")) {
       return alert("Please enter Valid email");
     }
-    // if (graduate.password !== confirmPassword) {
-    //   alert("Passwords not match!");
-    // } else {
-    //   graduate["password"] = confirmPassword;
+    if (graduate.password !== confirmPassword) {
+      alert("Passwords not match!");
+    } else {
+      graduate["password2"] = graduate.password2;
     // Creating JSON data for POST request to DB
 
     fetch(`https://ancient-hamlet-95801.herokuapp.com/api/users/signup`, {
@@ -106,6 +106,7 @@ const GraduateRegistration = () => {
                           className="select"
                           name="password"
                           onChange={handleChange}
+                          type="password"
                           required
                         ></input>
                       </label>
@@ -116,6 +117,7 @@ const GraduateRegistration = () => {
                         <input
                           className="select"
                           name="password2"
+                          type="password"
                           onChange={handleChange}
                           // onChange={confirmPasswordValidation}
                           required
