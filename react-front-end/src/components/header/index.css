@@ -62,23 +62,24 @@
   color: #d12f2f;
   text-decoration: none;
 }
-.grey{
-  background-color: #FDFDFD;
-}
+
 .tooltip {
   position: relative;
   display: inline-block;
   margin-left: 10px;
   cursor: pointer;
 }
-.signAndImageLanding{
-  display:flex;
+
+.signAndImageLanding {
+  display: flex;
   justify-content: center;
 
 }
-.signLandibOneMoreDiv{
+
+.signLandibOneMoreDiv {
   align-content: center;
 }
+
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 150px;
@@ -121,4 +122,10 @@
   .nav {
     width: 50%;
   }
+}
+
+.you_are_logged_in {
+  color: rgb(211, 38, 38);
+  margin-left: 600px;
+
 }
