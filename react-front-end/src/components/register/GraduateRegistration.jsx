@@ -118,7 +118,7 @@ const GraduateRegistration = () => {
                           className="select"
                           name="password2"
                           onChange={handleChange}
-                          onChange={confirmPasswordValidation}
+                          // onChange={confirmPasswordValidation}
                           required
                         ></input>
                       </label>
