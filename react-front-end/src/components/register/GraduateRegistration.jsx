@@ -40,14 +40,13 @@ const GraduateRegistration = () => {
     //   alert("Passwords not match!");
     // } else {
     //   graduate["password"] = confirmPassword;
-      // Creating JSON data for POST request to DB
+    // Creating JSON data for POST request to DB
 
-      fetch(`https://ancient-hamlet-95801.herokuapp.com/api/users/signup`, {
-        method: "POST",
-        body: JSON.stringify(graduate),
-        headers: { "Content-Type": "application/json" },
-      }).then(setUserCreated(!userCreated));
-    }
+    fetch(`https://ancient-hamlet-95801.herokuapp.com/api/users/signup`, {
+      method: "POST",
+      body: JSON.stringify(graduate),
+      headers: { "Content-Type": "application/json" },
+    }).then(setUserCreated(!userCreated));
   };
 
   return (
