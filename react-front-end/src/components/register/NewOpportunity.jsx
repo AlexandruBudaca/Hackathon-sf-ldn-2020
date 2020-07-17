@@ -78,6 +78,7 @@ const NewOpportunityForm = () => {
                           className="select"
                           name="company"
                           onChange={handleChange}
+                          type="text"
                           required
                         ></input>
                       </label>
@@ -165,7 +166,6 @@ const NewOpportunityForm = () => {
           </section>
         </div>
       )}
-      ;
     </section>
   );
 };
