@@ -4,7 +4,12 @@ import SignInHomePage from "../register/SignInOnHomePage";
 import seethefuture from "../../../src/seefuture (1).gif";
 import studentpic from "../../../src/students.jpg";
 import "./index.css";
-const LandingPage = ({ isLogin, setIsLogin }) => {
+const LandingPage = ({
+  isLogin,
+  setIsLogin,
+  setLoggedInUser,
+  loggedInUser,
+}) => {
   return (
     <main className="main">
       <div className="row landingSecondContainer">
@@ -24,7 +29,12 @@ const LandingPage = ({ isLogin, setIsLogin }) => {
       </div>
       <div className="superRedSeparator"></div>
       <div className="row rowAlignen">
-        <SignInHomePage isLogin={isLogin} setIsLogin={setIsLogin} />
+        <SignInHomePage
+          isLogin={isLogin}
+          setIsLogin={setIsLogin}
+          setLoggedInUser={setLoggedInUser}
+          loggedInUser={loggedInUser}
+        />
 
         <img
           className="col-6 sm-col-12 md-col-6"

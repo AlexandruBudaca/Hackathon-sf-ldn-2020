@@ -23,17 +23,22 @@ import GraduateRegistration from "./components/register/GraduateRegistration";
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
-
+  const [loggedInUser, setLoggedInUser] = useState(false);
   return (
     <Router>
       <div className="App">
-        <Nav isLogin={isLogin} />
+        <Nav isLogin={isLogin} loggedInUser={loggedInUser} />
         <Switch>
           <Route
             exact
             path="/"
             render={() => (
-              <LandingPage isLogin={isLogin} setIsLogin={setIsLogin} />
+              <LandingPage
+                isLogin={isLogin}
+                setIsLogin={setIsLogin}
+                setLoggedInUser={setLoggedInUser}
+                loggedInUser={loggedInUser}
+              />
             )}
           />
           <Route path="/company" exact component={Company} />

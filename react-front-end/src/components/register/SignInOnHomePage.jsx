@@ -53,9 +53,8 @@ const SignInHomePage = (props) => {
         } else {
           alert("The password or email is not valid!");
         }
-
-        setPopupSignIn(!popupSignIn);
       });
+    props.setLoggedInUser(!props.loggedInUser);
     e.target.reset();
   };
 
