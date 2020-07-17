@@ -36,8 +36,11 @@ const GraduateRegistration = () => {
     if (!graduate.email.includes("@")) {
       return alert("Please enter Valid email");
     }
+    if (!graduate.password.legth<6) {
+      return alert("password should have at least 6 symbols");
+    }
     if (graduate.password !== graduate.password2) {
-      alert("Passwords not match!");
+      alert("Passwords do not match!");
     } else {
       graduate["password2"] = graduate.password2;
       // Creating JSON data for POST request to DB
