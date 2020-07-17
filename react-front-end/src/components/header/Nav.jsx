@@ -1,19 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import imgSrc from "../../images/cyf_brand.png";
 import "./index.css";
 
-function Nav({ loggedInUser }) {
-  const logged = localStorage.getItem("auth");
+function Nav({ loggedInUser, setLoggedInUser }) {
+  const [log, setLog] = useState({});
+  useEffect(() => {
+    const logged = localStorage.getItem("auth");
+    setLog(logged);
+  }, []);
   return (
     <header className="header row">
       <div className="row justified alignRight">
         <img className="col-3" src={imgSrc} />
 
         <nav className="nav col-6">
+          {log ? (
+            <div>
+              <span className="you_are_logged_in bold">You are logged in!</span>
+            </div>
+          ) : (
+            ""
+          )}
           {loggedInUser ? (
             <div>
-              {" "}
               <span className="you_are_logged_in bold">You are logged in!</span>
             </div>
           ) : (
@@ -27,6 +37,13 @@ function Nav({ loggedInUser }) {
               {" "}
               <li className="simpleNavList">Companies</li>
             </Link>
+            {log ? (
+              <Link to="/opportunities" className="navStyle">
+                <li className="simpleNavList">Opportunities</li>
+              </Link>
+            ) : (
+              ""
+            )}
             {loggedInUser ? (
               <Link to="/opportunities" className="navStyle">
                 <li className="simpleNavList">Opportunities</li>
