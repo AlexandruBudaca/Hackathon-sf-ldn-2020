@@ -10,9 +10,7 @@ function Nav({ loggedInUser, setLoggedInUser }) {
     const logged = JSON.parse(localStorage.getItem("auth"));
     setLog(logged);
   }, []);
-  {
-    console.log(log);
-  }
+  
   return (
     <header className="header row">
       <div className="row justified alignRight">

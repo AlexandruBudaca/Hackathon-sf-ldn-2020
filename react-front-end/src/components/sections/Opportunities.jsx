@@ -4,15 +4,15 @@ import Separator from "../Separator";
 
 const ListOfOpportunities = () => {
   const [opportunities, setOpportunities] = useState([]);
-
+  const [defaultOpportunities, setDefaultOpportunities]=useState(null)
   useEffect(() => {
     async function fetchData() {
       try {
         const res = await fetch(
           "https://ancient-hamlet-95801.herokuapp.com/api/opp"
         );
-        const json = await res.json();
-        setOpportunities(json);
+        const json = await res.json()
+        setOpportunities(json)
       } catch (error) {
         console.error(error.message);
       }
@@ -24,9 +24,10 @@ const ListOfOpportunities = () => {
     };
   }, []);
 const filterRole=(event)=>{
-  // console.log("hey yo!")
+if(event.target.value!=null){
 const flteredByRole = opportunities.filter((opp)=>{opp.role.includes(event.target.value)})
-setOpportunities(flteredByRole)
+setOpportunities(flteredByRole)}
+else{setOpportunities(defaultOpportunities)}
 }
   return (
     
@@ -34,7 +35,7 @@ setOpportunities(flteredByRole)
       <Separator category="Opportunities" />
       <div className='row'>
       <select onChange={filterRole} className ='col-3' >
-        <option value='null'  onChange={filterRole}>show all</option>
+        <option value={null}  onChange={filterRole}>show all</option>
   <option onChange={filterRole} value="front-end">front-end</option>
   <option  onChange={filterRole}  value="back-end">back-end</option>
   <option  onChange={filterRole} value="full-stack">full-stack</option>
