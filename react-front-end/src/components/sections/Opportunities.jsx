@@ -23,22 +23,28 @@ const ListOfOpportunities = () => {
       clearTimeout(repeat);
     };
   }, []);
-
+const filterRole=(event)=>{
+  // console.log("hey yo!")
+const flteredByRole = opportunities.filter((opp)=>{opp.role.includes(event.target.value)})
+setOpportunities(flteredByRole)
+}
   return (
+    
     <section className="opportunitySection">
       <Separator category="Opportunities" />
       <div className='row'>
-      <select className = 'col-3' id="1" name="skills">
-  <option value="front-end">front-end</option>
-  <option value="back-end">back-end</option>
-  <option value="full-stack">full-stack</option>
+      <select onChange={filterRole} className ='col-3' >
+        <option value='null'  onChange={filterRole}>show all</option>
+  <option onChange={filterRole} value="front-end">front-end</option>
+  <option  onChange={filterRole}  value="back-end">back-end</option>
+  <option  onChange={filterRole} value="full-stack">full-stack</option>
 </select>
-<select className = 'col-3' id="2" name="level">
+{/* <select className = 'col-3' id="2" name="level">
   <option value="junior">junior</option>
   <option value="midweight">midweight</option>
   <option value="senior">senior</option>
   <option value="12th dan">12th dan</option>
-</select>
+</select> */}
 <select className = 'col-3' id="2" name="location">
   <option value="London">London</option>
   <option value="Manchester">Manchester</option>

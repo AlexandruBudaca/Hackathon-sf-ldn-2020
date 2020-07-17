@@ -1,5 +1,5 @@
-import React, { Component, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, {  useState } from 'react';
+
 import './index.css'
 import Separator from '../Separator'
 const Graduates =()=> {
