@@ -12,7 +12,7 @@ const opportunities = require("./routes/api/opportunities");
 
 const app = express();
 
-// displaying error
+// display error
 app.use(morgan('dev'))
 
 // Body parser middleware

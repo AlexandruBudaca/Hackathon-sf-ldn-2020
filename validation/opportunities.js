@@ -27,7 +27,7 @@ module.exports = function validateOpportunitiesInput(data) {
   if ((!Validator.isLength(data.location), { min: 2, max: 40 })) {
     errors.location = "Invalid input";
   }
-  if (!Validator.isLength(data.description),{ min: 2, max: 40 }) {
+  if (!Validator.isLength(data.description), { min: 2, max: 40 }) {
     errors.description = 'Invalid input';
   }
 

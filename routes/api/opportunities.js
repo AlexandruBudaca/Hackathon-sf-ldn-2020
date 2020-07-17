@@ -20,12 +20,12 @@ const validateOpportunitiesInput = require("../../validation/opportunities");
 
 router.post("/", (req, res) => {
 
-  const { errors, isValid } = validateOpportunitiesInput(req.body);
-  // Check Validation
-  if (!isValid) {
-    // Return any errors with 400 status
-    return res.status(400).json(errors);
-  }
+  // const { errors, isValid } = validateOpportunitiesInput(req.body);
+  // // Check Validation
+  // if (!isValid) {
+  //   // Return any errors with 400 status
+  //   return res.status(400).json(errors);
+  // }
 
   const newOpportunities = new Opportunities({
     company: req.body.company,
