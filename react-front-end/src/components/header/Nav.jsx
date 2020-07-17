@@ -11,7 +11,7 @@ function Nav({ loggedInUser }) {
         <img className="col-3" src={imgSrc} />
 
         <nav className="nav col-6">
-          {logged || loggedInUser ? (
+          {logged ? (
             <div>
               {" "}
               <span className="you_are_logged_in bold">You are logged in!</span>
@@ -27,7 +27,7 @@ function Nav({ loggedInUser }) {
               {" "}
               <li className="simpleNavList">Companies</li>
             </Link>
-            {logged || loggedInUser ? (
+            {logged ? (
               <Link to="/opportunities" className="navStyle">
                 <li className="simpleNavList">Opportunities</li>
               </Link>
