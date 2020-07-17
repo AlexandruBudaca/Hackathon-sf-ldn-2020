@@ -17,12 +17,12 @@ const GraduateRegistration = () => {
     password: "",
     password2: "",
   });
-  const [confirmPassword, setConfirmPassword] = useState("");
+  // const [confirmPassword, setConfirmPassword] = useState("");
   const [userCreated, setUserCreated] = useState(false);
 
-  const confirmPasswordValidation = (event) => {
-    setConfirmPassword(event.target.value);
-  };
+  // const confirmPasswordValidation = (event) => {
+  //   setConfirmPassword(event.target.value);
+  // };
   const handleChange = (event) => {
     const newUser = {
       ...graduate,
@@ -36,10 +36,10 @@ const GraduateRegistration = () => {
     if (!graduate.email.includes("@")) {
       return alert("Please enter Valid email");
     }
-    if (graduate.password !== confirmPassword) {
-      alert("Passwords not match!");
-    } else {
-      graduate["password"] = confirmPassword;
+    // if (graduate.password !== confirmPassword) {
+    //   alert("Passwords not match!");
+    // } else {
+    //   graduate["password"] = confirmPassword;
       // Creating JSON data for POST request to DB
 
       fetch(`https://ancient-hamlet-95801.herokuapp.com/api/users/signup`, {
