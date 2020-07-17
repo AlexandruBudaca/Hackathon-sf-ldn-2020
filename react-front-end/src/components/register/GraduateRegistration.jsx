@@ -36,12 +36,12 @@ const GraduateRegistration = () => {
     if (!graduate.email.includes("@")) {
       return alert("Please enter Valid email");
     }
-    if (graduate.password !== confirmPassword) {
+    if (graduate.password !== graduate.password2) {
       alert("Passwords not match!");
     } else {
       graduate["password2"] = graduate.password2;
-    // Creating JSON data for POST request to DB
-
+      // Creating JSON data for POST request to DB
+    }
     fetch(`https://ancient-hamlet-95801.herokuapp.com/api/users/signup`, {
       method: "POST",
       body: JSON.stringify(graduate),
