@@ -27,7 +27,7 @@ const filterRole=(event)=>{
 if(event.target.value!=null){
 const flteredByRole = opportunities.filter((opp)=>{opp.role.includes(event.target.value)})
 setOpportunities(flteredByRole)}
-else{setOpportunities(defaultOpportunities)}
+
 }
   return (
     
