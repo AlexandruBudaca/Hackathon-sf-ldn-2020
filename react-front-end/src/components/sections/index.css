@@ -50,8 +50,11 @@
 
 
 }
-.landingSecondContainer{
-
+.alignRight{
+  align-self:right;
+}
+.navRow{
+  justify-content:space-evenly ;
 }
 .firstBlock{
   display:flex;
@@ -65,8 +68,9 @@
   margin-left: -15px;
 }
 .studPic{
-  height:auto;
-  background-size: cover;}
+  height: auto;
+
+  object-fit: cover;}
 .introtext {
   /* Envision the day-to-day requirements of your future career */
   font-family: Open Sans;
@@ -74,7 +78,7 @@
   font-weight: 300;
   font-size: 35px;
   line-height: 48px;
-
+  padding-bottom:3em;
   color: #3F3F3F;
 
 

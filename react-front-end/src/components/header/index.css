@@ -62,7 +62,9 @@
   color: #d12f2f;
   text-decoration: none;
 }
-
+.grey{
+  background-color: #FDFDFD;
+}
 .tooltip {
   position: relative;
   display: inline-block;
@@ -71,9 +73,11 @@
 }
 .signAndImageLanding{
   display:flex;
-  flex-direction:row;
-  flex-wrap: wrap;
-  
+  justify-content: center;
+
+}
+.signLandibOneMoreDiv{
+  align-content: center;
 }
 .tooltip .tooltiptext {
   visibility: hidden;

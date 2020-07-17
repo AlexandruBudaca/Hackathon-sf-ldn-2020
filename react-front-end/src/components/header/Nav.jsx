@@ -6,12 +6,12 @@ import "./index.css";
 function Nav(props) {
   return (
     <header className="header row">
-      <div className="row">
+      <div className="row justified alignRight">
         
           <img  className='col-3' src={imgSrc} />
   
         <nav className="nav col-6">
-          <ul className='row'>
+          <ul className='row navRow'>
             <Link to="/" className="navStyle">
               <li className="simpleNavList">Home</li>
             </Link>

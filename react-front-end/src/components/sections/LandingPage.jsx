@@ -24,15 +24,20 @@ const LandingPage = ({ isLogin, setIsLogin }) => {
         
       </div>
       <div className="superRedSeparator"></div>
-      <div className='row rowAligned justified signAndImageLanding'>
+      <div className='row rowAlignen'>
       <SignInHomePage isLogin={isLogin} setIsLogin={setIsLogin} />
+ 
+    
+        <img className='col-6 sm-col-12 md-col-6' src="https://github.com/AlexandruBudaca/Hackaton-sf-ldn-2020/blob/babak/Design/images%20files/Pages%20files/dev-signin.jpg?raw=true" />
+     
+    
       </div>
       <div className='row'>
-        <img className=" studPic col-7 md-col-6 sm-col-12" src={studentpic} alt="CYF students" />
+        <img className="studPic col-7 md-col-6 sm-col-12" src={studentpic} alt="CYF students" />
         
         <div className="col-6 md-col-6 sm-col-12">
           <h2 className="infotitle col-6 sm-col-12">Our Students</h2>
-          <p className="col-6 md-col-6 sm-col-12">
+          <p className="col-12">
             See the Future is a way for students and graduates of the
             CodeYourFuture course to be matched with a range of opportunities
             provided by local businesses. This could be anything from a few

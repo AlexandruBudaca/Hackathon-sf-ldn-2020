@@ -45,7 +45,8 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
   };
 
   return (
-    <div className="row signAndImageLanding">
+  
+      <div className="signLandibOneMoreDiv col-6 md-col-6 sm-col-12">
       {authMessage.message === "Authorization successful" ? (
         <Redirect to="/Opportunities" />
       ) : (
@@ -58,10 +59,10 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
       {authMessage.message === "Authorization successful"
         ? setIsLogin(!isLogin)
         : null}
-      <div className="signHome col-6 md-col-6 sm-col-12">
-        <form onSubmit={handleSubmit}>
-          <div className="landingsign col-5 sm-col-12">
-            <div className="formline">
+      
+        <form className="signForm"onSubmit={handleSubmit}>
+         
+            <div className="formline grey">
               <label>Email </label>
 
               <input
@@ -70,7 +71,7 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
                 onChange={handleChange}
                 required
               ></input>
-            </div>
+       
             <div className="formline">
               <label>Password </label>
               <input
@@ -79,20 +80,21 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
                 onChange={handleChange}
                 required
               ></input>
-            </div>
+                    
+         
             <button className="buttonSignInHome">Sign In</button>
-          </div>
+          </div>   </div>
         </form>
-
+<div className='formline'>
         <p>don't you have an account?</p>
-        <Link to="/signUp" className="navStyle">
-          Sign up here
+        <Link to="/signUp" >
+        Sign up here
         </Link>
+        </div>
       </div>
     
-        <img className='col-6' src="https://github.com/AlexandruBudaca/Hackaton-sf-ldn-2020/blob/babak/Design/images%20files/Pages%20files/dev-signin.jpg?raw=true" />
-     
-    </div>
+       
+
   );
 };
 

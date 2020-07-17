@@ -108,11 +108,7 @@ form ul input {
 .landingsign {
   display: flex;
   flex-direction: column;
-  justify-content: center;
- 
-  align-items: center;
-  background-color: #FAFAFA;
-  height: 30vh;
+
 }
 
 .formline {
@@ -120,6 +116,7 @@ form ul input {
   flex-direction: column;
   margin-top: 15px;
   padding: 2px;
+  align-items: center;
 }
 
 .formline input {
@@ -382,6 +379,7 @@ h3 {
   line-height: 21px;
   color: #FFFFFF;
   margin-bottom: 10px;
+  align-self: center;
 }
 
 .buttonSignInHome:hover {
