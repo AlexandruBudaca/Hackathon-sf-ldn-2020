@@ -15,6 +15,7 @@ const GraduateRegistration = () => {
     lastName: "",
     email: "",
     password: "",
+    password2: "",
   });
   const [confirmPassword, setConfirmPassword] = useState("");
   const [userCreated, setUserCreated] = useState(false);
