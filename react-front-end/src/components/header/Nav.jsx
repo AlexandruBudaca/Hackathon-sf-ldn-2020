@@ -4,14 +4,23 @@ import imgSrc from "../../images/cyf_brand.png";
 import "./index.css";
 
 function Nav(props) {
+  const loggedInUser = localStorage.getItem("auth");
+
   return (
     <header className="header row">
       <div className="row justified alignRight">
-        
-          <img  className='col-3' src={imgSrc} />
-  
+        <img className="col-3" src={imgSrc} />
+
         <nav className="nav col-6">
-          <ul className='row navRow'>
+          {loggedInUser ? (
+            <div>
+              {" "}
+              <span className="you_are_logged_in bold">You are logged in!</span>
+            </div>
+          ) : (
+            ""
+          )}
+          <ul className="row navRow">
             <Link to="/" className="navStyle">
               <li className="simpleNavList">Home</li>
             </Link>
@@ -19,17 +28,18 @@ function Nav(props) {
               {" "}
               <li className="simpleNavList">Companies</li>
             </Link>
-            {props.isLogin ? (
+            {loggedInUser ? (
               <Link to="/opportunities" className="navStyle">
                 <li className="simpleNavList">Opportunities</li>
               </Link>
-            ) : (<div></div>
-            // <li className="simpleNavList">
-            //   <div className="tooltip">
-            //     Opportunities
-            //     <span className="tooltiptext">You must log in!</span>
-            //   </div>
-            //   </li>
+            ) : (
+              <div></div>
+              // <li className="simpleNavList">
+              //   <div className="tooltip">
+              //     Opportunities
+              //     <span className="tooltiptext">You must log in!</span>
+              //   </div>
+              //   </li>
             )}
 
             <Link to="/Graduates" className="navStyle">

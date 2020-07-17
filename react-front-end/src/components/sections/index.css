@@ -31,7 +31,7 @@
 
 
 .superRedSeparator {
-  width:100%;
+  width: 100%;
   height: 7vh;
   margin-top: -5vh;
   z-index: -1;
@@ -50,27 +50,47 @@
 
 
 }
-.alignRight{
-  align-self:right;
+
+.alignRight {
+  align-self: right;
 }
-.navRow{
-  justify-content:space-evenly ;
+
+.navRow {
+  justify-content: space-evenly;
 }
-.firstBlock{
-  display:flex;
-  flex-direction:row;
+
+.firstBlock {
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
 }
+
 .row {
   display: flex;
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+  align-items: center;
+  justify-content: space-between;
 }
-.studPic{
+
+.ourStudents {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.ourStudents p {
+  width: auto;
+  height: auto;
+  font-size: 21px;
+}
+
+.studPic {
   height: auto;
 
-  object-fit: cover;}
+  object-fit: cover;
+}
+
 .introtext {
   /* Envision the day-to-day requirements of your future career */
   font-family: Open Sans;
@@ -78,7 +98,7 @@
   font-weight: 300;
   font-size: 35px;
   line-height: 48px;
-  padding-bottom:3em;
+  padding-bottom: 3em;
   color: #3F3F3F;
 
 
@@ -98,11 +118,12 @@
 
 
 }
+
 @media only screen and (max-width: 600px) {
   .introHeader {
     /* See the future */
-  
-  
+
+
     font-family: Open Sans;
     font-style: normal;
     font-weight: bold;
@@ -110,10 +131,11 @@
     line-height: 45px;
     align-self: flex-start;
     color: #D12F2F;
-  
-  
+
+
   }
 }
+
 .footMenu {
   font-family: Open Sans;
   font-style: normal;
@@ -156,13 +178,14 @@
   flex-direction: row;
   background: #3f3f3f;
   padding: 1rem;
-  margin-top:1rem;
+  margin-top: 1rem;
   justify-items: center;
+  bottom: 0;
 }
 
 .footerCol {
-align-items:center;
-flex-direction:row;
+  align-items: center;
+  flex-direction: row;
 }
 
 .copyright {
@@ -172,7 +195,7 @@ flex-direction:row;
   font-size: 16px;
   line-height: 22px;
   align-self: center;
-text-align: center;
+  text-align: center;
   color: #FDFDFD;
 }
 

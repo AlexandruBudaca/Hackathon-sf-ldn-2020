@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import "./App.css";
 import "./grid.css";
 import Nav from "./components/header/Nav";
@@ -18,14 +23,15 @@ import GraduateRegistration from "./components/register/GraduateRegistration";
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
+
   return (
     <Router>
       <div className="App">
         <Nav isLogin={isLogin} />
         <Switch>
           <Route
-            path="/"
             exact
+            path="/"
             render={() => (
               <LandingPage isLogin={isLogin} setIsLogin={setIsLogin} />
             )}

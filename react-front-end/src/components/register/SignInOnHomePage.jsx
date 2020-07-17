@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
   Redirect,
+  Switch,
 } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const SignInHomePage = ({ isLogin, setIsLogin }) => {
+const SignInHomePage = (props) => {
+  const userLoggedIn = localStorage.getItem("auth");
   const [username, setUsername] = useState({
     email: "",
     password: "",
@@ -39,63 +41,57 @@ const SignInHomePage = ({ isLogin, setIsLogin }) => {
       .then((res) => res.json())
       .then((data) => {
         setAuthMessage(data);
+
+        if (data.message === "Authorization successful") {
+          props.setIsLogin(!props.isLogin);
+        }
+
+        localStorage.setItem("auth", JSON.stringify(data));
+
+        if (data.message === "Authorization successful") {
+          props.history.push("/opportunities/");
+        } else {
+          alert("The password or email is not valid!");
+        }
+
         setPopupSignIn(!popupSignIn);
       });
     e.target.reset();
   };
 
   return (
-  
-      <div className="signLandibOneMoreDiv col-6 md-col-6 sm-col-12">
-      {authMessage.message === "Authorization successful" ? (
-        <Redirect to="/Opportunities" />
-      ) : (
-        <div className="popup">
-          <span className={popupSignIn ? "show" : "popuptext"}>
-            The email or password is not valid!
-          </span>
-        </div>
-      )}
-      {authMessage.message === "Authorization successful"
-        ? setIsLogin(!isLogin)
-        : null}
-      
-        <form className="signForm"onSubmit={handleSubmit}>
-         
-            <div className="formline grey">
-              <label>Email </label>
+    <div className="signLandibOneMoreDiv col-6 md-col-6 sm-col-12">
+      <form className="signForm" onSubmit={handleSubmit}>
+        <div className="formline grey">
+          <h2>Graduate Sign In</h2>
+          <div className="formline">
+            <label>Email </label>
+            <input
+              type="text"
+              name="email"
+              onChange={handleChange}
+              required
+            ></input>
+          </div>
+          <div className="formline">
+            <label>Password </label>
+            <input
+              type="password"
+              name="password"
+              onChange={handleChange}
+              required
+            ></input>
 
-              <input
-                type="text"
-                name="email"
-                onChange={handleChange}
-                required
-              ></input>
-       
-            <div className="formline">
-              <label>Password </label>
-              <input
-                type="password"
-                name="password"
-                onChange={handleChange}
-                required
-              ></input>
-                    
-         
             <button className="buttonSignInHome">Sign In</button>
-          </div>   </div>
-        </form>
-<div className='formline'>
-        <p>don't you have an account?</p>
-        <Link to="/signUp" >
-        Sign up here
-        </Link>
+          </div>{" "}
         </div>
+      </form>
+      <div className="formline">
+        <p>don't you have an account?</p>
+        <Link to="/signUp">Sign up here</Link>
       </div>
-    
-       
-
+    </div>
   );
 };
 
-export default SignInHomePage;
+export default withRouter(SignInHomePage);

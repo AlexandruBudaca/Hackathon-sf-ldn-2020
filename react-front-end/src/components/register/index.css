@@ -126,7 +126,16 @@ form ul input {
 
 .formline label {
   font-size: 14px;
+  align-self: flex-start;
+}
 
+.formline h2 {
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.grey {
+  background-color: #FDFDFD;
 }
 
 .div-form li label {
@@ -270,13 +279,16 @@ h3 {
 
   align-items: center;
 }
-.rowAligned{
+
+.rowAligned {
   align-items: center;
 }
-.justified{
-  display:flex;
+
+.justified {
+  display: flex;
   justify-content: space-around;
 }
+
 .-SignUp {
   display: flex;
   align-items: center;
@@ -339,10 +351,10 @@ h3 {
   padding: 8px 0;
   position: absolute;
   z-index: 1;
-  bottom: 140px;
-  margin-left: 280px;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s
+  bottom: -10px;
+  margin-left: 190px;
+  -webkit-animation: fadeIn 0.5s;
+  animation: fadeIn 0.5s
 }
 
 /* Add animation (fade in the popup) */
