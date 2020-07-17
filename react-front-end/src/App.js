@@ -22,6 +22,7 @@ import NewOpportunityForm from "./components/register/NewOpportunity";
 import GraduateRegistration from "./components/register/GraduateRegistration";
 
 function App() {
+  const [isLogin, setIsLogin] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState(false);
   return (
     <Router>

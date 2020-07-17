@@ -16,7 +16,7 @@ const SignInHomePage = (props) => {
   });
   const [token, setToken] = useState({});
   const [authMessage, setAuthMessage] = useState({});
-  const [popupSignIn, setPopupSignIn] = useState(false);
+  // const [popupSignIn, setPopupSignIn] = useState(false);
 
   const handleChange = (e) => {
     const newUsername = {
@@ -45,7 +45,6 @@ const SignInHomePage = (props) => {
         if (data.message === "Authorization successful") {
           props.setIsLogin(!props.isLogin);
         }
-
         localStorage.setItem("auth", JSON.stringify(data));
 
         if (data.message === "Authorization successful") {
@@ -53,8 +52,13 @@ const SignInHomePage = (props) => {
         } else {
           alert("The password or email is not valid!");
         }
+        if (data.message === "Authorization successful") {
+          props.setLoggedInUser(!props.loggedInUser);
+        } else {
+          props.setLoggedInUser(false);
+        }
       });
-    props.setLoggedInUser(!props.loggedInUser);
+
     e.target.reset();
   };
 

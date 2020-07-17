@@ -4,18 +4,22 @@ import imgSrc from "../../images/cyf_brand.png";
 import "./index.css";
 
 function Nav({ loggedInUser, setLoggedInUser }) {
-  const [log, setLog] = useState({});
+  const [log, setLog] = useState("");
+
   useEffect(() => {
-    const logged = localStorage.getItem("auth");
+    const logged = JSON.parse(localStorage.getItem("auth"));
     setLog(logged);
   }, []);
+  {
+    console.log(log);
+  }
   return (
     <header className="header row">
       <div className="row justified alignRight">
         <img className="col-3" src={imgSrc} />
 
         <nav className="nav col-6">
-          {log ? (
+          {log && log.message === "Authorization successful" ? (
             <div>
               <span className="you_are_logged_in bold">You are logged in!</span>
             </div>
