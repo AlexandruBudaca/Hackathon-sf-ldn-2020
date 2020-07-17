@@ -65,8 +65,9 @@
   margin-left: -15px;
 }
 .studPic{
-  height:auto;
-  background-size: cover;}
+  height: auto;
+
+  object-fit: cover;}
 .introtext {
   /* Envision the day-to-day requirements of your future career */
   font-family: Open Sans;
