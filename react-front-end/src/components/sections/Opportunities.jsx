@@ -1,22 +1,35 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
 import "./index.css";
 import Separator from "../Separator";
+
 const ListOfOpportunities = () => {
-  const [opportunities, setOpportinities] = useState([]);
+  const [opportunities, setOpportunities] = useState([]);
 
   useEffect(() => {
-    fetch("https://ancient-hamlet-95801.herokuapp.com/api/opp")
-      .then((req) => req.json())
-      .then((data) => setOpportinities(data));
-  }, [opportunities]);
+    async function fetchData() {
+      try {
+        const res = await fetch(
+          "https://ancient-hamlet-95801.herokuapp.com/api/opp"
+        );
+        const json = await res.json();
+        setOpportunities(json);
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+    fetchData();
+    const repeat = setTimeout(fetchData, 60000);
+    return () => {
+      clearTimeout(repeat);
+    };
+  }, []);
 
   return (
     <section className="opportunitySection">
       <Separator category="opportunities" />
-      {opportunities.map((opportunity, index) => {
+      {opportunities.map((opportunity) => {
         return (
-          <article className="opp_article">
+          <article className="opp_article" key={opportunity._id}>
             <div className="opportunity_logo">
               <img
                 src="https://github.com/AlexandruBudaca/Hackaton-sf-ldn-2020/blob/babak/Design/images%20files/opp-icon/role-frontend.gif?raw=true"
