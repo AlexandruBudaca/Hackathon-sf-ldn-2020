@@ -17,6 +17,12 @@ const Opportunities = require("../../models/Opportunities");
 // @route   POST api/users/signup
 
 router.post("/signup", (req, res) => {
+  const { errors, isValid } = validateRegisterInput(req.body);
+  // Check Validation
+  if (!isValid) {
+    // Return any errors with 400 status
+    return res.status(400).json(errors);
+  }
   User.find({ email: req.body.email })
     .exec()
     .then((user) => {
@@ -34,6 +40,7 @@ router.post("/signup", (req, res) => {
               lastName: req.body.lastName,
               email: req.body.email,
               password: hash,
+              password2: hash,
             });
             newUser
               .save()
@@ -57,6 +64,13 @@ router.post("/signup", (req, res) => {
 
 // @route   POST api/users/login
 router.post("/login", (req, res) => {
+
+  const { errors, isValid } = validateLoginInput(req.body);
+  // Check Validation
+  if (!isValid) {
+    // Return any errors with 400 status
+    return res.status(400).json(errors);
+  }
   User.find({ email: req.body.email })
     .exec()
     .then((user) => {

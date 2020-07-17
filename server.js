@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const path = require("path");
- const cors = require("cors");
+const cors = require("cors");
+const morgan=require("morgan")
 
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
@@ -11,10 +12,14 @@ const opportunities = require("./routes/api/opportunities");
 
 const app = express();
 
+// displaying error
+app.use(morgan('dev'))
+
 // Body parser middleware
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 
 // DB Config
 const db = require("./config/keys").mongoURI;
@@ -30,6 +35,22 @@ app.use("/api/users", users);
 app.use("/api/profile", profile);
 app.use("/api/opp", opportunities);
 
+
+//display error
+
+app.use((req,res,next)=>{
+  const error = new Error('not found')
+  error.status(401)
+  next(error)
+
+})
+app.use((error,req,res,next)=>{
+  res.status(error.status||500);
+  res.json({
+    error:{ message : error.message}
+  })
+
+})
 //connect on port 3000
 const port = process.env.PORT || 5000;
 
