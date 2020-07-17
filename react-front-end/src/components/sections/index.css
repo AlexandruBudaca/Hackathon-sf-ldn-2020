@@ -78,7 +78,14 @@
   margin-top: 100px;
   margin-bottom: 100px;
 }
+.opp_article{
+  display:flex;
+  justify-content: start;
 
+}
+.oppColumn{
+  align-content: center;
+}
 .ourStudents p {
   width: auto;
   height: auto;
