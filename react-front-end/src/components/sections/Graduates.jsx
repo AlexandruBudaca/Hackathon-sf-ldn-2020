@@ -1,23 +1,25 @@
-import React, {  useState } from 'react';
+import React, {  useState, useEffect } from 'react';
 import './index.css'
 import Separator from '../Separator'
+import Gr from '../../MockData/Graduates.json'
 
 const Graduates =()=> {
-
-  const [graduates, setGraduates]= useState ([])
-  
-        async function fetchGrads() {
-          try {
-            const res = await fetch(
-              "https://ancient-hamlet-95801.herokuapp.com/api/opp"
-            );
-            const json = await res.json()
-            setGraduates(json)
-          } catch (error) {
-            console.error(error.message);
-          }
-        }
-        fetchGrads()
+  const [graduates, setGraduates]= useState(Gr)
+  useEffect(() => {
+    async function fetchGrads() {
+      try {
+        const res = await fetch(
+          "https://ancient-hamlet-95801.herokuapp.com/api/opp"
+        );
+        const json = await res.json()
+        setGraduates(json)
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+    fetchGrads();
+    
+  }, []);
     return (
       <section className="companiesSection">
       <Separator category="graduates"/>
