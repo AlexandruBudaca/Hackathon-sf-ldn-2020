@@ -26,35 +26,50 @@ const ListOfOpportunities = () => {
 
   return (
     <section className="opportunitySection">
-      <Separator category="opportunities" />
+      <Separator category="Opportunities" />
+      <div className='row'>
+      <select className = 'col-3' id="1" name="skills">
+  <option value="front-end">front-end</option>
+  <option value="back-end">back-end</option>
+  <option value="full-stack">full-stack</option>
+</select>
+<select className = 'col-3' id="2" name="level">
+  <option value="junior">junior</option>
+  <option value="midweight">midweight</option>
+  <option value="senior">senior</option>
+  <option value="12th dan">12th dan</option>
+</select>
+<select className = 'col-3' id="2" name="location">
+  <option value="London">London</option>
+  <option value="Manchester">Manchester</option>
+  <option value="Birmingham">Birmingham</option>
+  <option value="Rome">Rome</option>
+</select>
+</div>
       {opportunities.map((opportunity) => {
         return (
-          <article className="opp_article" key={opportunity._id}>
-            <div className="opportunity_logo">
-              <img
+          <article className="opp_article row" key={opportunity._id}>
+      
+              <img className='companyLogo col-1'
                 src="https://github.com/AlexandruBudaca/Hackaton-sf-ldn-2020/blob/babak/Design/images%20files/opp-icon/role-frontend.gif?raw=true"
                 alt=""
               />
-            </div>
-
-            <div>
-              <div>
+     
+              <div className='oppColumn col-3'>
                 {/* <Link to="/Opportunity">
                 </Link> */}
                 <p>{opportunity.company}</p>
-              </div>
-              <div>
+              
+                <span>{opportunity.location}</span>
+               
+               <span>{opportunity.role}</span>
+                </div>
+                <div className='oppColumn col-3'>
                 <span>{opportunity.description}</span>
-              </div>
-              <div>
-                <div>
-                  <span>{opportunity.location}</span>
-                </div>
-                <div>
-                  <span>{opportunity.role}</span>
-                </div>
-              </div>
             </div>
+              
+
+           
           </article>
         );
       })}
