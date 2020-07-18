@@ -9,7 +9,7 @@ const Graduates =()=> {
     async function fetchGrads() {
       try {
         const res = await fetch(
-          "https://ancient-hamlet-95801.herokuapp.com/api/opp"
+          "https://ancient-hamlet-95801.herokuapp.com/api/users"
         );
         const json = await res.json()
         setGraduates(json)
