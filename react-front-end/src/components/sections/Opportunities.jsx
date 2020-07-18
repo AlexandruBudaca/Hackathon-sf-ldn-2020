@@ -4,7 +4,7 @@ import Separator from "../Separator";
 
 const ListOfOpportunities = () => {
   const [opportunities, setOpportunities] = useState([]);
-  const [defaultOpportunities, setDefaultOpportunities]=useState(null)
+
   useEffect(() => {
     async function fetchData() {
       try {
