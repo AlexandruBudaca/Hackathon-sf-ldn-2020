@@ -18,7 +18,6 @@ const Graduates =()=> {
       }
     }
     fetchGrads();
-    
   }, []);
     return (
       <section className="companiesSection">
