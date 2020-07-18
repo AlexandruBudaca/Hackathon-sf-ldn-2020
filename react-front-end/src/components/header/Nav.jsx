@@ -7,20 +7,16 @@ import logout from "../../images/logout.png";
 import { withRouter } from "react-router-dom";
 
 function Nav(props) {
-  const [log, setLog] = useState(() => {
-    JSON.parse(localStorage.getItem("auth"));
-  });
-
   useEffect(() => {
     const logged = JSON.parse(localStorage.getItem("auth"));
-    setLog(logged);
+    props.setLog(logged);
   }, []);
 
   const handleSignOut = () => {
     if (props.loggedInUser) {
       props.setLoggedInUser(!props.loggedInUser);
     }
-    setLog("");
+    props.setLog("");
     props.history.push("/");
     localStorage.clear();
   };
@@ -40,7 +36,7 @@ function Nav(props) {
               {" "}
               <li className="simpleNavList">Companies</li>
             </Link>
-            {log && log.message === "Authorization successful" ? (
+            {props.log && props.log.message === "Authorization successful" ? (
               <Link to="/opportunities" className="navStyle">
                 <li className="simpleNavList">Opportunities</li>
               </Link>
@@ -80,7 +76,7 @@ function Nav(props) {
         </nav>
       </div>
       <div className="up-login-logOut">
-        {log && log.message === "Authorization successful" ? (
+        {props.log && props.log.message === "Authorization successful" ? (
           <div className="logout">
             <img className="personLogIn" src={login} alt="person logged" />
             {/* <p>Welcome</p> */}
@@ -89,7 +85,7 @@ function Nav(props) {
           ""
         )}
 
-        {log && log.message === "Authorization successful" ? (
+        {props.log && props.log.message === "Authorization successful" ? (
           <div className="logout">
             <button onClick={handleSignOut}>Sign out</button>
             <img className="logout-sign" src={logout} alt="person logged" />

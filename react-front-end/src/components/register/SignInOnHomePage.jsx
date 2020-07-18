@@ -65,7 +65,18 @@ const SignInHomePage = (props) => {
               required
             ></input>
 
-            <button className="buttonSignInHome">Sign In</button>
+            <button
+              disabled={
+                (props.log &&
+                  props.log.message === "Authorization successful") ||
+                props.loggedInUser
+                  ? true
+                  : false
+              }
+              className="buttonSignInHome"
+            >
+              Sign In
+            </button>
           </div>{" "}
         </div>
       </form>

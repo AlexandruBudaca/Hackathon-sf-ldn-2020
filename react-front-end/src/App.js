@@ -18,11 +18,18 @@ import GraduateRegistration from "./components/register/GraduateRegistration";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(false);
-
+  const [log, setLog] = useState(() => {
+    JSON.parse(localStorage.getItem("auth"));
+  });
   return (
     <Router>
       <div className="App">
-        <Nav loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} />
+        <Nav
+          loggedInUser={loggedInUser}
+          setLoggedInUser={setLoggedInUser}
+          setLog={setLog}
+          log={log}
+        />
         <Switch>
           <Route
             exact
@@ -31,6 +38,8 @@ function App() {
               <LandingPage
                 setLoggedInUser={setLoggedInUser}
                 loggedInUser={loggedInUser}
+                setLog={setLog}
+                log={log}
               />
             )}
           />

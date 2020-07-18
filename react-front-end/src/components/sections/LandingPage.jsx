@@ -4,7 +4,7 @@ import SignInHomePage from "../register/SignInOnHomePage";
 import seethefuture from "../../../src/seefuture (1).gif";
 import studentpic from "../../../src/students.jpg";
 import "./index.css";
-const LandingPage = ({ setLoggedInUser, loggedInUser }) => {
+const LandingPage = ({ setLoggedInUser, loggedInUser, setLog, log }) => {
   return (
     <main className="main">
       <div className="row landingSecondContainer">
@@ -27,6 +27,8 @@ const LandingPage = ({ setLoggedInUser, loggedInUser }) => {
         <SignInHomePage
           setLoggedInUser={setLoggedInUser}
           loggedInUser={loggedInUser}
+          setLog={setLog}
+          log={log}
         />
 
         <img
