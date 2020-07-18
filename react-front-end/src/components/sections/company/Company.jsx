@@ -1,9 +1,6 @@
-
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
 import "./index.css";
-import Opportunities from "../Opportunities";
 
 const Company = () => {
   const [company, setCompany] = useState({
@@ -92,16 +89,12 @@ const Company = () => {
                   </div>
                 </Link>
               ))}
-
-
             </section>
           </section>
         </section>
       </section>
-
     </section>
   );
 };
-
 
 export default Company;

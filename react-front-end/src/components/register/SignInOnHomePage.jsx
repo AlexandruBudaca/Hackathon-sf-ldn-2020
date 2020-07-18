@@ -1,23 +1,12 @@
-import React, { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-  Switch,
-} from "react-router-dom";
+import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const SignInHomePage = (props) => {
-  const userLoggedIn = localStorage.getItem("auth");
   const [username, setUsername] = useState({
     email: "",
     password: "",
   });
-  const [token, setToken] = useState({});
-  const [authMessage, setAuthMessage] = useState({});
-  // const [popupSignIn, setPopupSignIn] = useState(false);
-
   const handleChange = (e) => {
     const newUsername = {
       ...username,
@@ -34,16 +23,14 @@ const SignInHomePage = (props) => {
       mode: "cors",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token.token}`,
+        Authorization: `Bearer`,
       },
       body: JSON.stringify(username),
     })
       .then((res) => res.json())
       .then((data) => {
-        setAuthMessage(data);
-
         if (data.message === "Authorization successful") {
-          props.setIsLogin(!props.isLogin);
+          props.setBtnDisabled(!props.btnDisabled);
         }
         localStorage.setItem("auth", JSON.stringify(data));
 
@@ -58,7 +45,6 @@ const SignInHomePage = (props) => {
           props.setLoggedInUser(false);
         }
       });
-
     e.target.reset();
   };
 
@@ -85,12 +71,16 @@ const SignInHomePage = (props) => {
               required
             ></input>
 
-            <button className="buttonSignInHome">Sign In</button>
+            <button disabled={props.btnDisabled} className="buttonSignInHome">
+              Sign In
+            </button>
           </div>{" "}
         </div>
       </form>
       <div className="formline">
-        <p className='pleaseRegister col-4'>If you don’t have an account please register on the link below</p>
+        <p className="pleaseRegister col-4">
+          If you don’t have an account please register on the link below
+        </p>
         <Link to="/signUp">Sign up here</Link>
       </div>
     </div>

@@ -5,10 +5,10 @@ import seethefuture from "../../../src/seefuture (1).gif";
 import studentpic from "../../../src/students.jpg";
 import "./index.css";
 const LandingPage = ({
-  isLogin,
-  setIsLogin,
   setLoggedInUser,
   loggedInUser,
+  btnDisabled,
+  setBtnDisabled,
 }) => {
   return (
     <main className="main">
@@ -30,15 +30,16 @@ const LandingPage = ({
       <div className="superRedSeparator"></div>
       <div className="row rowAlignen">
         <SignInHomePage
-          isLogin={isLogin}
-          setIsLogin={setIsLogin}
           setLoggedInUser={setLoggedInUser}
           loggedInUser={loggedInUser}
+          btnDisabled={btnDisabled}
+          setBtnDisabled={setBtnDisabled}
         />
 
         <img
           className="col-6 sm-col-12 md-col-6"
           src="https://github.com/AlexandruBudaca/Hackaton-sf-ldn-2020/blob/babak/Design/images%20files/Pages%20files/dev-signin.jpg?raw=true"
+          alt=""
         />
       </div>
       <div className="ourStudents">
