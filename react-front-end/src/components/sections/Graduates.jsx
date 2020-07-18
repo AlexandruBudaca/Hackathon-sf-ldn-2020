@@ -22,7 +22,7 @@ const Graduates =()=> {
   }, []);
     return (
       <section className="companiesSection">
-      <Separator category="graduates"/>
+      <Separator category="Graduates"/>
       {graduates.map((grad) => {
       return (
           <article className="opp_article row" key={grad._id}>

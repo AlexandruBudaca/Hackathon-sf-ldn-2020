@@ -90,7 +90,7 @@ const SignInHomePage = (props) => {
         </div>
       </form>
       <div className="formline">
-        <p>don't you have an account?</p>
+        <p className='pleaseRegister col-4'>If you don’t have an account please register on the link below</p>
         <Link to="/signUp">Sign up here</Link>
       </div>
     </div>
