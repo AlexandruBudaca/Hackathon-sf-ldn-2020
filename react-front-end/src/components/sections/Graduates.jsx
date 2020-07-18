@@ -9,7 +9,7 @@ const Graduates =()=> {
     async function fetchGrads() {
       try {
         const res = await fetch(
-          "https://ancient-hamlet-95801.herokuapp.com/api/opp"
+          "https://ancient-hamlet-95801.herokuapp.com/api/users"
         );
         const json = await res.json()
         setGraduates(json)
@@ -36,6 +36,7 @@ const Graduates =()=> {
                 {/* <Link to="/Opportunity">
                 </Link> */}
                 <p>{grad.firstName}</p>
+                <p>{grad.lastName}</p>
               
                 <span>{grad.lastName}</span>
                
