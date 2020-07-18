@@ -21,10 +21,10 @@ const [companies, setCompanies] = useState(companiesData);
             </div>
             <div className="company_content">
               <div className="name_descrip">
-                <p>
+              
                   <span>Company's Name: </span>{" "}
                   <span className="bold">{company.name}</span>
-                </p>
+              
                 <p>Number of Opportunities: {company.numberOfOffers}</p>
               </div>
               <div className="comapny_descript">
@@ -34,7 +34,7 @@ const [companies, setCompanies] = useState(companiesData);
               <div className="application_Date">
                 <Link to="/Company" className="readMore_link">
                   {" "}
-                  <button className="readMore">Read More...</button>
+                  <button className="resetFilters">Read More...</button>
                 </Link>
               </div>
             </div>
