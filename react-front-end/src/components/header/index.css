@@ -129,3 +129,43 @@
   margin-left: 600px;
 
 }
+
+.personLogIn {
+  width: 25px;
+
+}
+
+.up-login-logOut {
+  position: absolute;
+  display: flex;
+  right: 10vh;
+  top: 10px;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.logout p {
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.logout button {
+  background-color: #fff;
+  border: hidden;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.logout button:hover {
+  color: #d12f2f;
+}
+
+
+.logout-sign {
+  width: 20px;
+  margin-left: 10px;
+}

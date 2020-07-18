@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import "./grid.css";
 import Nav from "./components/header/Nav";
@@ -22,20 +17,18 @@ import NewOpportunityForm from "./components/register/NewOpportunity";
 import GraduateRegistration from "./components/register/GraduateRegistration";
 
 function App() {
-  const [isLogin, setIsLogin] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState(false);
+
   return (
     <Router>
       <div className="App">
-        <Nav isLogin={isLogin} loggedInUser={loggedInUser} />
+        <Nav loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} />
         <Switch>
           <Route
             exact
             path="/"
             render={() => (
               <LandingPage
-                isLogin={isLogin}
-                setIsLogin={setIsLogin}
                 setLoggedInUser={setLoggedInUser}
                 loggedInUser={loggedInUser}
               />
