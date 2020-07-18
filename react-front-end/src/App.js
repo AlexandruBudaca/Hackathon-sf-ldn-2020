@@ -15,7 +15,7 @@ import Tips from "./components/sections/tips/Tips";
 import SignIn from "./components/register/SignIn";
 import NewOpportunityForm from "./components/register/NewOpportunity";
 import GraduateRegistration from "./components/register/GraduateRegistration";
-
+import CompanyRegistration from "./components/register/CompanyRegistration";
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(false);
   const [log, setLog] = useState(() => {
@@ -52,6 +52,8 @@ function App() {
           <Route path="/tips" exact component={Tips} />
           <Route path="/signIn" exact component={SignIn} />
           <Route path="/signUp" exact component={GraduateRegistration} />
+          <Route path="/GraduateRegistration" exact component={GraduateRegistration} />
+          <Route path="/CompanyRegistration" exact component={CompanyRegistration} />
           <Route
             path="/NewOpportunityForm"
             exact
