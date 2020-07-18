@@ -23,11 +23,18 @@ const ListOfOpportunities = () => {
       clearTimeout(repeat);
     };
   }, []);
+  // this filter by role and sets opportunities in state
 const filterRole=(event)=>{
 if(event.target.value!=null){
 const flteredByRole = opportunities.filter((opp)=>
   opp.role.toLowerCase().includes(event.target.value.toLowerCase()))
 setOpportunities(flteredByRole)}}
+
+  // this filter by Location and sets in opportunities state
+const filterLoc=(event)=>{
+const flteredByLocation = opportunities.filter((opp)=>
+  opp.location.toLowerCase().includes(event.target.value.toLowerCase()))
+setOpportunities(flteredByLocation)}
   return (
     
     <section className="opportunitySection">
@@ -45,11 +52,11 @@ setOpportunities(flteredByRole)}}
   <option value="senior">senior</option>
   <option value="12th dan">12th dan</option>
 </select> */}
-<select className = 'col-3' id="2" name="location">
-  <option value="London">London</option>
-  <option value="Manchester">Manchester</option>
-  <option value="Birmingham">Birmingham</option>
-  <option value="Rome">Rome</option>
+<select className = 'col-3' id="2" name="location" onChange={filterLoc}>
+  <option onChange={filterLoc} value="London">London</option>
+  <option onChange={filterLoc} value="Manchester">Manchester</option>
+  <option onChange={filterLoc} value="Birmingham">Birmingham</option>
+  <option onChange={filterLoc}  value="Rome">Rome</option>
 </select>
 </div>
       {opportunities.map((opportunity) => {
