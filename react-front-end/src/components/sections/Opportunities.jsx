@@ -25,10 +25,9 @@ const ListOfOpportunities = () => {
   }, []);
 const filterRole=(event)=>{
 if(event.target.value!=null){
-const flteredByRole = opportunities.filter((opp)=>{opp.role.includes(event.target.value)})
-setOpportunities(flteredByRole)}
-
-}
+const flteredByRole = opportunities.filter((opp)=>
+  opp.role.toLowerCase().includes(event.target.value.toLowerCase()))
+setOpportunities(flteredByRole)}}
   return (
     
     <section className="opportunitySection">
