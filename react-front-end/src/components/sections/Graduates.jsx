@@ -36,6 +36,7 @@ const Graduates =()=> {
                 {/* <Link to="/Opportunity">
                 </Link> */}
                 <p>{grad.firstName}</p>
+                <p>{grad.lastName}</p>
               
                 <span>{grad.lastName}</span>
                
