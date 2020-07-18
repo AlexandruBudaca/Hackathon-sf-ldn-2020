@@ -29,11 +29,7 @@ const SignInHomePage = (props) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.message === "Authorization successful") {
-          props.setBtnDisabled(!props.btnDisabled);
-        }
         localStorage.setItem("auth", JSON.stringify(data));
-
         if (data.message === "Authorization successful") {
           props.history.push("/opportunities/");
         } else {
@@ -41,8 +37,6 @@ const SignInHomePage = (props) => {
         }
         if (data.message === "Authorization successful") {
           props.setLoggedInUser(!props.loggedInUser);
-        } else {
-          props.setLoggedInUser(false);
         }
       });
     e.target.reset();
@@ -71,9 +65,7 @@ const SignInHomePage = (props) => {
               required
             ></input>
 
-            <button disabled={props.btnDisabled} className="buttonSignInHome">
-              Sign In
-            </button>
+            <button className="buttonSignInHome">Sign In</button>
           </div>{" "}
         </div>
       </form>

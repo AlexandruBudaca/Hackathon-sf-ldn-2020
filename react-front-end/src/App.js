@@ -18,16 +18,11 @@ import GraduateRegistration from "./components/register/GraduateRegistration";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(false);
-  const [btnDisabled, setBtnDisabled] = useState(false);
+
   return (
     <Router>
       <div className="App">
-        <Nav
-          loggedInUser={loggedInUser}
-          setLoggedInUser={setLoggedInUser}
-          btnDisabled={btnDisabled}
-          setBtnDisabled={setBtnDisabled}
-        />
+        <Nav loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} />
         <Switch>
           <Route
             exact
@@ -36,8 +31,6 @@ function App() {
               <LandingPage
                 setLoggedInUser={setLoggedInUser}
                 loggedInUser={loggedInUser}
-                btnDisabled={btnDisabled}
-                setBtnDisabled={setBtnDisabled}
               />
             )}
           />

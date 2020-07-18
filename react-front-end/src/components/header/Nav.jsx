@@ -7,7 +7,9 @@ import logout from "../../images/logout.png";
 import { withRouter } from "react-router-dom";
 
 function Nav(props) {
-  const [log, setLog] = useState("");
+  const [log, setLog] = useState(() => {
+    JSON.parse(localStorage.getItem("auth"));
+  });
 
   useEffect(() => {
     const logged = JSON.parse(localStorage.getItem("auth"));
@@ -15,11 +17,12 @@ function Nav(props) {
   }, []);
 
   const handleSignOut = () => {
-    props.setLoggedInUser(!props.loggedInUser);
-    localStorage.clear();
+    if (props.loggedInUser) {
+      props.setLoggedInUser(!props.loggedInUser);
+    }
     setLog("");
     props.history.push("/");
-    props.setBtnDisabled(!props.btnDisabled);
+    localStorage.clear();
   };
 
   return (
@@ -37,7 +40,7 @@ function Nav(props) {
               {" "}
               <li className="simpleNavList">Companies</li>
             </Link>
-            {log ? (
+            {log && log.message === "Authorization successful" ? (
               <Link to="/opportunities" className="navStyle">
                 <li className="simpleNavList">Opportunities</li>
               </Link>
