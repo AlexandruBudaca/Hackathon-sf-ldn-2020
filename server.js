@@ -6,6 +6,7 @@ const path = require("path");
 const cors = require("cors");
 const morgan=require("morgan")
 
+const companies = require("./routes/api/companies");
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
 const opportunities = require("./routes/api/opportunities");
@@ -31,6 +32,7 @@ mongoose
   .catch((err) => console.log(err));
 
 // // Use Routes for each api
+app.use("/api/companies", companies)
 app.use("/api/users", users);
 app.use("/api/profile", profile);
 app.use("/api/opp", opportunities);
@@ -55,3 +57,4 @@ app.use((error,req,res,next)=>{
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
+

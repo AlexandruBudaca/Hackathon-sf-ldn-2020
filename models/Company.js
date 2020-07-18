@@ -14,6 +14,11 @@ const CompanySchema = new Schema({
   companyPassword:{
     type:String,
     required:true,
+  },
+  date:{
+    type: String,
+    default: Date.now()
   }
 
 })
+module.exports = Company = mongoose.model("companies", CompanySchema);
