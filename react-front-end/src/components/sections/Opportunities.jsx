@@ -35,29 +35,34 @@ const filterLoc=(event)=>{
 const flteredByLocation = opportunities.filter((opp)=>
   opp.location.toLowerCase().includes(event.target.value.toLowerCase()))
 setOpportunities(flteredByLocation)}
+
+
+  async function resetFilters() {
+
+      const res = await fetch(
+        "https://ancient-hamlet-95801.herokuapp.com/api/opp"
+      );
+      const json = await res.json()
+      setOpportunities(json)
+    } 
+
   return (
-    
     <section className="opportunitySection">
       <Separator category="Opportunities" />
-      <div className='row'>
-      <select onChange={filterRole} className ='col-3' >
-        <option value={null}  onChange={filterRole}>show all</option>
+      <div className='col-12 filters'>
+      <select onChange={filterRole}  className ='col-3' >
   <option onChange={filterRole} value="front-end">front-end</option>
   <option  onChange={filterRole}  value="back-end">back-end</option>
   <option  onChange={filterRole} value="full-stack">full-stack</option>
 </select>
-{/* <select className = 'col-3' id="2" name="level">
-  <option value="junior">junior</option>
-  <option value="midweight">midweight</option>
-  <option value="senior">senior</option>
-  <option value="12th dan">12th dan</option>
-</select> */}
+
 <select className = 'col-3' id="2" name="location" onChange={filterLoc}>
   <option onChange={filterLoc} value="London">London</option>
   <option onChange={filterLoc} value="Manchester">Manchester</option>
   <option onChange={filterLoc} value="Birmingham">Birmingham</option>
   <option onChange={filterLoc}  value="Rome">Rome</option>
 </select>
+<button onClick={resetFilters} className="resetFilters">reset filters</button>
 </div>
       {opportunities.map((opportunity) => {
         return (

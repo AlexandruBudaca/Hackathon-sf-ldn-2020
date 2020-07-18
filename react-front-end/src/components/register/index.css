@@ -398,3 +398,25 @@ h3 {
   background-color: #fff;
   color: #259654;
 }
+.resetFilters{
+  background-color: #259654;
+  width: 150px;
+  height: 45px;
+  border: 1px solid #CCCCCC;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 21px;
+  color: #FFFFFF;
+}
+
+.resetFilters:hover {
+  background-color: #fff;
+  color: #259654;
+}
+.filters{
+  display:flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #FDFDFD;
+}
