@@ -90,8 +90,19 @@
 
 .companyLogo {
   width: 12%;
+  padding-right:15px;
 }
-
+.round{
+  width:8vw;
+  height:8vw;
+  border-radius: 50%;
+  background-size: cover;
+}
+.nearLogo{
+  padding-left:25px;
+  padding-right:25px;
+  justify-content: flex-start;
+}
 .oppColumn {
   align-content: center;
   margin-left: 50px;
