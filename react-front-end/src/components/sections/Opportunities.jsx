@@ -58,6 +58,13 @@ const ListOfOpportunities = () => {
     const json = await res.json();
     setOpportunities(json);
   }
+  opportunities
+    .sort(
+      (a, b) =>
+        moment(a.date).format("DD-MM-YYYY") -
+        moment(b.date).format("DD-MM-YYYY")
+    )
+    .reverse();
 
   return (
     <section className="opportunitySection">
