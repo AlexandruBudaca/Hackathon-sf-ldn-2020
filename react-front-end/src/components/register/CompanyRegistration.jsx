@@ -11,18 +11,9 @@ bio, occupation, img.
 */
 const CompanyRegistration = () => {
   const [companyReg, setCompanyReg] = useState({
-    // CompanyName: "",
-    // logoLink: "",
-    // videoPresentation: "",
-    // description: "",
-    // password: "",
-    // password2: "",
-    name: "Capgemini",
-    Industry: "Tech",
-    Leadership: "Tell me",
-    Size: "Tell me",
-    about: "a long text here.....",
-    video: "https://www.youtube.com/watch?v=MGuehquIp8g",
+companyName”: “Minko”,
+“companyEmail”: “minko@company.com”,
+“companyPassword”: “123456"
   });
   // const [confirmPassword, setConfirmPassword] = useState("");
   const [companyCreated, setCompanyCreated] = useState(false);
@@ -93,10 +84,10 @@ const CompanyRegistration = () => {
                   </li>
                   <li>
                     <label>
-                      Email:
+                      Company email:
                       <input
                         className="select"
-                        name="email"
+                        name="companyEmail"
                         onChange={handleChange}
                         required
                       ></input>
