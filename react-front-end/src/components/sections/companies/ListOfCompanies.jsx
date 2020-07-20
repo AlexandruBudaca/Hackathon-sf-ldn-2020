@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
 import Separator from "../../../components/Separator";
-
+import Sample from '../../../MockData/images/sample.png'
 let companiesData = require("../../../MockData/companies.json");
 
 const ListOfCompanies = () => {
@@ -14,24 +14,24 @@ const ListOfCompanies = () => {
       {companies.map((company, index) => {
         return (
           <article className="company_details" key="id">
-            <div className="company_logo">
-              <img src={company.imgSrc} />
-            </div>
+               <img className="companyLogo col-1" src={Sample} alt="" />
             <div className="company_content">
-              <div className="name_descrip">
-                <span>Company's Name: </span>{" "}
-                <span className="bold">{company.name}</span>
-                <p>Number of Opportunities: {company.numberOfOffers}</p>
+       
+            <div className="row nearLogo">
+              <div className="name_descrip ">
+                <span className="bold ">Company Name: </span>{company.company}
+             
               </div>
-              <div className="comapny_descript">
+           
+                <div className="name_descrip">
                 <span className="bold">Company Info : </span>
-                <span>{company.description}</span>
-              </div>
-              <div className="application_Date">
-                <Link to="/Company" className="readMore_link">
+                <span>{company.description}</span></div>
+              </div>  <Link to="/Company" className="readMore_link">
                   {" "}
                   <button className="resetFilters">Read More...</button>
                 </Link>
+              <div className="application_Date">
+              
               </div>
             </div>
           </article>
