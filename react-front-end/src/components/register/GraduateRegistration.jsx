@@ -36,11 +36,11 @@ const GraduateRegistration = () => {
     if (!graduate.email.includes("@")) {
       return alert("Please enter Valid email");
     }
-    if (graduate.password !== graduate.password2) {
-      alert("Passwords do not match!");
-    }
     if (graduate.password.length < 6) {
       return alert("password should have at least 6 symbols");
+    }
+    if (graduate.password !== graduate.password2) {
+      alert("Passwords do not match!");
     }
 
     // Creating JSON data for POST request to DB
