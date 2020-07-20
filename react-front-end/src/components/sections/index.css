@@ -157,6 +157,11 @@
 
 }
 
+.job-date-moment {
+  color: red;
+  margin-left: 10px;
+}
+
 /*Opportunities*/
 
 .ourStudents p {
