@@ -1,8 +1,8 @@
 import React from "react";
 
 import SignInHomePage from "../register/SignInOnHomePage";
-import seethefuture from "../../../src/seefuture (1).gif";
-import studentpic from "../../../src/students.jpg";
+import seethefuture from "../../../src/images/seefuture (1).gif";
+import studentpic from "../../../src/images/students.jpg";
 import "./index.css";
 const LandingPage = ({ setLoggedInUser, loggedInUser, setLog, log }) => {
   return (

@@ -3,6 +3,13 @@ import "./index.css";
 import Separator from "../Separator";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import frontend from "../../images/role-frontend.gif";
+import backend from "../../images/role-backend.gif";
+import designer from "../../images/role-designer.gif";
+import programmer from "../../images/role-programmer.gif";
+import projectMannager from "../../images/role-projectmanager.gif";
+import tester from "../../images/role-tester.gif";
+import solarArchitect from "../../images/role-solarchitect.gif";
 
 const ListOfOpportunities = () => {
   const [opportunities, setOpportunities] = useState([]);
@@ -89,15 +96,35 @@ const ListOfOpportunities = () => {
           reset filters
         </button>
       </div>
+
       {opportunities.map((opportunity) => {
         const date = moment(opportunity.date).format("DD-MM-YYYY");
+        let srcRole;
+        if (opportunity.role === "Front-end Developer") {
+          srcRole = frontend;
+        }
+        if (opportunity.role === "Back-end Developer") {
+          srcRole = backend;
+        }
+        if (opportunity.role === "Programmer") {
+          srcRole = programmer;
+        }
+        if (opportunity.role === "UI/UX Designer") {
+          srcRole = designer;
+        }
+        if (opportunity.role === "Solution Architect") {
+          srcRole = solarArchitect;
+        }
+        if (opportunity.role === "Tester") {
+          srcRole = tester;
+        }
+        if (opportunity.role === "Project Manager") {
+          srcRole = projectMannager;
+        }
+
         return (
           <article className="opp_article row" key={opportunity._id}>
-            <img
-              className="companyLogo col-1"
-              src="https://github.com/AlexandruBudaca/Hackaton-sf-ldn-2020/blob/babak/Design/images%20files/opp-icon/role-frontend.gif?raw=true"
-              alt=""
-            />
+            <img className="companyLogo col-1" src={srcRole} alt="" />
 
             {console.log(opportunity)}
             <div className="oppColumn col-4">
