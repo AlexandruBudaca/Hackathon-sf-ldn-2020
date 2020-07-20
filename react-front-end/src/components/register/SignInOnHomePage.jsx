@@ -46,7 +46,7 @@ const SignInHomePage = (props) => {
     <div className="signLandibOneMoreDiv col-6 md-col-6 sm-col-12">
       <form className="signForm" onSubmit={handleSubmit}>
         <div className="formline grey">
-          <h2>Graduate Sign In</h2>
+          <h2>Sign In</h2>
           <div className="formline">
             <label>Email </label>
             <input
