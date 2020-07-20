@@ -90,6 +90,7 @@ const ListOfOpportunities = () => {
         </button>
       </div>
       {opportunities.map((opportunity) => {
+        const date = moment(opportunity.date).format("DD-MM-YYYY");
         return (
           <article className="opp_article row" key={opportunity._id}>
             <img
@@ -110,8 +111,10 @@ const ListOfOpportunities = () => {
               </Link>
               <div className="job-company-date">
                 <p>{opportunity.company}</p>
-                <p className="job-date">
-                  {moment(opportunity.date).format("DD-MM-YYYY")}
+                <p className="job-date">{date}</p>
+                <p className="job-date-last">
+                  {" "}
+                  {moment(date, "DD-MM-YYYY").fromNow()}
                 </p>
               </div>
             </div>

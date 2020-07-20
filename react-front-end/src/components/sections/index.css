@@ -343,3 +343,8 @@
 .opportunity_logo img {
   width: 20%;
 }
+
+.job-date-last {
+  margin-left: 10px;
+  color: #ff8b8b;
+}

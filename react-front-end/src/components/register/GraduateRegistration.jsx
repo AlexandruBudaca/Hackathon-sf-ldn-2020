@@ -41,7 +41,6 @@ const GraduateRegistration = () => {
     }
     if (graduate.password.length < 4) {
       return alert("password should have at least 4 symbols");
-  
     }
 
     // Creating JSON data for POST request to DB
@@ -56,21 +55,19 @@ const GraduateRegistration = () => {
   return (
     <section className="companiesSection">
       <Separator category={"User Registration"} />
-      {
-      // userCreated ? (
-      //   <div className="singUpBack">
-      //     Your account was created!
-      //     <Link to="/" className="backBtnSignUp">
-      //       Back
-      //     </Link>
-      //   </div>
-      // ) : (
-        <div>   
-         
+      {userCreated ? (
+        <div className="singUpBack">
+          Your account was created!
+          <Link to="/" className="backBtnSignUp">
+            Back
+          </Link>
+        </div>
+      ) : (
+        <div>
           <section className="mainRegister">
-          <Link to="./CompanyRegistration" className="backBtnSignUp">
-        Register as a Company?
-      </Link>
+            <Link to="./CompanyRegistration" className="backBtnSignUp">
+              Register as a Company?
+            </Link>
             <div className="div-form-graduates">
               <div className="div-form">
                 <form onSubmit={handleSubmit}>
@@ -140,8 +137,7 @@ const GraduateRegistration = () => {
             </div>
           </section>
         </div>
-      // )
-      }
+      )}
     </section>
   );
 };
