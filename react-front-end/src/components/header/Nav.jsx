@@ -36,79 +36,67 @@ function Nav(props) {
               {" "}
               <li className="simpleNavList">Companies</li>
             </Link>
-            {props.log && props.log.message === "Authorization successful" ? (
+            {/* Hide/Show Opportunities Page when graduates log in*/}
+            {(props.log && props.log.token) || props.loggedInUser ? (
               <Link to="/opportunities" className="navStyle">
-                <li className="simpleNavList">Opportunities</li>
+                <li className="simpleNavList"> Opportunities</li>
               </Link>
             ) : (
               ""
             )}
-            {props.loggedInUser ? (
-              <Link to="/opportunities" className="navStyle">
-                <li className="simpleNavList">Opportunities</li>
-              </Link>
+            {(props.log && props.log.token) || props.loggedInUser ? (
+              ""
             ) : (
-              <div></div>
-              // <li className="simpleNavList">
-              //   <div className="tooltip">
-              //     Opportunities
-              //     <span className="tooltiptext">You must log in!</span>
-              //   </div>
-              //   </li>
+              <Link to="/Graduates" className="navStyle">
+                <li className="simpleNavList">Graduates</li>
+              </Link>
             )}
 
-            <Link to="/Graduates" className="navStyle">
-              <li className="simpleNavList">Graduates</li>
-            </Link>
             {/* <Link to="/tips" className="navStyle">
               <li className="simpleNavList">Tips & FAQ</li>
             </Link> */}
-            <Link to="/NewOpportunityForm" className="navStyle">
-              <li className="simpleNavList"> Add new opportunity</li>
-            </Link>
+
             {/* <Link to="/signIn" className="navStyle">
               <li className="simpleNavList">Sign in</li>
             </Link> */}
-            <Link to="/signUp" className="navStyle">
-              <li className="simpleNavList">Sign up</li>
-            </Link>
+
+            {(props.log && props.log.token) || props.loggedInUser ? (
+              ""
+            ) : (
+              <Link to="/signUp" className="navStyle">
+                <li className="simpleNavList">Sign up</li>
+              </Link>
+            )}
+            {/* Show Sign out svg when graduates log in*/}
+            <div className="up-login-logOut">
+              {(props.log && props.log.token) || props.loggedInUser ? (
+                <div className="logout">
+                  <img
+                    className="personLogIn"
+                    src={login}
+                    alt="person logged"
+                  />
+                  {/* <p>Welcome</p> */}
+                </div>
+              ) : (
+                ""
+              )}
+
+              {(props.log && props.log.token) || props.loggedInUser ? (
+                <div className="logout">
+                  <button onClick={handleSignOut}>Sign out</button>
+                  <img
+                    className="logout-sign"
+                    src={logout}
+                    alt="person logged"
+                  />
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
           </ul>
         </nav>
-      </div>
-      <div className="up-login-logOut">
-        {props.log && props.log.message === "Authorization successful" ? (
-          <div className="logout">
-            <img className="personLogIn" src={login} alt="person logged" />
-            {/* <p>Welcome</p> */}
-          </div>
-        ) : (
-          ""
-        )}
-
-        {props.log && props.log.message === "Authorization successful" ? (
-          <div className="logout">
-            <button onClick={handleSignOut}>Sign out</button>
-            <img className="logout-sign" src={logout} alt="person logged" />
-          </div>
-        ) : (
-          ""
-        )}
-        {props.loggedInUser ? (
-          <div className="logout">
-            <img className="personLogIn" src={login} alt="person logged" />
-            {/* <p>Welcome</p> */}
-          </div>
-        ) : (
-          ""
-        )}
-        {props.loggedInUser ? (
-          <div className="logout">
-            <button onClick={handleSignOut}>Sign out</button>
-            <img className="logout-sign" src={logout} alt="person logged" />
-          </div>
-        ) : (
-          ""
-        )}
       </div>
     </header>
   );
