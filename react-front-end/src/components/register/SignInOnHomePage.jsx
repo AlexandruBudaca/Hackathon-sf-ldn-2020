@@ -30,12 +30,12 @@ const SignInHomePage = (props) => {
       .then((res) => res.json())
       .then((data) => {
         localStorage.setItem("auth", JSON.stringify(data));
-        if (data.message === "Authorization successful") {
+        if (data.token) {
           props.history.push("/opportunities/");
         } else {
           alert("The password or email is not valid!");
         }
-        if (data.message === "Authorization successful") {
+        if (data.token) {
           props.setLoggedInUser(!props.loggedInUser);
         }
       });
