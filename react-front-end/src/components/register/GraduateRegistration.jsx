@@ -39,8 +39,8 @@ const GraduateRegistration = () => {
     if (graduate.password !== graduate.password2) {
       alert("Passwords do not match!");
     }
-    if (graduate.password.length < 4) {
-      return alert("password should have at least 4 symbols");
+    if (graduate.password.length < 6) {
+      return alert("password should have at least 6 symbols");
     }
 
     // Creating JSON data for POST request to DB

@@ -11,9 +11,9 @@ bio, occupation, img.
 */
 const CompanyRegistration = () => {
   const [companyReg, setCompanyReg] = useState({
-companyName”: “Minko”,
-“companyEmail”: “minko@company.com”,
-“companyPassword”: “123456"
+    companyName: "",
+    companyEmail: "",
+    companyPassword: "",
   });
   // const [confirmPassword, setConfirmPassword] = useState("");
   const [companyCreated, setCompanyCreated] = useState(false);
@@ -30,10 +30,18 @@ companyName”: “Minko”,
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event.target.value);
-    //Email validation
+    if (!companyReg.companyEmail.includes("@")) {
+      return alert("Please enter Valid email");
+    }
+    // if (companyReg.password !== graduate.password2) {
+    //   alert("Passwords do not match!");
+    // }
+    if (companyReg.password.length < 6) {
+      return alert("password should have at least 6 symbols");
+    }
+    console.log(companyReg);
 
-    fetch(`https://ancient-hamlet-95801.herokuapp.com/api/users/signup`, {
+    fetch(`https://ancient-hamlet-95801.herokuapp.com/api/companies/signup`, {
       method: "POST",
       body: JSON.stringify(companyReg),
       headers: { "Content-Type": "application/json" },
@@ -43,89 +51,78 @@ companyName”: “Minko”,
   return (
     <section className="companiesSection">
       <Separator category={"Company Registration"} />
-      {/* {companyCreated?(
+      {companyCreated ? (
         <div className="singUpBack">
           Your company account was created!
           <Link to="/" className="backBtnSignUp">
             Back
           </Link>
         </div>
-      ) : ( */}
-      <div>
-        <section className="mainRegister">
-          <Link to="/GraduateRegistration" className="backBtnSignUp">
-            Register as a student?
-          </Link>
-          <div className="div-form-graduates">
-            <div className="div-form">
-              <form onSubmit={handleSubmit}>
-                <ul>
-                  <li>
-                    <label>
-                      Company Name
-                      <input
-                        className="select"
-                        name="firstName"
-                        onChange={handleChange}
-                        required
-                      ></input>
-                    </label>
-                  </li>
-                  <li>
-                    <label>
-                      Company description
-                      <input
-                        className="select"
-                        name="lastName"
-                        onChange={handleChange}
-                        required
-                      ></input>
-                    </label>
-                  </li>
-                  <li>
-                    <label>
-                      Company email:
-                      <input
-                        className="select"
-                        name="companyEmail"
-                        onChange={handleChange}
-                        required
-                      ></input>
-                    </label>
-                  </li>
-                  <li>
-                    <label>
-                      Password:
-                      <input
-                        className="select"
-                        name="password"
-                        onChange={handleChange}
-                        type="password"
-                        required
-                      ></input>
-                    </label>
-                  </li>
-                  <li>
-                    <label>
-                      Confirm Password:
-                      <input
-                        className="select"
-                        name="password2"
-                        type="password"
-                        onChange={handleChange}
-                        // onChange={confirmPasswordValidation}
-                        required
-                      ></input>
-                    </label>
-                  </li>
-                </ul>
-                <button>Register</button>
-              </form>
+      ) : (
+        <div>
+          <section className="mainRegister">
+            <Link to="/GraduateRegistration" className="backBtnSignUp">
+              Register as a student?
+            </Link>
+            <div className="div-form-graduates">
+              <div className="div-form">
+                <form onSubmit={handleSubmit}>
+                  <ul>
+                    <li>
+                      <label>
+                        Company Name
+                        <input
+                          className="select"
+                          name="companyName"
+                          onChange={handleChange}
+                          required
+                        ></input>
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        Company email:
+                        <input
+                          className="select"
+                          name="companyEmail"
+                          onChange={handleChange}
+                          required
+                        ></input>
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        Password:
+                        <input
+                          className="select"
+                          name="companyPassword"
+                          onChange={handleChange}
+                          type="password"
+                          required
+                        ></input>
+                      </label>
+                    </li>
+                    {/* <li>
+                      <label>
+                        Confirm Password:
+                        <input
+                          className="select"
+                          name="password2"
+                          type="password"
+                          onChange={handleChange}
+                          // onChange={confirmPasswordValidation}
+                          required
+                        ></input>
+                      </label>
+                    </li> */}
+                  </ul>
+                  <button>Register</button>
+                </form>
+              </div>
             </div>
-          </div>
-        </section>
-      </div>
-      )
+          </section>
+        </div>
+      )}
     </section>
   );
 };
