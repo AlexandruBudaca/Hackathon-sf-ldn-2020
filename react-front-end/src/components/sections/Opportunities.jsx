@@ -37,12 +37,13 @@ const ListOfOpportunities = () => {
 
   // this filter by Location and sets in opportunities state
   const filterLoc = (event) => {
-    const flteredByLocation = opportunities.filter((opp) =>
-      opp.location.toLowerCase().includes(event.target.value.toLowerCase())
-    );
-    setOpportunities(flteredByLocation);
+    if (event.target.value != null) {
+      const flteredByLocation = opportunities.filter((opp) =>
+        opp.location.toLowerCase().includes(event.target.value.toLowerCase())
+      );
+      setOpportunities(flteredByLocation);
+    }
   };
-
   async function resetFilters() {
     const res = await fetch(
       "https://ancient-hamlet-95801.herokuapp.com/api/opp"
@@ -68,6 +69,9 @@ const ListOfOpportunities = () => {
         </select>
 
         <select className="col-3" id="2" name="location" onChange={filterLoc}>
+          <option onChange={filterLoc} value={null}>
+            show all
+          </option>
           <option onChange={filterLoc} value="London">
             London
           </option>

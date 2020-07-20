@@ -22,8 +22,8 @@ const CompanyRegistration = () => {
     Leadership: "Tell me",
     Size: "Tell me",
     about: "a long text here.....",
-    video: "https://www.youtube.com/watch?v=MGuehquIp8g"
-  })
+    video: "https://www.youtube.com/watch?v=MGuehquIp8g",
+  });
   // const [confirmPassword, setConfirmPassword] = useState("");
   const [companyCreated, setCompanyCreated] = useState(false);
 
@@ -38,11 +38,10 @@ const CompanyRegistration = () => {
     setCompanyReg(newCompany);
   };
   const handleSubmit = (event) => {
-  
     event.preventDefault();
-    console.log(event.target.value)
+    console.log(event.target.value);
     //Email validation
-    
+
     fetch(`https://ancient-hamlet-95801.herokuapp.com/api/users/signup`, {
       method: "POST",
       body: JSON.stringify(companyReg),
@@ -61,81 +60,80 @@ const CompanyRegistration = () => {
           </Link>
         </div>
       ) : ( */}
-        <div>
-          <section className="mainRegister">
+      <div>
+        <section className="mainRegister">
           <Link to="/GraduateRegistration" className="backBtnSignUp">
             Register as a student?
           </Link>
-            <div className="div-form-graduates">
-                
-              <div className="div-form">
-                <form onSubmit={handleSubmit}>
-                  <ul>
-                    <li>
-                      <label>
-                        First name:
-                        <input
-                          className="select"
-                          name="firstName"
-                          onChange={handleChange}
-                          required
-                        ></input>
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        Last name:
-                        <input
-                          className="select"
-                          name="lastName"
-                          onChange={handleChange}
-                          required
-                        ></input>
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        Email:
-                        <input
-                          className="select"
-                          name="email"
-                          onChange={handleChange}
-                          required
-                        ></input>
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        Password:
-                        <input
-                          className="select"
-                          name="password"
-                          onChange={handleChange}
-                          type="password"
-                          required
-                        ></input>
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        Confirm Password:
-                        <input
-                          className="select"
-                          name="password2"
-                          type="password"
-                          onChange={handleChange}
-                          // onChange={confirmPasswordValidation}
-                          required
-                        ></input>
-                      </label>
-                    </li>
-                  </ul>
-                  <button>Register</button>
-                </form>
-              </div>
+          <div className="div-form-graduates">
+            <div className="div-form">
+              <form onSubmit={handleSubmit}>
+                <ul>
+                  <li>
+                    <label>
+                      Company Name
+                      <input
+                        className="select"
+                        name="firstName"
+                        onChange={handleChange}
+                        required
+                      ></input>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      Company description
+                      <input
+                        className="select"
+                        name="lastName"
+                        onChange={handleChange}
+                        required
+                      ></input>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      Email:
+                      <input
+                        className="select"
+                        name="email"
+                        onChange={handleChange}
+                        required
+                      ></input>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      Password:
+                      <input
+                        className="select"
+                        name="password"
+                        onChange={handleChange}
+                        type="password"
+                        required
+                      ></input>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      Confirm Password:
+                      <input
+                        className="select"
+                        name="password2"
+                        type="password"
+                        onChange={handleChange}
+                        // onChange={confirmPasswordValidation}
+                        required
+                      ></input>
+                    </label>
+                  </li>
+                </ul>
+                <button>Register</button>
+              </form>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
+      </div>
       )
     </section>
   );
