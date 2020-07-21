@@ -90,17 +90,17 @@
 
 .companyLogo {
   width: 12%;
-  padding-right:15px;
+  padding-right: 15px;
 }
-.round{
-  width:8vw;
-  height:8vw;
+.round {
+  width: 8vw;
+  height: 8vw;
   border-radius: 50%;
   background-size: cover;
 }
-.nearLogo{
-  padding-left:25px;
-  padding-right:25px;
+.nearLogo {
+  padding-left: 25px;
+  padding-right: 25px;
   justify-content: flex-start;
 }
 .oppColumn {
@@ -148,24 +148,23 @@
 
 .oppColumnApply button {
   margin-top: 30px;
-  background-color: #2D9CDB;
+  background-color: #2d9cdb;
   width: 80px;
   height: 25px;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #cccccc;
   box-sizing: border-box;
   border-radius: 4px;
   font-size: 16px;
   line-height: 21px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-top: 40%;
   text-align: center;
   cursor: pointer;
 }
 
 .oppColumnApply button:hover {
-  color: #2D9CDB;
-  background-color: #FFF;
-
+  color: #2d9cdb;
+  background-color: #fff;
 }
 
 /*Opportunities*/
@@ -180,7 +179,10 @@
   height: auto;
   object-fit: cover;
 }
-
+.COLUMN {
+  display: flex;
+  flex-direction: column;
+}
 .introtext {
   /* Envision the day-to-day requirements of your future career */
   font-family: Open Sans;
