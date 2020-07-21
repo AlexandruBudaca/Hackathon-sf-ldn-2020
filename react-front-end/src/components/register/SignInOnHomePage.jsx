@@ -54,9 +54,7 @@ const SignInHomePage = (props) => {
               name="email"
               onChange={handleChange}
               required
-              data-tip="must include @ symbol"
             ></input>
-            <ReactTooltip />
           </div>
           <div className="formline">
             <label>Password </label>
@@ -65,9 +63,8 @@ const SignInHomePage = (props) => {
               name="password"
               onChange={handleChange}
               required
-              data-tip="min. 6 symbols"
             ></input>
-            <ReactTooltip />
+
             <button
               disabled={
                 (props.log &&
