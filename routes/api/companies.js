@@ -8,14 +8,14 @@ const secretKey = require("../../config/keys").JWT_KEY;
 
 //GET api/companies
 router.get("/", (req, res) => {
-  Company.find().then((compaines) => res.json(compaines));
+  Company.find().then((companies) => res.json(companies));
 });
 
 //making POST api/companies/signup
 
 router.post("/signup", (req, res)=> {
   Company.find({
-    companyEmail: req.body.companyEmail,
+    email: req.body.email,
   })
     .exec()
     .then((data) => {
@@ -26,14 +26,14 @@ router.post("/signup", (req, res)=> {
         });
       } else {
         //    Store hash in your password DB.
-        bcrypt.hash(req.body.companyPassword, 10, (err, hash)=> {
+        bcrypt.hash(req.body.password, 10, (err, hash)=> {
           if (err) {
             res.sendStatus(500).json({ error: "err" });
           } else {
             const newCompany = new Company({
-              companyName: req.body.companyName,
-              companyEmail: req.body.companyEmail,
-              companyPassword: hash,
+              name: req.body.name,
+              email: req.body.email,
+              password: hash,
               date: Date.now(),
             });
             newCompany
@@ -60,7 +60,7 @@ router.post("/signup", (req, res)=> {
 router.post("/login", (req, res) => {
 
   
-  Company.find({ companyEmail: req.body.companyEmail })
+  Company.find({ email: req.body.email })
     .exec()
     .then((company) => {
       if (company.length < 1) {
@@ -68,7 +68,7 @@ router.post("/login", (req, res) => {
           message: "Authorization failed",
         });
       }
-      bcrypt.compare(req.body.companyPassword, company[0].companyPassword, (err, result) => {
+      bcrypt.compare(req.body.password, company[0].password, (err, result) => {
         if (err) {
           return res.status(401).json({
             message: "Authorization failed",
@@ -77,8 +77,8 @@ router.post("/login", (req, res) => {
         if (result) {
           let token = jwt.sign(
             {
-              companyEmail: company[0].email,
-              compnayId: company[0]._id,
+              email: company[0].email,
+              userId: company[0]._id,
             },
             secretKey,
             {
@@ -86,7 +86,7 @@ router.post("/login", (req, res) => {
             }
           );
           return res.status(200).json({
-            companyName: company[0].companyName,
+            name: company[0].name,
             message: "Company Authorization successful",
             token: token,
           });
