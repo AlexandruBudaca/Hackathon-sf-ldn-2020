@@ -114,24 +114,20 @@ const ListOfOpportunities = () => {
         let srcRole;
         if (opportunity.role === "Front-end Developer") {
           srcRole = frontend;
-        }
-        if (opportunity.role === "Back-end Developer") {
+        } else if (opportunity.role === "Back-end Developer") {
           srcRole = backend;
-        }
-        if (opportunity.role === "Programmer") {
+        } else if (opportunity.role === "Programmer") {
           srcRole = programmer;
-        }
-        if (opportunity.role === "UI/UX Designer") {
+        } else if (opportunity.role === "UI/UX Designer") {
           srcRole = designer;
-        }
-        if (opportunity.role === "Solution Architect") {
+        } else if (opportunity.role === "Solution Architect") {
           srcRole = solarArchitect;
-        }
-        if (opportunity.role === "Tester") {
+        } else if (opportunity.role === "Tester") {
           srcRole = tester;
-        }
-        if (opportunity.role === "Project Manager") {
+        } else if (opportunity.role === "Project Manager") {
           srcRole = projectMannager;
+        } else {
+          srcRole = solarArchitect;
         }
 
         return (
