@@ -8,17 +8,16 @@ import { withRouter } from "react-router-dom";
 
 function Nav(props) {
   useEffect(() => {
-    const logged = JSON.parse(localStorage.getItem("auth"));
+    const logged = JSON.parse(sessionStorage.getItem("authorization"));
     props.setLog(logged);
   }, []);
 
   const handleSignOut = () => {
-    if (props.loggedInUser) {
-      props.setLoggedInUser(!props.loggedInUser);
-    }
-    props.setLog("");
+    props.setLoggedInUser(!props.loggedInUser);
+    props.setSignOutComp(!props.signOutComp);
+
     props.history.push("/");
-    localStorage.clear();
+    sessionStorage.clear();
   };
 
   return (
@@ -32,57 +31,53 @@ function Nav(props) {
             <Link to="/" className="navStyle">
               <li className="simpleNavList">Home</li>
             </Link>
-            <Link to="/listOfCompanies" className="navStyle">
-              {" "}
-              <li className="simpleNavList">Companies</li>
-            </Link>
             {/* Hide/Show Opportunities Page when graduates log in*/}
-            {(props.log && props.log.token) || props.loggedInUser ? (
+            {props.loggedInUser ? (
               <Link to="/opportunities" className="navStyle">
                 <li className="simpleNavList"> Opportunities</li>
               </Link>
             ) : (
               ""
             )}
-            {(props.log && props.log.token) || props.loggedInUser ? (
-              ""
-            ) : (
-              <Link to="/Graduates" className="navStyle">
-                <li className="simpleNavList">Graduates</li>
+            <Link to="/listOfCompanies" className="navStyle">
+              <li className="simpleNavList">Companies</li>
+            </Link>
+
+            <Link to="/Graduates" className="navStyle">
+              <li className="simpleNavList">Graduates</li>
+            </Link>
+
+            {props.logSession &&
+            props.logSession.message === "Company Authorization successful" ? (
+              <Link to="/NewOpportunityForm" className="navStyle">
+                <li className="simpleNavList">Add New Opportunity</li>
               </Link>
-            )}
-
-            {/* <Link to="/tips" className="navStyle">
-              <li className="simpleNavList">Tips & FAQ</li>
-            </Link> */}
-
-            {/* <Link to="/signIn" className="navStyle">
-              <li className="simpleNavList">Sign in</li>
-            </Link> */}
-
-            {(props.log && props.log.token) || props.loggedInUser ? (
-              ""
-            ) : (
+            ) : null}
+            {console.log(props.log)}
+            {props.logSession && props.log ? null : (
               <Link to="/signIn" className="navStyle">
                 <li className="simpleNavList">Sign in</li>
               </Link>
             )}
             {/* Show Sign out svg when graduates log in*/}
+
             <div className="up-login-logOut">
-              {(props.log && props.log.token) || props.loggedInUser ? (
+              {props.loggedInUser || props.signOutComp ? (
                 <div className="logout">
                   <img
                     className="personLogIn"
                     src={login}
                     alt="person logged"
                   />
-                  {/* <p>Welcome</p> */}
+                  {props.logSession.name
+                    ? props.logSession.name
+                    : props.logSession.firstName}
                 </div>
               ) : (
                 ""
               )}
 
-              {(props.log && props.log.token) || props.loggedInUser ? (
+              {props.signOutComp || props.loggedInUser ? (
                 <div className="logout">
                   <button onClick={handleSignOut}>Sign out</button>
                   <img
@@ -94,6 +89,9 @@ function Nav(props) {
               ) : (
                 ""
               )}
+              {/* <Link to="/tips" className="navStyle">
+              <li className="simpleNavList">Tips & FAQ</li>
+            </Link> */}
             </div>
           </ul>
         </nav>

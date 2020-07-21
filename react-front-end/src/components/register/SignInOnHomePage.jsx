@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
-import ReactTooltip from "react-tooltip";
+
 const SignInHomePage = (props) => {
   const [username, setUsername] = useState({
+    email: "",
+    password: "",
+  });
+  const [company, setCompany] = useState({
     email: "",
     password: "",
   });
@@ -12,32 +16,56 @@ const SignInHomePage = (props) => {
       ...username,
       [e.target.name]: e.target.value,
     };
+    const newCompany = {
+      ...company,
+      [e.target.name]: e.target.value,
+    };
     setUsername(newUsername);
+    setCompany(newCompany);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    fetch("https://ancient-hamlet-95801.herokuapp.com/api/users/login", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer`,
-      },
-      body: JSON.stringify(username),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        localStorage.setItem("auth", JSON.stringify(data));
-        if (data.token) {
-          props.history.push("/opportunities/");
-        } else {
-          alert("The password or email is not valid!");
-        }
-        if (data.token) {
-          props.setLoggedInUser(!props.loggedInUser);
-        }
+    Promise.all([
+      fetch("https://ancient-hamlet-95801.herokuapp.com/api/users/login", {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer`,
+        },
+        body: JSON.stringify(username),
+      }).then((res) => res.json()),
+      fetch("https://ancient-hamlet-95801.herokuapp.com/api/companies/login", {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer`,
+        },
+        body: JSON.stringify(username),
+      }).then((res) => res.json()),
+    ])
+      .then((res) => {
+        const res1 = res[0];
+        const res2 = res[1];
+        console.log(res1, res2);
+        res.map((res) => {
+          if (res.message.includes("successful")) {
+            sessionStorage.setItem("authorization", JSON.stringify(res));
+            props.setLogSession(res);
+          }
+          if (res.message.includes("Graduate")) {
+            props.history.push("/opportunities/");
+            props.setLoggedInUser(!props.loggedInUser);
+          }
+          if (res.message.includes("Company")) {
+            props.setSignOutComp(!props.signOutComp);
+          }
+        });
+      })
+      .catch((err) => {
+        console.log(err);
       });
     e.target.reset();
   };

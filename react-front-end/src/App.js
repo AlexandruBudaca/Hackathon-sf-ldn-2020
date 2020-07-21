@@ -18,9 +18,11 @@ import GraduateRegistration from "./components/register/GraduateRegistration";
 import CompanyRegistration from "./components/register/CompanyRegistration";
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(false);
-  const [log, setLog] = useState(() => {
-    JSON.parse(localStorage.getItem("auth"));
-  });
+  const [log, setLog] = useState(
+    JSON.parse(sessionStorage.getItem("authorization"))
+  );
+  const [logSession, setLogSession] = useState({});
+  const [signOutComp, setSignOutComp] = useState(false);
   return (
     <Router>
       <div className="App">
@@ -29,6 +31,10 @@ function App() {
           setLoggedInUser={setLoggedInUser}
           setLog={setLog}
           log={log}
+          signOutComp={signOutComp}
+          setSignOutComp={setSignOutComp}
+          logSession={logSession}
+          setLogSession={setLogSession}
         />
         <Switch>
           <Route
@@ -40,6 +46,10 @@ function App() {
                 loggedInUser={loggedInUser}
                 setLog={setLog}
                 log={log}
+                signOutComp={signOutComp}
+                setSignOutComp={setSignOutComp}
+                logSession={logSession}
+                setLogSession={setLogSession}
               />
             )}
           />
