@@ -69,6 +69,7 @@ const ListOfOpportunities = () => {
   return (
     <section className="opportunitySection">
       <Separator category="Opportunities" />
+      <h1 className="filters">Filter opportunities</h1>
       <div className="col-12 filters">
         <select onChange={filterRole} className="col-3">
           <option onChange={filterRole} value="front-end">
