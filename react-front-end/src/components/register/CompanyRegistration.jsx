@@ -37,7 +37,7 @@ const CompanyRegistration = () => {
     // if (companyReg.password !== graduate.password2) {
     //   alert("Passwords do not match!");
     // }
-    if (companyReg.password.length < 6) {
+    if (companyReg.companyPassword.length < 6) {
       return alert("password should have at least 6 symbols");
     }
     console.log(companyReg);

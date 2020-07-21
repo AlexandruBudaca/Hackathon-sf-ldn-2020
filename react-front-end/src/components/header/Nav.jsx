@@ -63,8 +63,8 @@ function Nav(props) {
             {(props.log && props.log.token) || props.loggedInUser ? (
               ""
             ) : (
-              <Link to="/signUp" className="navStyle">
-                <li className="simpleNavList">Sign up</li>
+              <Link to="/signIn" className="navStyle">
+                <li className="simpleNavList">Sign in</li>
               </Link>
             )}
             {/* Show Sign out svg when graduates log in*/}
