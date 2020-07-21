@@ -12,13 +12,16 @@ const footer = () => {
         </div>
         <div className="rightFooterBlock col-3 md-col-3 sm-col-6">
           <Link className="footMenu" to="/signUp">
-            {" "}
             Graduate registration
           </Link>
-          <p className="footMenu">Company registration</p>
-        </div> <p className="copyright col-12">Code For Good Hackaton, Copyright July 2020</p>
+          <Link className="footMenu" to="/CompanyRegistration">
+            Company registration
+          </Link>
+        </div>
+        <p className="copyright col-12">
+          Code For Good Hackaton, Copyright July 2020
+        </p>
       </div>
-     
     </div>
   );
 };
