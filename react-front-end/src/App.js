@@ -50,10 +50,27 @@ function App() {
           <Route path="/opportunity" exact component={Opportunity} />
           <Route path="/Opportunities" exact component={ListOfOpportunities} />
           <Route path="/tips" exact component={Tips} />
-          <Route path="/signIn" exact component={SignIn} />
+          <Route
+            path="/signIn"
+            exact
+            component={() => (
+              <SignIn
+                setLoggedInUser={setLoggedInUser}
+                loggedInUser={loggedInUser}
+              />
+            )}
+          />
           <Route path="/signUp" exact component={GraduateRegistration} />
-          <Route path="/GraduateRegistration" exact component={GraduateRegistration} />
-          <Route path="/CompanyRegistration" exact component={CompanyRegistration} />
+          <Route
+            path="/GraduateRegistration"
+            exact
+            component={GraduateRegistration}
+          />
+          <Route
+            path="/CompanyRegistration"
+            exact
+            component={CompanyRegistration}
+          />
           <Route
             path="/NewOpportunityForm"
             exact

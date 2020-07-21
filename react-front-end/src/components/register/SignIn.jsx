@@ -1,84 +1,94 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./index.css";
-// import './index.css'
-import imgSrc from "../../images/cyf_brand.png";
 
-class SignIn extends Component {
-  constructor() {
-    super();
-    this.state = {
-      email: "",
-      password: "",
-      form: [],
+const SignIn = (props) => {
+  const [username, setUsername] = useState({
+    email: "",
+    password: "",
+  });
+  const handleChange = (e) => {
+    const newUsername = {
+      ...username,
+      [e.target.name]: e.target.value,
     };
-  }
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
+    setUsername(newUsername);
   };
-  handleSubmit = (event) => {
-    const { email, password } = this.state;
-    //Data Validation
-    if (!email.includes("@")) {
-      return alert("Please enter Valid email");
-    }
-    //Creating JSON form to send to DB
-    this.setState({
-      form: [{ email, password }],
-    });
-    event.preventDefault();
-    //Post Request
-    fetch(`#`, {
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fetch("https://ancient-hamlet-95801.herokuapp.com/api/users/login", {
       method: "POST",
-      body: JSON.stringify(this.state.form),
-      headers: { "Content-Type": "application/json" },
-    }).then((res) => {
-      //Clearing Form
-      this.setState({
-        email: "",
-        password: "",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer`,
+      },
+      body: JSON.stringify(username),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        localStorage.setItem("auth", JSON.stringify(data));
+        if (data.token) {
+          props.history.push("/opportunities/");
+        } else {
+          alert("The password or email is not valid!");
+        }
+        if (data.token) {
+          props.setLoggedInUser(!props.loggedInUser);
+        }
       });
-    });
+    e.target.reset();
   };
-  render() {
-    return (
-      <section className="mainRegister">
 
-        <div className="imgBlk">
-          <img src={imgSrc} alt="imgBlk" />
+  return (
+    <div className="mainRegister">
+      <form className="signInPage" onSubmit={handleSubmit}>
+        <div className="div-sign-in-Page">
+          <h2>Sign In</h2>
+          <div className="div-sign-in">
+            <label>Email </label>
+            <input
+              type="text"
+              name="email"
+              onChange={handleChange}
+              required
+            ></input>
+          </div>
+          <div className="div-sign-in">
+            <label>Password </label>
+            <input
+              type="password"
+              name="password"
+              onChange={handleChange}
+              required
+            ></input>
+
+            <button
+              disabled={
+                (props.log && props.log.token) || props.loggedInUser
+                  ? true
+                  : false
+              }
+              className="buttonSignInHome"
+            >
+              Sign In
+            </button>
+          </div>{" "}
         </div>
+      </form>
+      <div className="div-sign-in-text">
+        <p className="">
+          If you don’t have an account please register on the link below
+        </p>
+        <Link className="link-sign-up" to="/signUp">
+          Sign up here
+        </Link>
+      </div>
+    </div>
+  );
+};
 
-        <h3>Sign In</h3>
-        <form onSubmit={this.handleSubmit} className="registerForm">
-          <ul>
-            <li>
-              <label>
-                <input
-                  name="email"
-                  type="text"
-                  placeholder="Email Address"
-                  onChange={this.handleChange}
-                />
-              </label>
-            </li>
-            <li>
-              <label>
-                <input
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                  onChange={this.handleChange}
-                />
-              </label>
-            </li>
-          </ul>
-          <button className="btn" type="submit">
-            Log In
-          </button>
-        </form>
-      </section>
-    );
-  }
-}
-export default SignIn;
+export default withRouter(SignIn);

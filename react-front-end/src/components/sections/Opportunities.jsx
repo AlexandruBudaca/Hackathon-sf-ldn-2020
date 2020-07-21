@@ -131,7 +131,6 @@ const ListOfOpportunities = () => {
           <article className="opp_article row" key={opportunity._id}>
             <img className="companyLogo col-1" src={srcRole} alt="" />
 
-            {console.log(opportunity)}
             <div className="oppColumn col-4">
               <Link className="job-link" to="/Opportunity">
                 <h2>{opportunity.role}</h2>
