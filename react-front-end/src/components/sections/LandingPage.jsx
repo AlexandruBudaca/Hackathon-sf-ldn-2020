@@ -4,7 +4,15 @@ import SignInHomePage from "../register/SignInOnHomePage";
 import seethefuture from "../../../src/images/seefuture (1).gif";
 import studentpic from "../../../src/images/students.jpg";
 import "./index.css";
-const LandingPage = ({ setLoggedInUser, loggedInUser, setLog, log }) => {
+const LandingPage = ({
+  setLoggedInUser,
+  loggedInUser,
+  setLog,
+  log,
+  signOutComp,
+  setSignOutComp,
+  setLogSession,
+}) => {
   return (
     <main className="main">
       <div className="row landingSecondContainer">
@@ -29,6 +37,9 @@ const LandingPage = ({ setLoggedInUser, loggedInUser, setLog, log }) => {
           loggedInUser={loggedInUser}
           setLog={setLog}
           log={log}
+          signOutComp={signOutComp}
+          setSignOutComp={setSignOutComp}
+          setLogSession={setLogSession}
         />
 
         <img

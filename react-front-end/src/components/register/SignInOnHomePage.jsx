@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
-import ReactTooltip from "react-tooltip";
+
 const SignInHomePage = (props) => {
   const [username, setUsername] = useState({
     email: "",
     password: "",
   });
   const [company, setCompany] = useState({
-    companyEmail: "",
-    companyPassword: "",
+    email: "",
+    password: "",
   });
   const handleChange = (e) => {
     const newUsername = {
@@ -26,7 +26,6 @@ const SignInHomePage = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(company);
     Promise.all([
       fetch("https://ancient-hamlet-95801.herokuapp.com/api/users/login", {
         method: "POST",
@@ -47,22 +46,27 @@ const SignInHomePage = (props) => {
         body: JSON.stringify(username),
       }).then((res) => res.json()),
     ])
-      .then((res) => console.log(res))
+      .then((res) => {
+        const res1 = res[0];
+        const res2 = res[1];
+        console.log(res1, res2);
+        res.map((res) => {
+          if (res.message.includes("successful")) {
+            sessionStorage.setItem("authorization", JSON.stringify(res));
+            props.setLogSession(res);
+          }
+          if (res.message.includes("Graduate")) {
+            props.history.push("/opportunities/");
+            props.setLoggedInUser(!props.loggedInUser);
+          }
+          if (res.message.includes("Company")) {
+            props.setSignOutComp(!props.signOutComp);
+          }
+        });
+      })
       .catch((err) => {
         console.log(err);
       });
-
-    // .then((data) => {
-    //   localStorage.setItem("auth", JSON.stringify(data));
-    //   if (data.token) {
-    //     props.history.push("/opportunities/");
-    //   } else {
-    //     alert("The password or email is not valid!");
-    //   }
-    //   if (data.token) {
-    //     props.setLoggedInUser(!props.loggedInUser);
-    //   }
-    // });
     e.target.reset();
   };
 
@@ -76,7 +80,6 @@ const SignInHomePage = (props) => {
             <input
               type="text"
               name="email"
-              name="companyEmail"
               onChange={handleChange}
               required
             ></input>
@@ -86,7 +89,6 @@ const SignInHomePage = (props) => {
             <input
               type="password"
               name="password"
-              name="companyPassword"
               onChange={handleChange}
               required
             ></input>
