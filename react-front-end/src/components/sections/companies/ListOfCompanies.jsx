@@ -16,7 +16,7 @@ const ListOfCompanies = () => {
           <article className="opp_article row" key="id">
             <img className="companyLogo col-1" src={Sample} alt="" />
 
-            <div className="col-5 COLUMN">
+            <div className="col-2 COLUMN">
               <span className="bold ">Company Name: </span>
               <span>{company.company}</span>
             </div>
