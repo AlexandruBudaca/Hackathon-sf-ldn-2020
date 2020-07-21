@@ -13,7 +13,7 @@ import solarArchitect from "../../images/role-solarchitect.gif";
 
 const ListOfOpportunities = () => {
   const [opportunities, setOpportunities] = useState([]);
-
+  const [defaultOpportunities, setDefaultOpportunities] = useState([]);
   useEffect(() => {
     async function fetchData() {
       try {
@@ -22,6 +22,7 @@ const ListOfOpportunities = () => {
         );
         const json = await res.json();
         setOpportunities(json);
+        setDefaultOpportunities(json);
       } catch (error) {
         console.error(error.message);
       }
@@ -34,7 +35,8 @@ const ListOfOpportunities = () => {
   }, []);
   // this filter by role and sets opportunities in state
   const filterRole = (event) => {
-    if (event.target.value != null) {
+    setOpportunities(defaultOpportunities);
+    if (event.target.value != null && opportunities === defaultOpportunities) {
       const flteredByRole = opportunities.filter((opp) =>
         opp.role.toLowerCase().includes(event.target.value.toLowerCase())
       );
@@ -44,7 +46,8 @@ const ListOfOpportunities = () => {
 
   // this filter by Location and sets in opportunities state
   const filterLoc = (event) => {
-    if (event.target.value != null) {
+    setOpportunities(defaultOpportunities);
+    if (event.target.value != null && opportunities === defaultOpportunities) {
       const flteredByLocation = opportunities.filter((opp) =>
         opp.location.toLowerCase().includes(event.target.value.toLowerCase())
       );
@@ -80,6 +83,10 @@ const ListOfOpportunities = () => {
           </option>
           <option onChange={filterRole} value="full-stack">
             full-stack
+          </option>
+
+          <option onChange={filterRole} value="UI/UX Designer">
+            UI/UX Designer
           </option>
         </select>
 
