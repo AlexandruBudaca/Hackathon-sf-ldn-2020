@@ -99,8 +99,7 @@ router.post("/login", (req, res) => {
           return res.status(200).json({
             firstName: user[0].firstName,
             lastName: user[0].lastName,
-            email:user[0].email,
-            message: "Authorization successful",
+            message: "Graduate Authorization successful",
             token: token,
           });
         }

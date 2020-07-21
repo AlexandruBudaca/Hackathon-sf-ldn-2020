@@ -87,9 +87,7 @@ router.post("/login", (req, res) => {
           );
           return res.status(200).json({
             companyName: company[0].companyName,
-
-            compnayEmail: company[0].companyEmail,
-            message: "Authorization successful",
+            message: "Company Authorization successful",
             token: token,
           });
         }
