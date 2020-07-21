@@ -83,9 +83,6 @@ const ListOfOpportunities = () => {
         </select>
 
         <select className="col-3" id="2" name="location" onChange={filterLoc}>
-          <option onChange={filterLoc} value={null}>
-            show all
-          </option>
           <option onChange={filterLoc} value="London">
             London
           </option>
