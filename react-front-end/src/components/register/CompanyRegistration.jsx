@@ -18,7 +18,11 @@ const CompanyRegistration = () => {
   });
   // const [confirmPassword, setConfirmPassword] = useState("");
   const [companyCreated, setCompanyCreated] = useState(false);
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
+  const handleChangeFormPasswordConfirmation = (event) => {
+    setPasswordConfirmation(event.target.value);
+  };
   // const confirmPasswordValidation = (event) => {
   //   setConfirmPassword(event.target.value);
   // };
@@ -34,9 +38,11 @@ const CompanyRegistration = () => {
     if (!companyReg.companyEmail.includes("@")) {
       return alert("Please enter Valid email");
     }
-    // if (companyReg.password !== graduate.password2) {
-    //   alert("Passwords do not match!");
-    // }
+    if (passwordConfirmation !== companyReg.companyPassword) {
+      alert("Passwords do not match!");
+    } else {
+      companyReg["companyPassword"] = passwordConfirmation;
+    }
     if (companyReg.companyPassword.length < 6) {
       return alert("password should have at least 6 symbols");
     }
@@ -107,19 +113,17 @@ const CompanyRegistration = () => {
                         <ReactTooltip />
                       </label>
                     </li>
-                    {/* <li>
+                    <li>
                       <label>
                         Confirm Password:
                         <input
                           className="select"
-                          name="password2"
                           type="password"
-                          onChange={handleChange}
-                          // onChange={confirmPasswordValidation}
+                          onChange={handleChangeFormPasswordConfirmation}
                           required
                         ></input>
                       </label>
-                    </li> */}
+                    </li>
                   </ul>
                   <button>Register</button>
                 </form>
@@ -131,6 +135,5 @@ const CompanyRegistration = () => {
     </section>
   );
 };
-// return<div>we recieved a lot of application from companies... and we are very busy sorting 5hem out. if we find you company is of interest to out students we will contact you soon</div>
-// }
+
 export default CompanyRegistration;

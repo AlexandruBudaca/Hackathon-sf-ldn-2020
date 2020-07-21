@@ -7,38 +7,62 @@ const SignInHomePage = (props) => {
     email: "",
     password: "",
   });
+  const [company, setCompany] = useState({
+    companyEmail: "",
+    companyPassword: "",
+  });
   const handleChange = (e) => {
     const newUsername = {
       ...username,
       [e.target.name]: e.target.value,
     };
+    const newCompany = {
+      ...company,
+      [e.target.name]: e.target.value,
+    };
     setUsername(newUsername);
+    setCompany(newCompany);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    fetch("https://ancient-hamlet-95801.herokuapp.com/api/users/login", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer`,
-      },
-      body: JSON.stringify(username),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        localStorage.setItem("auth", JSON.stringify(data));
-        if (data.token) {
-          props.history.push("/opportunities/");
-        } else {
-          alert("The password or email is not valid!");
-        }
-        if (data.token) {
-          props.setLoggedInUser(!props.loggedInUser);
-        }
+    console.log(company);
+    Promise.all([
+      fetch("https://ancient-hamlet-95801.herokuapp.com/api/users/login", {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer`,
+        },
+        body: JSON.stringify(username),
+      }).then((res) => res.json()),
+      fetch("https://ancient-hamlet-95801.herokuapp.com/api/companies/login", {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer`,
+        },
+        body: JSON.stringify(username),
+      }).then((res) => res.json()),
+    ])
+      .then((res) => console.log(res))
+      .catch((err) => {
+        console.log(err);
       });
+
+    // .then((data) => {
+    //   localStorage.setItem("auth", JSON.stringify(data));
+    //   if (data.token) {
+    //     props.history.push("/opportunities/");
+    //   } else {
+    //     alert("The password or email is not valid!");
+    //   }
+    //   if (data.token) {
+    //     props.setLoggedInUser(!props.loggedInUser);
+    //   }
+    // });
     e.target.reset();
   };
 
@@ -52,6 +76,7 @@ const SignInHomePage = (props) => {
             <input
               type="text"
               name="email"
+              name="companyEmail"
               onChange={handleChange}
               required
             ></input>
@@ -61,6 +86,7 @@ const SignInHomePage = (props) => {
             <input
               type="password"
               name="password"
+              name="companyPassword"
               onChange={handleChange}
               required
             ></input>
