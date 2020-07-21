@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Separator from "../Separator";
 import "./index.css";
 import { Link } from "react-router-dom";
+import ReactTooltip from "react-tooltip";
 // import './index.css'
 /* 
 Registration is a shorter home to fill for users to sign up 
@@ -87,7 +88,9 @@ const CompanyRegistration = () => {
                           name="companyEmail"
                           onChange={handleChange}
                           required
+                          data-tip="must include @ symbol"
                         ></input>
+                        <ReactTooltip />
                       </label>
                     </li>
                     <li>
@@ -99,7 +102,9 @@ const CompanyRegistration = () => {
                           onChange={handleChange}
                           type="password"
                           required
+                          data-tip="min. 6 symbols"
                         ></input>
+                        <ReactTooltip />
                       </label>
                     </li>
                     {/* <li>
