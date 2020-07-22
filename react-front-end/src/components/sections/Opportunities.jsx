@@ -14,6 +14,8 @@ import solarArchitect from "../../images/role-solarchitect.gif";
 const ListOfOpportunities = () => {
   const [opportunities, setOpportunities] = useState([]);
   const [defaultOpportunities, setDefaultOpportunities] = useState([]);
+  const [roleFilter,setRoleFilter]=useState(null);
+  const[locationFilter,setLocationFilter]=useState(null)
   useEffect(() => {
     async function fetchData() {
       try {
@@ -49,37 +51,42 @@ const ListOfOpportunities = () => {
   }, []);
   // this filter by role and sets opportunities
   const filterRole = (event) => {
-    setOpportunities(defaultOpportunities);
-    if (event.target.value != null && opportunities === defaultOpportunities) {
-      const flteredByRole = opportunities.filter((opp) =>
-        opp.role.toLowerCase().includes(event.target.value.toLowerCase())
-      );
-      setOpportunities(
-        flteredByRole.sort(
-          (a, b) =>
-            moment(a.date).format("DD-MM-YYYY") -
-            moment(b.date).format("DD-MM-YYYY")
-        )
-      );
+   
+    setRoleFilter(event.target.value)
+    
     }
-  };
+
 
   // this filter by Location and sets in opportunities state
   const filterLoc = (event) => {
-    setOpportunities(defaultOpportunities);
-    if (event.target.value != null && opportunities === defaultOpportunities) {
-      const flteredByLocation = opportunities.filter((opp) =>
-        opp.location.toLowerCase().includes(event.target.value.toLowerCase())
-      );
-      setOpportunities(
-        flteredByLocation.sort(
-          (a, b) =>
-            moment(a.date).format("DD-MM-YYYY") -
-            moment(b.date).format("DD-MM-YYYY")
-        )
-      );
-    }
+    setLocationFilter(event.target.value)
+   
   };
+  useEffect(()=>{
+    if (roleFilter) {
+    console.log('hellorole')
+    const flteredByRole = opportunities.filter((opp) =>
+      opp.role.toLowerCase().includes(roleFilter.toLowerCase())
+    );
+    setOpportunities(
+      flteredByRole.sort(
+        (a, b) =>
+          moment(a.date).format("DD-MM-YYYY") -
+          moment(b.date).format("DD-MM-YYYY")
+      ))}
+  if (locationFilter!= null && opportunities) {
+    console.log('helloloc')
+    const flteredByLocation = opportunities.filter((opp) =>
+      opp.location.toLowerCase().includes(locationFilter.toLowerCase())
+    );
+    setOpportunities(
+      flteredByLocation.sort(
+        (a, b) =>
+          moment(a.date).format("DD-MM-YYYY") -
+          moment(b.date).format("DD-MM-YYYY")
+      )
+    );}
+ },[locationFilter,roleFilter])
   async function resetFilters() {
     const res = await fetch(
       "https://ancient-hamlet-95801.herokuapp.com/api/opp"
@@ -94,8 +101,8 @@ const ListOfOpportunities = () => {
         )
         .reverse()
     );
-  }
-
+  
+        }
   return (
     <section className="opportunitySection">
       <Separator category="Opportunities" />
