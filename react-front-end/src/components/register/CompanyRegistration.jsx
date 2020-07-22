@@ -24,20 +24,7 @@ const CompanyRegistration = () => {
   const handleChangeFormPasswordConfirmation = (event) => {
     setPasswordConfirmation(event.target.value);
   };
-  useEffect(() => {
-    fetch("https://ancient-hamlet-95801.herokuapp.com/api/companies")
-      .then((res) => res.json())
-      .then((data) => setCompanyData(data));
-  });
-  let emailCompany;
-  const checkEmailInDatabase = () => {
-    companyData.find((data) => {
-      if (data.email === companyReg.email) {
-        emailCompany = data.email;
-      }
-    });
-    return emailCompany;
-  };
+
   const handleChange = (event) => {
     const newCompany = {
       ...companyReg,
@@ -58,17 +45,12 @@ const CompanyRegistration = () => {
     if (companyReg.password.length < 6) {
       return alert("password should have at least 6 symbols");
     }
-    checkEmailInDatabase();
-    emailCompany
-      ? alert("The email is already in the database!")
-      : fetch(
-          `https://ancient-hamlet-95801.herokuapp.com/api/companies/signup`,
-          {
-            method: "POST",
-            body: JSON.stringify(companyReg),
-            headers: { "Content-Type": "application/json" },
-          }
-        ).then(setCompanyCreated(!companyCreated));
+
+    fetch(`https://ancient-hamlet-95801.herokuapp.com/api/companies/signup`, {
+      method: "POST",
+      body: JSON.stringify(companyReg),
+      headers: { "Content-Type": "application/json" },
+    }).then(setCompanyCreated(!companyCreated));
     event.target.reset();
   };
 
