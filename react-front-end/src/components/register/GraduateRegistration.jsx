@@ -33,17 +33,17 @@ const GraduateRegistration = () => {
   };
   useEffect(() => {
     fetch("https://ancient-hamlet-95801.herokuapp.com/api/users")
-      .then((req) => req.json())
+      .then((res) => res.json())
       .then((data) => setDataUsers(data));
   });
-  let email;
+  let emailGraduate;
   const checkEmailInDatabase = () => {
     dataUsers.find((data) => {
       if (data.email === graduate.email) {
-        email = data.email;
+        emailGraduate = data.email;
       }
     });
-    return email;
+    return emailGraduate;
   };
 
   const handleSubmit = (event) => {
@@ -61,7 +61,7 @@ const GraduateRegistration = () => {
 
     // Creating JSON data for POST request to DB
     checkEmailInDatabase();
-    email
+    emailGraduate
       ? alert("The email is already in the database!")
       : fetch(`https://ancient-hamlet-95801.herokuapp.com/api/users/signup`, {
           method: "POST",

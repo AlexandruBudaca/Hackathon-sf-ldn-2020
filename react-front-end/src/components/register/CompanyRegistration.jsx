@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Separator from "../Separator";
 import "./index.css";
 import { Link } from "react-router-dom";
@@ -19,13 +19,25 @@ const CompanyRegistration = () => {
   // const [confirmPassword, setConfirmPassword] = useState("");
   const [companyCreated, setCompanyCreated] = useState(false);
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [companyData, setCompanyData] = useState([]);
 
   const handleChangeFormPasswordConfirmation = (event) => {
     setPasswordConfirmation(event.target.value);
   };
-  // const confirmPasswordValidation = (event) => {
-  //   setConfirmPassword(event.target.value);
-  // };
+  useEffect(() => {
+    fetch("https://ancient-hamlet-95801.herokuapp.com/api/companies")
+      .then((res) => res.json())
+      .then((data) => setCompanyData(data));
+  });
+  let emailCompany;
+  const checkEmailInDatabase = () => {
+    companyData.find((data) => {
+      if (data.email === companyReg.email) {
+        emailCompany = data.email;
+      }
+    });
+    return emailCompany;
+  };
   const handleChange = (event) => {
     const newCompany = {
       ...companyReg,
@@ -46,14 +58,17 @@ const CompanyRegistration = () => {
     if (companyReg.password.length < 6) {
       return alert("password should have at least 6 symbols");
     }
-
-    if (companyReg) {
-      fetch(`https://ancient-hamlet-95801.herokuapp.com/api/companies/signup`, {
-        method: "POST",
-        body: JSON.stringify(companyReg),
-        headers: { "Content-Type": "application/json" },
-      }).then(setCompanyCreated(!companyCreated));
-    }
+    checkEmailInDatabase();
+    emailCompany
+      ? alert("The email is already in the database!")
+      : fetch(
+          `https://ancient-hamlet-95801.herokuapp.com/api/companies/signup`,
+          {
+            method: "POST",
+            body: JSON.stringify(companyReg),
+            headers: { "Content-Type": "application/json" },
+          }
+        ).then(setCompanyCreated(!companyCreated));
     event.target.reset();
   };
 
