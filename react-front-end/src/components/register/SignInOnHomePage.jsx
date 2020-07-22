@@ -46,9 +46,6 @@ const SignInHomePage = (props) => {
       }).then((res) => res.json()),
     ])
       .then((res) => {
-        const res1 = res[0];
-        const res2 = res[1];
-        console.log(res1, res2);
         res.map((res) => {
           if (res.message.includes("successful")) {
             sessionStorage.setItem("authorization", JSON.stringify(res));

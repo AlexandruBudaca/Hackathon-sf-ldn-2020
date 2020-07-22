@@ -17,29 +17,44 @@ const SignIn = (props) => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-
-    fetch("https://ancient-hamlet-95801.herokuapp.com/api/users/login", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer`,
-      },
-      body: JSON.stringify(username),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        localStorage.setItem("auth", JSON.stringify(data));
-        if (data.token) {
-          props.history.push("/opportunities/");
-        } else {
-          alert("The password or email is not valid!");
-        }
-        if (data.token) {
-          props.setLoggedInUser(!props.loggedInUser);
-        }
+    Promise.all([
+      fetch("https://ancient-hamlet-95801.herokuapp.com/api/users/login", {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer`,
+        },
+        body: JSON.stringify(username),
+      }).then((res) => res.json()),
+      fetch("https://ancient-hamlet-95801.herokuapp.com/api/companies/login", {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer`,
+        },
+        body: JSON.stringify(username),
+      }).then((res) => res.json()),
+    ])
+      .then((res) => {
+        res.map((res) => {
+          if (res.message.includes("successful")) {
+            sessionStorage.setItem("authorization", JSON.stringify(res));
+            props.setLogSession(res);
+          }
+          if (res.message.includes("Graduate")) {
+            props.history.push("/opportunities/");
+          }
+          if (res.message.includes("Company")) {
+            props.history.push("/NewOpportunityForm/");
+          }
+        });
+      })
+      .catch((err) => {
+        console.log(err);
       });
+    e.preventDefault();
     e.target.reset();
   };
 
