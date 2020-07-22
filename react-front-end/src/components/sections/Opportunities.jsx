@@ -67,15 +67,7 @@ const ListOfOpportunities = () => {
       const flteredByLocation = opportunities.filter((opp) =>
         opp.location.toLowerCase().includes(event.target.value.toLowerCase())
       );
-      setOpportunities(
-        flteredByLocation
-          .sort(
-            (a, b) =>
-              moment(a.date).format("DD-MM-YYYY") -
-              moment(b.date).format("DD-MM-YYYY")
-          )
-          .reverse()
-      );
+      setOpportunities(flteredByLocation);
     }
   };
   async function resetFilters() {
