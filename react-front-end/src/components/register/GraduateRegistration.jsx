@@ -60,8 +60,8 @@ const GraduateRegistration = () => {
 
     // Creating JSON data for POST request to DB
     checkForEmailGraduate();
-    emailGraduate
-      ? alert("The password is already in the database")
+    emailGraduate === graduate.email
+      ? alert("The email is already in the database")
       : fetch(`https://ancient-hamlet-95801.herokuapp.com/api/users/signup`, {
           method: "POST",
           body: JSON.stringify(graduate),

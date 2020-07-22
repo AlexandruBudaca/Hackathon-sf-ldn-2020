@@ -161,10 +161,12 @@ const ListOfOpportunities = () => {
               </Link>
               <div className="job-company-date">
                 <p>{opportunity.company}</p>
-                <p className="job-date">{date}</p>
+                <p className="job-date">
+                  {opportunity.date.format("DD-MM-YYYY")}
+                </p>
                 <p className="job-date-last">
                   {" "}
-                  {moment(date, "DD-MM-YYYY").fromNow()}
+                  {moment(opportunity.date, "DD-MM-YYYY").fromNow()}
                 </p>
               </div>
             </div>
