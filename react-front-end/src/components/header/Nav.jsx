@@ -80,7 +80,28 @@ function Nav(props) {
                     src={login}
                     alt="person logged"
                   />
+                  <div className="displayName">
+                    {props.logSession &&
+                    props.logSession.message ===
+                      "Company Authorization successful"
+                      ? props.logSession.name
+                      : ""}
+                    {props.log &&
+                    props.log.message === "Company Authorization successful"
+                      ? props.log.name
+                      : ""}
+                    {props.logSession &&
+                    props.logSession.message ===
+                      "Graduate Authorization successful"
+                      ? props.logSession.firstName
+                      : ""}
+                    {props.log &&
+                    props.log.message === "Graduate Authorization successful"
+                      ? props.log.firstName
+                      : ""}
+                  </div>
                 </div>
+
                 <div className="logout">
                   <button onClick={handleSignOut}>Sign out</button>
                   <img
