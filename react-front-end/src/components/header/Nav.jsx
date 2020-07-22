@@ -54,14 +54,36 @@ function Nav(props) {
               </Link>
             ) : null}
             {console.log(props.log)}
-            {props.logSession && props.log ? null : (
-              <Link to="/signIn" className="navStyle">
-                <li className="simpleNavList">Sign in</li>
-              </Link>
+            {props.loggedInUser === true ? (
+              <div className="logout">
+                <Link to="/signIn" className="navStyle">
+                  <li onClick={handleSignOut} className="simpleNavList">
+                    Sign out
+                    <div className="logout">
+                      <img
+                        className="personLogIn"
+                        src={login}
+                        alt="person logged"
+                      />
+                      <img
+                        className="logout-sign"
+                        src={logout}
+                        alt="person logged"
+                      />
+                    </div>
+                  </li>
+                </Link>
+              </div>
+            ) : (
+              <div className="logout">
+                <Link to="/signIn" className="navStyle">
+                  <li className="simpleNavList">Sign in</li>
+                </Link>
+              </div>
             )}
             {/* Show Sign out svg when graduates log in*/}
 
-            <div className="up-login-logOut">
+            {/* <div className="up-login-logOut">
               {props.loggedInUser || props.signOutComp ? (
                 <div className="logout">
                   <img
@@ -75,9 +97,9 @@ function Nav(props) {
                 </div>
               ) : (
                 ""
-              )}
+              )} */}
 
-              {props.signOutComp || props.loggedInUser ? (
+            {/* {props.signOutComp || props.loggedInUser ? (
                 <div className="logout">
                   <button onClick={handleSignOut}>Sign out</button>
                   <img
@@ -88,11 +110,11 @@ function Nav(props) {
                 </div>
               ) : (
                 ""
-              )}
-              {/* <Link to="/tips" className="navStyle">
+              )} */}
+            {/* <Link to="/tips" className="navStyle">
               <li className="simpleNavList">Tips & FAQ</li>
             </Link> */}
-            </div>
+            {/* </div> */}
           </ul>
         </nav>
       </div>
