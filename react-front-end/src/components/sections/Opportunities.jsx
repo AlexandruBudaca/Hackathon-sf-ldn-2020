@@ -47,7 +47,7 @@ const ListOfOpportunities = () => {
       clearTimeout(repeat);
     };
   }, []);
-  // this filter by role and sets opportunities in state
+  // this filter by role and sets opportunities
   const filterRole = (event) => {
     setOpportunities(defaultOpportunities);
     if (event.target.value != null && opportunities === defaultOpportunities) {
