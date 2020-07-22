@@ -12,9 +12,9 @@ bio, occupation, img.
 */
 const CompanyRegistration = () => {
   const [companyReg, setCompanyReg] = useState({
-    companyName: "",
-    companyEmail: "",
-    companyPassword: "",
+    name: "",
+    email: "",
+    password: "",
   });
   // const [confirmPassword, setConfirmPassword] = useState("");
   const [companyCreated, setCompanyCreated] = useState(false);
@@ -35,24 +35,26 @@ const CompanyRegistration = () => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!companyReg.companyEmail.includes("@")) {
+    if (!companyReg.email.includes("@")) {
       return alert("Please enter Valid email");
     }
-    if (passwordConfirmation !== companyReg.companyPassword) {
+    if (passwordConfirmation !== companyReg.password) {
       alert("Passwords do not match!");
     } else {
       companyReg["companyPassword"] = passwordConfirmation;
     }
-    if (companyReg.companyPassword.length < 6) {
+    if (companyReg.password.length < 6) {
       return alert("password should have at least 6 symbols");
     }
-    console.log(companyReg);
 
-    fetch(`https://ancient-hamlet-95801.herokuapp.com/api/companies/signup`, {
-      method: "POST",
-      body: JSON.stringify(companyReg),
-      headers: { "Content-Type": "application/json" },
-    }).then(setCompanyCreated(!companyCreated));
+    if (companyReg) {
+      fetch(`https://ancient-hamlet-95801.herokuapp.com/api/companies/signup`, {
+        method: "POST",
+        body: JSON.stringify(companyReg),
+        headers: { "Content-Type": "application/json" },
+      }).then(setCompanyCreated(!companyCreated));
+    }
+    event.target.reset();
   };
 
   return (
@@ -80,7 +82,7 @@ const CompanyRegistration = () => {
                         Company Name
                         <input
                           className="select"
-                          name="companyName"
+                          name="name"
                           onChange={handleChange}
                           required
                         ></input>
@@ -91,7 +93,7 @@ const CompanyRegistration = () => {
                         Company email:
                         <input
                           className="select"
-                          name="companyEmail"
+                          name="email"
                           onChange={handleChange}
                           required
                           data-tip="must include @ symbol"
@@ -104,7 +106,7 @@ const CompanyRegistration = () => {
                         Password:
                         <input
                           className="select"
-                          name="companyPassword"
+                          name="password"
                           onChange={handleChange}
                           type="password"
                           required
