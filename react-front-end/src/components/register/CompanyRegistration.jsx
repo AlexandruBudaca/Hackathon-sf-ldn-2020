@@ -60,7 +60,7 @@ const CompanyRegistration = () => {
     }
 
     checkForEmailCompany();
-    companyData === companyReg
+    emailCompany === companyReg.email
       ? alert("The email is already in the database!")
       : fetch(
           `https://ancient-hamlet-95801.herokuapp.com/api/companies/signup`,
