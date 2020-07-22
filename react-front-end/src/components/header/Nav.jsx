@@ -13,9 +13,8 @@ function Nav(props) {
   }, []);
 
   const handleSignOut = () => {
-    props.setLoggedInUser(!props.loggedInUser);
-    props.setSignOutComp(!props.signOutComp);
-
+    props.setLogSession({});
+    props.setLog("");
     props.history.push("/");
     sessionStorage.clear();
   };
@@ -32,7 +31,11 @@ function Nav(props) {
               <li className="simpleNavList">Home</li>
             </Link>
             {/* Hide/Show Opportunities Page when graduates log in*/}
-            {props.loggedInUser ? (
+            {(props.log &&
+              props.log.message === "Graduate Authorization successful") ||
+            (props.logSession &&
+              props.logSession.message ===
+                "Graduate Authorization successful") ? (
               <Link to="/opportunities" className="navStyle">
                 <li className="simpleNavList"> Opportunities</li>
               </Link>
@@ -47,33 +50,19 @@ function Nav(props) {
               <li className="simpleNavList">Graduates</li>
             </Link>
 
-            {props.logSession &&
-            props.logSession.message === "Company Authorization successful" ? (
+            {(props.log &&
+              props.log.message === "Company Authorization successful") ||
+            (props.logSession &&
+              props.logSession.message ===
+                "Company Authorization successful") ? (
               <Link to="/NewOpportunityForm" className="navStyle">
                 <li className="simpleNavList">Add New Opportunity</li>
               </Link>
-            ) : null}
-            {console.log(props.log)}
-            {props.loggedInUser === true ? (
-              <div className="logout">
-                <Link to="/signIn" className="navStyle">
-                  <li onClick={handleSignOut} className="simpleNavList">
-                    Sign out
-                    <div className="logout">
-                      <img
-                        className="personLogIn"
-                        src={login}
-                        alt="person logged"
-                      />
-                      <img
-                        className="logout-sign"
-                        src={logout}
-                        alt="person logged"
-                      />
-                    </div>
-                  </li>
-                </Link>
-              </div>
+            ) : (
+              ""
+            )}
+            {props.log || props.logSession.token ? (
+              ""
             ) : (
               <div className="logout">
                 <Link to="/signIn" className="navStyle">
@@ -83,23 +72,36 @@ function Nav(props) {
             )}
             {/* Show Sign out svg when graduates log in*/}
 
-            {/* <div className="up-login-logOut">
-              {props.loggedInUser || props.signOutComp ? (
+            {props.log || props.logSession.token ? (
+              <div className="up-login-logOut">
                 <div className="logout">
                   <img
                     className="personLogIn"
                     src={login}
                     alt="person logged"
                   />
-                  {props.logSession.name
-                    ? props.logSession.name
-                    : props.logSession.firstName}
+                  <div className="displayName">
+                    {props.logSession &&
+                    props.logSession.message ===
+                      "Company Authorization successful"
+                      ? props.logSession.name
+                      : ""}
+                    {props.log &&
+                    props.log.message === "Company Authorization successful"
+                      ? props.log.name
+                      : ""}
+                    {props.logSession &&
+                    props.logSession.message ===
+                      "Graduate Authorization successful"
+                      ? props.logSession.firstName
+                      : ""}
+                    {props.log &&
+                    props.log.message === "Graduate Authorization successful"
+                      ? props.log.firstName
+                      : ""}
+                  </div>
                 </div>
-              ) : (
-                ""
-              )} */}
 
-            {/* {props.signOutComp || props.loggedInUser ? (
                 <div className="logout">
                   <button onClick={handleSignOut}>Sign out</button>
                   <img
@@ -108,13 +110,14 @@ function Nav(props) {
                     alt="person logged"
                   />
                 </div>
-              ) : (
-                ""
-              )} */}
+              </div>
+            ) : (
+              ""
+            )}
+
             {/* <Link to="/tips" className="navStyle">
               <li className="simpleNavList">Tips & FAQ</li>
             </Link> */}
-            {/* </div> */}
           </ul>
         </nav>
       </div>

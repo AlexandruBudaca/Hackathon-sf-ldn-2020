@@ -25,7 +25,6 @@ const SignInHomePage = (props) => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     Promise.all([
       fetch("https://ancient-hamlet-95801.herokuapp.com/api/users/login", {
         method: "POST",
@@ -57,16 +56,16 @@ const SignInHomePage = (props) => {
           }
           if (res.message.includes("Graduate")) {
             props.history.push("/opportunities/");
-            props.setLoggedInUser(!props.loggedInUser);
           }
           if (res.message.includes("Company")) {
-            props.setSignOutComp(!props.signOutComp);
+            props.history.push("/NewOpportunityForm/");
           }
         });
       })
       .catch((err) => {
         console.log(err);
       });
+    e.preventDefault();
     e.target.reset();
   };
 
@@ -93,18 +92,7 @@ const SignInHomePage = (props) => {
               required
             ></input>
 
-            <button
-              disabled={
-                (props.log &&
-                  props.log.message === "Authorization successful") ||
-                props.loggedInUser
-                  ? true
-                  : false
-              }
-              className="buttonSignInHome"
-            >
-              Sign In
-            </button>
+            <button className="buttonSignInHome">Sign In</button>
           </div>{" "}
         </div>
       </form>
