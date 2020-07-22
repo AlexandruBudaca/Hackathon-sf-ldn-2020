@@ -56,7 +56,7 @@ const NewOpportunityForm = () => {
   // };
   return (
     <section className="companiesSection">
-      <Separator category={"New Opportunity"} />
+      <Separator category={"Add new ppportunity"} />
       {userCreated ? (
         <div className="singUpBack">
           Your opportunity was created!

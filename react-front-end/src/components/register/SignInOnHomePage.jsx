@@ -61,6 +61,7 @@ const SignInHomePage = (props) => {
           }
           if (res.message.includes("Company")) {
             props.setSignOutComp(!props.signOutComp);
+            props.history.push("/NewOpportunityForm/");
           }
         });
       })
@@ -93,18 +94,7 @@ const SignInHomePage = (props) => {
               required
             ></input>
 
-            <button
-              disabled={
-                (props.log &&
-                  props.log.message === "Authorization successful") ||
-                props.loggedInUser
-                  ? true
-                  : false
-              }
-              className="buttonSignInHome"
-            >
-              Sign In
-            </button>
+            <button className="buttonSignInHome">Sign In</button>
           </div>{" "}
         </div>
       </form>
