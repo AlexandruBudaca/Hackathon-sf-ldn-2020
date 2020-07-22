@@ -24,6 +24,19 @@ const GraduateRegistration = () => {
   // const confirmPasswordValidation = (event) => {
   //   setConfirmPassword(event.target.value);
   // };
+  useEffect(() => {
+    fetch("https://ancient-hamlet-95801.herokuapp.com/api/users")
+      .then((res) => res.json())
+      .then((data) => setDataUsers(data));
+  }, []);
+  let emailGraduate;
+  const checkForEmailGraduate = () => {
+    dataUsers.find((data) =>
+      data.email === graduate.email ? (emailGraduate = data.email) : null
+    );
+    return emailGraduate;
+  };
+
   const handleChange = (event) => {
     const newUser = {
       ...graduate,
@@ -46,12 +59,14 @@ const GraduateRegistration = () => {
     }
 
     // Creating JSON data for POST request to DB
-
-    fetch(`https://ancient-hamlet-95801.herokuapp.com/api/users/signup`, {
-      method: "POST",
-      body: JSON.stringify(graduate),
-      headers: { "Content-Type": "application/json" },
-    }).then(setUserCreated(!userCreated));
+    checkForEmailGraduate();
+    emailGraduate
+      ? alert("The password is already in the database")
+      : fetch(`https://ancient-hamlet-95801.herokuapp.com/api/users/signup`, {
+          method: "POST",
+          body: JSON.stringify(graduate),
+          headers: { "Content-Type": "application/json" },
+        }).then(setUserCreated(!userCreated));
   };
 
   return (
