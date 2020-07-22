@@ -35,7 +35,12 @@ function Nav(props) {
               props.log.message === "Graduate Authorization successful") ||
             (props.logSession &&
               props.logSession.message ===
-                "Graduate Authorization successful") ? (
+                "Graduate Authorization successful") ||
+            (props.log &&
+              props.log.message === "Company Authorization successful") ||
+            (props.logSession &&
+              props.logSession.message ===
+                "Company Authorization successful") ? (
               <Link to="/opportunities" className="navStyle">
                 <li className="simpleNavList"> Opportunities</li>
               </Link>

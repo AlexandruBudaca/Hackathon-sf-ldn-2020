@@ -34,7 +34,10 @@ function App() {
       render={() =>
         (logSession &&
           logSession.message === "Graduate Authorization successful") ||
-        (log && log.message === "Graduate Authorization successful") ? (
+        (log && log.message === "Graduate Authorization successful") ||
+        (logSession &&
+          logSession.message === "Company Authorization successful") ||
+        (log && log.message === "Company Authorization successful") ? (
           <Component />
         ) : (
           <Redirect to="/SignIn" />
