@@ -25,7 +25,6 @@ const SignInHomePage = (props) => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     Promise.all([
       fetch("https://ancient-hamlet-95801.herokuapp.com/api/users/login", {
         method: "POST",
@@ -57,10 +56,8 @@ const SignInHomePage = (props) => {
           }
           if (res.message.includes("Graduate")) {
             props.history.push("/opportunities/");
-            props.setLoggedInUser(!props.loggedInUser);
           }
           if (res.message.includes("Company")) {
-            props.setSignOutComp(!props.signOutComp);
             props.history.push("/NewOpportunityForm/");
           }
         });
@@ -68,6 +65,7 @@ const SignInHomePage = (props) => {
       .catch((err) => {
         console.log(err);
       });
+    e.preventDefault();
     e.target.reset();
   };
 

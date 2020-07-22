@@ -22,7 +22,7 @@ function App() {
     JSON.parse(sessionStorage.getItem("authorization"))
   );
   const [logSession, setLogSession] = useState({});
-  const [signOutComp, setSignOutComp] = useState(false);
+
   return (
     <Router>
       <div className="App">
@@ -31,8 +31,6 @@ function App() {
           setLoggedInUser={setLoggedInUser}
           setLog={setLog}
           log={log}
-          signOutComp={signOutComp}
-          setSignOutComp={setSignOutComp}
           logSession={logSession}
           setLogSession={setLogSession}
         />
@@ -46,8 +44,6 @@ function App() {
                 loggedInUser={loggedInUser}
                 setLog={setLog}
                 log={log}
-                signOutComp={signOutComp}
-                setSignOutComp={setSignOutComp}
                 logSession={logSession}
                 setLogSession={setLogSession}
               />

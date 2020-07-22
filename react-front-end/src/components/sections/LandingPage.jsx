@@ -9,8 +9,6 @@ const LandingPage = ({
   loggedInUser,
   setLog,
   log,
-  signOutComp,
-  setSignOutComp,
   setLogSession,
 }) => {
   return (
@@ -37,8 +35,6 @@ const LandingPage = ({
           loggedInUser={loggedInUser}
           setLog={setLog}
           log={log}
-          signOutComp={signOutComp}
-          setSignOutComp={setSignOutComp}
           setLogSession={setLogSession}
         />
 
