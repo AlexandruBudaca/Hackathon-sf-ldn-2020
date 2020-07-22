@@ -22,7 +22,15 @@ const ListOfOpportunities = () => {
         );
         const json = await res.json();
         setOpportunities(json);
-        setDefaultOpportunities(json);
+        setDefaultOpportunities(
+          json
+            .sort(
+              (a, b) =>
+                moment(a.date).format("DD-MM-YYYY") -
+                moment(b.date).format("DD-MM-YYYY")
+            )
+            .reverse()
+        );
       } catch (error) {
         console.error(error.message);
       }
@@ -40,7 +48,15 @@ const ListOfOpportunities = () => {
       const flteredByRole = opportunities.filter((opp) =>
         opp.role.toLowerCase().includes(event.target.value.toLowerCase())
       );
-      setOpportunities(flteredByRole);
+      setOpportunities(
+        flteredByRole
+          .sort(
+            (a, b) =>
+              moment(a.date).format("DD-MM-YYYY") -
+              moment(b.date).format("DD-MM-YYYY")
+          )
+          .reverse()
+      );
     }
   };
 
@@ -51,7 +67,15 @@ const ListOfOpportunities = () => {
       const flteredByLocation = opportunities.filter((opp) =>
         opp.location.toLowerCase().includes(event.target.value.toLowerCase())
       );
-      setOpportunities(flteredByLocation);
+      setOpportunities(
+        flteredByLocation
+          .sort(
+            (a, b) =>
+              moment(a.date).format("DD-MM-YYYY") -
+              moment(b.date).format("DD-MM-YYYY")
+          )
+          .reverse()
+      );
     }
   };
   async function resetFilters() {
@@ -59,15 +83,16 @@ const ListOfOpportunities = () => {
       "https://ancient-hamlet-95801.herokuapp.com/api/opp"
     );
     const json = await res.json();
-    setOpportunities(json);
+    setOpportunities(
+      json
+        .sort(
+          (a, b) =>
+            moment(a.date).format("DD-MM-YYYY") -
+            moment(b.date).format("DD-MM-YYYY")
+        )
+        .reverse()
+    );
   }
-  opportunities
-    .sort(
-      (a, b) =>
-        moment(a.date).format("DD-MM-YYYY") -
-        moment(b.date).format("DD-MM-YYYY")
-    )
-    .reverse();
 
   return (
     <section className="opportunitySection">
