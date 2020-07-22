@@ -21,7 +21,13 @@ const ListOfOpportunities = () => {
           "https://ancient-hamlet-95801.herokuapp.com/api/opp"
         );
         const json = await res.json();
-        setOpportunities(json);
+        setOpportunities(
+          json.sort(
+            (a, b) =>
+              moment(a.date).format("DD-MM-YYYY") -
+              moment(b.date).format("DD-MM-YYYY")
+          )
+        );
         setDefaultOpportunities(
           json
             .sort(
@@ -49,13 +55,11 @@ const ListOfOpportunities = () => {
         opp.role.toLowerCase().includes(event.target.value.toLowerCase())
       );
       setOpportunities(
-        flteredByRole
-          .sort(
-            (a, b) =>
-              moment(a.date).format("DD-MM-YYYY") -
-              moment(b.date).format("DD-MM-YYYY")
-          )
-          .reverse()
+        flteredByRole.sort(
+          (a, b) =>
+            moment(a.date).format("DD-MM-YYYY") -
+            moment(b.date).format("DD-MM-YYYY")
+        )
       );
     }
   };
@@ -67,7 +71,13 @@ const ListOfOpportunities = () => {
       const flteredByLocation = opportunities.filter((opp) =>
         opp.location.toLowerCase().includes(event.target.value.toLowerCase())
       );
-      setOpportunities(flteredByLocation);
+      setOpportunities(
+        flteredByLocation.sort(
+          (a, b) =>
+            moment(a.date).format("DD-MM-YYYY") -
+            moment(b.date).format("DD-MM-YYYY")
+        )
+      );
     }
   };
   async function resetFilters() {
@@ -162,11 +172,10 @@ const ListOfOpportunities = () => {
               <div className="job-company-date">
                 <p>{opportunity.company}</p>
                 <p className="job-date">
-                  {opportunity.date.format("DD-MM-YYYY")}
+                  {moment(opportunity.date).format("DD-MM-YYYY")}
                 </p>
                 <p className="job-date-last">
-                  {" "}
-                  {moment(opportunity.date, "DD-MM-YYYY").fromNow()}
+                  {moment(opportunity.date).fromNow()}
                 </p>
               </div>
             </div>
