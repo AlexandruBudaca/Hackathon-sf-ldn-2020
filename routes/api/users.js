@@ -117,7 +117,7 @@ router.post("/login", (req, res) => {
 
 // router.get('/', (req, res) => res.json({ msg: 'Users Works' }));
 
-router.get("/",(req, res) => {
+router.get("/", checkAuth ,(req, res) => {
   User.find().then((users) => res.json(users));
 });
 // @route   DELETE api/users

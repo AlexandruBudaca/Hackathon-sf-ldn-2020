@@ -3,7 +3,7 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const mongodb = require("mongodb");
 const passport = require("passport");
-// const checkAuth= require('../../middleware/check-auth')
+//const checkAuth= require('../../middleware/check-auth')
 
 
 // Opportunities model
@@ -17,6 +17,7 @@ const validateOpportunitiesInput = require("../../validation/opportunities");
 // @route  POST api/opp
 // @desc    Tests post route
 // @access  Public
+
 
 router.post("/", (req, res) => {
 

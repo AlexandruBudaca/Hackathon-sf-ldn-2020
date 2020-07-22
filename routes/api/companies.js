@@ -4,10 +4,11 @@ const Company = require("../../models/Company");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const secretKey = require("../../config/keys").JWT_KEY;
+const checkAuth = require("../../middleware/check-auth.js");
 
 
 //GET api/companies
-router.get("/", (req, res) => {
+router.get("/", checkAuth, (req, res) => {
   Company.find().then((companies) => res.json(companies));
 });
 
