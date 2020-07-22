@@ -127,7 +127,6 @@ const ListOfOpportunities = () => {
       </div>
 
       {opportunities.map((opportunity) => {
-        const date = moment(opportunity.date).format("DD-MM-YYYY");
         let srcRole;
         if (opportunity.role === "Front-end Developer") {
           srcRole = frontend;
