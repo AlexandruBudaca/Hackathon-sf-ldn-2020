@@ -83,7 +83,8 @@ const SignIn = (props) => {
 
             <button
               disabled={
-                (props.log && props.log.token) || props.loggedInUser
+                (props.log && props.log.token) ||
+                (props.logSession && props.logSession.token)
                   ? true
                   : false
               }

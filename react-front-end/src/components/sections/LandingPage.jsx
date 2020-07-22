@@ -10,6 +10,7 @@ const LandingPage = ({
   setLog,
   log,
   setLogSession,
+  logSession,
 }) => {
   return (
     <main className="main">
@@ -35,6 +36,7 @@ const LandingPage = ({
           loggedInUser={loggedInUser}
           setLog={setLog}
           log={log}
+          logSession={logSession}
           setLogSession={setLogSession}
         />
 
