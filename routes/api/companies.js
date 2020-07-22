@@ -8,7 +8,7 @@ const checkAuth = require("../../middleware/check-auth.js");
 
 
 //GET api/companies
-router.get("/", checkAuth, (req, res) => {
+router.get("/",  (req, res) => {
   Company.find().then((companies) => res.json(companies));
 });
 
