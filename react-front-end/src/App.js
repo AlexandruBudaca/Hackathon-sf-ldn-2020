@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import "./App.css";
 import "./grid.css";
 import Nav from "./components/header/Nav";
@@ -22,6 +27,19 @@ function App() {
     JSON.parse(sessionStorage.getItem("authorization"))
   );
   const [logSession, setLogSession] = useState({});
+  const PrivateRoute = ({ Component }) => {
+    return (
+      <Route
+        render={() =>
+          logSession.message === "Graduate Authorization successful" ? (
+            <Component />
+          ) : (
+            <Redirect to="/signIn" />
+          )
+        }
+      />
+    );
+  };
 
   return (
     <Router>
@@ -54,18 +72,10 @@ function App() {
           <Route path="/listOfCompanies" exact component={ListOfCompanies} />
           <Route path="/Graduates" exact component={Graduates} />
           <Route path="/opportunity" exact component={Opportunity} />
+
           <Route path="/Opportunities" exact component={ListOfOpportunities} />
           <Route path="/tips" exact component={Tips} />
-          <Route
-            path="/signIn"
-            exact
-            component={() => (
-              <SignIn
-                setLoggedInUser={setLoggedInUser}
-                loggedInUser={loggedInUser}
-              />
-            )}
-          />
+          <Route path="/signIn" exact component={SignIn} />
           <Route path="/signUp" exact component={GraduateRegistration} />
           <Route
             path="/GraduateRegistration"
