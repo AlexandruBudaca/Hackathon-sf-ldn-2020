@@ -21,26 +21,40 @@ import SignIn from "./components/register/SignIn";
 import NewOpportunityForm from "./components/register/NewOpportunity";
 import GraduateRegistration from "./components/register/GraduateRegistration";
 import CompanyRegistration from "./components/register/CompanyRegistration";
+
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(false);
   const [log, setLog] = useState(
     JSON.parse(sessionStorage.getItem("authorization"))
   );
   const [logSession, setLogSession] = useState({});
-  const PrivateRoute = ({ Component }) => {
-    return (
-      <Route
-        render={() =>
-          logSession.message === "Graduate Authorization successful" ? (
-            <Component />
-          ) : (
-            <Redirect to="/signIn" />
-          )
-        }
-      />
-    );
-  };
 
+  const PrivateRouteGraduate = ({ component: Component }) => (
+    <Route
+      render={() =>
+        (logSession &&
+          logSession.message === "Graduate Authorization successful") ||
+        (log && log.message === "Graduate Authorization successful") ? (
+          <Component />
+        ) : (
+          <Redirect to="/SignIn" />
+        )
+      }
+    />
+  );
+  const PrivateRouteCompany = ({ component: Component }) => (
+    <Route
+      render={() =>
+        (logSession &&
+          logSession.message === "Company Authorization successful") ||
+        (log && log.message === "Company Authorization successful") ? (
+          <Component />
+        ) : (
+          <Redirect to="/SignIn" />
+        )
+      }
+    />
+  );
   return (
     <Router>
       <div className="App">
@@ -72,10 +86,20 @@ function App() {
           <Route path="/listOfCompanies" exact component={ListOfCompanies} />
           <Route path="/Graduates" exact component={Graduates} />
           <Route path="/opportunity" exact component={Opportunity} />
+          <PrivateRouteGraduate
+            path="/Opportunities"
+            exact={true}
+            component={ListOfOpportunities}
+          />
 
-          <Route path="/Opportunities" exact component={ListOfOpportunities} />
           <Route path="/tips" exact component={Tips} />
-          <Route path="/signIn" exact component={SignIn} />
+          <Route
+            path="/signIn"
+            exact
+            component={() => (
+              <SignIn logSession={logSession} setLogSession={setLogSession} />
+            )}
+          />
           <Route path="/signUp" exact component={GraduateRegistration} />
           <Route
             path="/GraduateRegistration"
@@ -87,9 +111,10 @@ function App() {
             exact
             component={CompanyRegistration}
           />
-          <Route
+
+          <PrivateRouteCompany
             path="/NewOpportunityForm"
-            exact
+            exact={true}
             component={NewOpportunityForm}
           />
         </Switch>
