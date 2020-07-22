@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Separator from "../Separator";
 import "./index.css";
 import { Link } from "react-router-dom";
@@ -20,7 +20,7 @@ const GraduateRegistration = () => {
   });
   // const [confirmPassword, setConfirmPassword] = useState("");
   const [userCreated, setUserCreated] = useState(false);
-
+  const [dataUsers, setDataUsers] = useState([]);
   // const confirmPasswordValidation = (event) => {
   //   setConfirmPassword(event.target.value);
   // };
@@ -31,6 +31,21 @@ const GraduateRegistration = () => {
     };
     setUser(newUser);
   };
+  useEffect(() => {
+    fetch("https://ancient-hamlet-95801.herokuapp.com/api/users")
+      .then((res) => res.json())
+      .then((data) => setDataUsers(data));
+  });
+  let emailGraduate;
+  const checkEmailInDatabase = () => {
+    dataUsers.find((data) => {
+      if (data.email === graduate.email) {
+        emailGraduate = data.email;
+      }
+    });
+    return emailGraduate;
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     //Email validation
@@ -45,12 +60,14 @@ const GraduateRegistration = () => {
     }
 
     // Creating JSON data for POST request to DB
-
-    fetch(`https://ancient-hamlet-95801.herokuapp.com/api/users/signup`, {
-      method: "POST",
-      body: JSON.stringify(graduate),
-      headers: { "Content-Type": "application/json" },
-    }).then(setUserCreated(!userCreated));
+    checkEmailInDatabase();
+    emailGraduate
+      ? alert("The email is already in the database!")
+      : fetch(`https://ancient-hamlet-95801.herokuapp.com/api/users/signup`, {
+          method: "POST",
+          body: JSON.stringify(graduate),
+          headers: { "Content-Type": "application/json" },
+        }).then(setUserCreated(!userCreated));
   };
 
   return (

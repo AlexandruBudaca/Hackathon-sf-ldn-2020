@@ -89,7 +89,17 @@ const SignInHomePage = (props) => {
               required
             ></input>
 
-            <button className="buttonSignInHome">Sign In</button>
+            <button
+              disabled={
+                (props.log && props.log.token) ||
+                (props.logSession && props.logSession.token)
+                  ? true
+                  : false
+              }
+              className="buttonSignInHome"
+            >
+              Sign In
+            </button>
           </div>{" "}
         </div>
       </form>
