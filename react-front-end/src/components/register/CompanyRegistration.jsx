@@ -59,7 +59,7 @@ const CompanyRegistration = () => {
       return alert("password should have at least 6 symbols");
     }
     if (companyReg.name.length < 2) {
-      return alert("The name should have at least 6 symbols");
+      return alert("The name should have at least 2 characters");
     }
 
     checkForEmailCompany();
