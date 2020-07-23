@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./index.css";
 import Separator from "../Separator";
 import Gr from "../../MockData/Graduates.json";
+import frontend from "../../images/role-frontend.gif";
 
 const Graduates = () => {
   const [graduates, setGraduates] = useState(Gr);
@@ -26,11 +27,7 @@ const Graduates = () => {
         return (
           <article className="opp_article row alignedTop" key={grad._id}>
             <div className="justified">
-              <img
-                className="companyLogo"
-                src="https://github.com/AlexandruBudaca/Hackaton-sf-ldn-2020/blob/babak/Design/images%20files/opp-icon/role-frontend.gif?raw=true"
-                alt=""
-              />
+              <img className="companyLogo" src={frontend} alt="" />
             </div>
 
             {/* <Link to="/Opportunity">

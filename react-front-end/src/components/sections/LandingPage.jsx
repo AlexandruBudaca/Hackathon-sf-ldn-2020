@@ -3,6 +3,7 @@ import React from "react";
 import SignInHomePage from "../register/SignInOnHomePage";
 import seethefuture from "../../../src/images/seefuture (1).gif";
 import studentpic from "../../../src/images/students.jpg";
+import devsignin from "../../images/dev-signin.jpg";
 import "./index.css";
 const LandingPage = ({
   setLoggedInUser,
@@ -40,11 +41,7 @@ const LandingPage = ({
           setLogSession={setLogSession}
         />
 
-        <img
-          className="col-6 sm-col-12 md-col-6"
-          src="https://github.com/AlexandruBudaca/Hackaton-sf-ldn-2020/blob/babak/Design/images%20files/Pages%20files/dev-signin.jpg?raw=true"
-          alt=""
-        />
+        <img className="col-6 sm-col-12 md-col-6" src={devsignin} alt="" />
       </div>
       <div className="ourStudents">
         <div className=" row ">
