@@ -25,7 +25,7 @@ const GraduateRegistration = () => {
   //   setConfirmPassword(event.target.value);
   // };
   useEffect(() => {
-    fetch("https://ancient-hamlet-95801.herokuapp.com/api/users")
+    fetch("https://sf-hackathon-2020.herokuapp.com/api/users")
       .then((res) => res.json())
       .then((data) => setDataUsers(data));
   }, []);
@@ -68,7 +68,7 @@ const GraduateRegistration = () => {
     checkForEmailGraduate();
     emailGraduate === graduate.email
       ? alert("The email is already in the database")
-      : fetch(`https://ancient-hamlet-95801.herokuapp.com/api/users/signup`, {
+      : fetch(`https://sf-hackathon-2020.herokuapp.com/api/users/signup`, {
           method: "POST",
           body: JSON.stringify(graduate),
           headers: { "Content-Type": "application/json" },

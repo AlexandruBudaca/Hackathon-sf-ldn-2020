@@ -10,7 +10,7 @@ const Graduates = () => {
     async function fetchGrads() {
       try {
         const res = await fetch(
-          "https://ancient-hamlet-95801.herokuapp.com/api/users"
+          "https://sf-hackathon-2020.herokuapp.com/api/users"
         );
         const json = await res.json();
         setGraduates(json);
@@ -29,9 +29,6 @@ const Graduates = () => {
             <div className="justified">
               <img className="companyLogo" src={frontend} alt="" />
             </div>
-
-            {/* <Link to="/Opportunity">
-                </Link> */}
             <p className="centered justified col-3">{grad.firstName}</p>
 
             <span className="centered justified col-3">{grad.lastName}</span>

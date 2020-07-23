@@ -20,7 +20,7 @@ const ListOfOpportunities = () => {
     async function fetchData() {
       try {
         const res = await fetch(
-          "https://ancient-hamlet-95801.herokuapp.com/api/opp"
+          "https://sf-hackathon-2020.herokuapp.com/api/opp"
         );
         const json = await res.json();
         setOpportunities(
@@ -104,9 +104,7 @@ const ListOfOpportunities = () => {
     }
   }, [locationFilter, roleFilter]);
   async function resetFilters() {
-    const res = await fetch(
-      "https://ancient-hamlet-95801.herokuapp.com/api/opp"
-    );
+    const res = await fetch("https://sf-hackathon-2020.herokuapp.com/api/opp");
     const json = await res.json();
     setOpportunities(
       json

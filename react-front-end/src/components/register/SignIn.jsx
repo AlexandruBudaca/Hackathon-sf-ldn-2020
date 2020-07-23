@@ -18,7 +18,7 @@ const SignIn = (props) => {
 
   const handleSubmit = (e) => {
     Promise.all([
-      fetch("https://ancient-hamlet-95801.herokuapp.com/api/users/login", {
+      fetch("https://sf-hackathon-2020.herokuapp.com/api/users/login", {
         method: "POST",
         mode: "cors",
         headers: {
@@ -27,7 +27,7 @@ const SignIn = (props) => {
         },
         body: JSON.stringify(username),
       }).then((res) => res.json()),
-      fetch("https://ancient-hamlet-95801.herokuapp.com/api/companies/login", {
+      fetch("https://sf-hackathon-2020.herokuapp.com/api/companies/login", {
         method: "POST",
         mode: "cors",
         headers: {
