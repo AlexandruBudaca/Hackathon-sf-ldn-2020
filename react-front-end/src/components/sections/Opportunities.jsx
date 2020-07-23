@@ -134,6 +134,9 @@ const ListOfOpportunities = () => {
         <select className="col-3" id="2" name="location" onChange={filterLoc}>
           <option defaultValue="">Select location</option>
           <option value="London">London</option>
+          <option value="Edinburgh">Edinburgh</option>
+          <option value="Cardiff">Cardiff</option>
+          <option value="London">London</option>
           <option value="Manchester">Manchester</option>
           <option value="Birmingham">Birmingham</option>
           <option value="Rome">Rome</option>
