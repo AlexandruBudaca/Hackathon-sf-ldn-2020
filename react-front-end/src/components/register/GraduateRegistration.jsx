@@ -57,6 +57,12 @@ const GraduateRegistration = () => {
     if (graduate.password !== graduate.password2) {
       alert("Passwords do not match!");
     }
+    if (graduate.firstName.length < 2) {
+      return alert("The first name should have at least 2 characters.");
+    }
+    if (graduate.lastName.length < 2) {
+      return alert("The last name should have at least 2 characters.");
+    }
 
     // Creating JSON data for POST request to DB
     checkForEmailGraduate();
