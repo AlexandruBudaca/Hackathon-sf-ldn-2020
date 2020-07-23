@@ -22,7 +22,7 @@ const CompanyRegistration = () => {
   const [companyData, setCompanyData] = useState([]);
 
   useEffect(() => {
-    fetch("https://ancient-hamlet-95801.herokuapp.com/api/users")
+    fetch("https://ancient-hamlet-95801.herokuapp.com/api/companies")
       .then((res) => res.json())
       .then((data) => setCompanyData(data));
   }, []);
