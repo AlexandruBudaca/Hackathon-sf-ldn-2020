@@ -60,7 +60,6 @@ const SignInHomePage = (props) => {
           if (res.message.includes("Company")) {
             props.history.push("/NewOpportunityForm/");
           }
-          console.log(res);
         });
         if (
           res1.message.includes("failed") &&
@@ -118,9 +117,7 @@ const SignInHomePage = (props) => {
         <p className="pleaseRegister col-4">
           If you don’t have an account please register on the link below
         </p>
-        <Link to="/signUp" onClick={(event) => event.preventDefault()}>
-          Sign up here{" "}
-        </Link>
+        <Link to="/signUp">Sign up here </Link>
       </div>
     </div>
   );

@@ -38,6 +38,8 @@ const SignIn = (props) => {
       }).then((res) => res.json()),
     ])
       .then((res) => {
+        const res1 = res[0];
+        const res2 = res[1];
         res.map((res) => {
           if (res.message.includes("successful")) {
             sessionStorage.setItem("authorization", JSON.stringify(res));
@@ -50,6 +52,12 @@ const SignIn = (props) => {
             props.history.push("/NewOpportunityForm/");
           }
         });
+        if (
+          res1.message.includes("failed") &&
+          res2.message.includes("failed")
+        ) {
+          alert("The email or password is not valid!");
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -99,11 +107,7 @@ const SignIn = (props) => {
         <p className="">
           If you don’t have an account please register on the link below
         </p>
-        <Link
-          className="link-sign-up"
-          to="/signUp"
-          onClick={(event) => event.preventDefault()}
-        >
+        <Link className="link-sign-up" to="/signUp">
           Sign up here
         </Link>
       </div>
