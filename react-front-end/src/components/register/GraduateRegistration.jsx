@@ -103,7 +103,9 @@ const GraduateRegistration = () => {
                           name="firstName"
                           onChange={handleChange}
                           required
+                          data-tip="at least 2 symbols"
                         ></input>
+                        <ReactTooltip />
                       </label>
                     </li>
                     <li>
@@ -114,7 +116,9 @@ const GraduateRegistration = () => {
                           name="lastName"
                           onChange={handleChange}
                           required
+                          data-tip="at least 2 symbols"
                         ></input>
+                        <ReactTooltip />
                       </label>
                     </li>
                     <li>

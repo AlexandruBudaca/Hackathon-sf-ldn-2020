@@ -104,7 +104,9 @@ const CompanyRegistration = () => {
                           name="name"
                           onChange={handleChange}
                           required
+                          data-tip="at least 2 symbols"
                         ></input>
+                        <ReactTooltip />
                       </label>
                     </li>
                     <li>
