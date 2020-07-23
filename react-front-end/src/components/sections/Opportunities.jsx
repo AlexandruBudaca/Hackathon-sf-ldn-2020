@@ -14,8 +14,8 @@ import solarArchitect from "../../images/role-solarchitect.gif";
 const ListOfOpportunities = () => {
   const [opportunities, setOpportunities] = useState([]);
   const [defaultOpportunities, setDefaultOpportunities] = useState([]);
-  const [roleFilter,setRoleFilter]=useState(null);
-  const[locationFilter,setLocationFilter]=useState(null)
+  const [roleFilter, setRoleFilter] = useState(null);
+  const [locationFilter, setLocationFilter] = useState(null);
   useEffect(() => {
     async function fetchData() {
       try {
@@ -51,59 +51,58 @@ const ListOfOpportunities = () => {
   }, []);
   // this filter by role and sets opportunities
   const filterRole = (event) => {
-   event.preventDefault();
-    setRoleFilter(event.target.value)
-    
-    }
-
+    event.preventDefault();
+    setRoleFilter(event.target.value);
+  };
 
   // this filter by Location and sets in opportunities state
   const filterLoc = (event) => {
     event.preventDefault();
-    setLocationFilter(event.target.value)
-   
+    setLocationFilter(event.target.value);
   };
-  useEffect(()=>{
-if(roleFilter&&locationFilter){
-  const filterR=defaultOpportunities.filter((opp) =>
-  opp.role.toLowerCase().includes(roleFilter.toLowerCase()))
-  const filterL=filterR.filter((opp) =>
-  opp.location.toLowerCase().includes(locationFilter.toLowerCase())
-);
-setOpportunities(
-  filterL.sort(
-    (a, b) =>
-      moment(a.date).format("DD-MM-YYYY") -
-      moment(b.date).format("DD-MM-YYYY")
-  ))
-}
-    else if (roleFilter) {
-    console.log('hellorole')
-    const flteredByRole = opportunities.filter((opp) =>
-      opp.role.toLowerCase().includes(roleFilter.toLowerCase())
-    );
-    setOpportunities(
-      flteredByRole.sort(
-        (a, b) =>
-          moment(a.date).format("DD-MM-YYYY") -
-          moment(b.date).format("DD-MM-YYYY")
-      ))}
-  else if (locationFilter!= null && opportunities) {
-    console.log('helloloc')
-    const flteredByLocation = opportunities.filter((opp) =>
-      opp.location.toLowerCase().includes(locationFilter.toLowerCase())
-    );
-    setOpportunities(
-      flteredByLocation.sort(
-        (a, b) =>
-          moment(a.date).format("DD-MM-YYYY") -
-          moment(b.date).format("DD-MM-YYYY")
-      )
-    );}
-    else{
-      setOpportunities(defaultOpportunities)
+  useEffect(() => {
+    if (roleFilter && locationFilter) {
+      const filterR = defaultOpportunities.filter((opp) =>
+        opp.role.toLowerCase().includes(roleFilter.toLowerCase())
+      );
+      const filterL = filterR.filter((opp) =>
+        opp.location.toLowerCase().includes(locationFilter.toLowerCase())
+      );
+      setOpportunities(
+        filterL.sort(
+          (a, b) =>
+            moment(a.date).format("DD-MM-YYYY") -
+            moment(b.date).format("DD-MM-YYYY")
+        )
+      );
+    } else if (roleFilter) {
+      console.log("hellorole");
+      const flteredByRole = opportunities.filter((opp) =>
+        opp.role.toLowerCase().includes(roleFilter.toLowerCase())
+      );
+      setOpportunities(
+        flteredByRole.sort(
+          (a, b) =>
+            moment(a.date).format("DD-MM-YYYY") -
+            moment(b.date).format("DD-MM-YYYY")
+        )
+      );
+    } else if (locationFilter != null && opportunities) {
+      console.log("helloloc");
+      const flteredByLocation = opportunities.filter((opp) =>
+        opp.location.toLowerCase().includes(locationFilter.toLowerCase())
+      );
+      setOpportunities(
+        flteredByLocation.sort(
+          (a, b) =>
+            moment(a.date).format("DD-MM-YYYY") -
+            moment(b.date).format("DD-MM-YYYY")
+        )
+      );
+    } else {
+      setOpportunities(defaultOpportunities);
     }
- },[locationFilter,roleFilter])
+  }, [locationFilter, roleFilter]);
   async function resetFilters() {
     const res = await fetch(
       "https://ancient-hamlet-95801.herokuapp.com/api/opp"
@@ -118,44 +117,26 @@ setOpportunities(
         )
         .reverse()
     );
-  
-        }
+  }
   return (
     <section className="opportunitySection">
       <Separator category="Opportunities" />
       <h1 className="filters">Filter opportunities</h1>
       <div className="col-12 filters">
         <select onChange={filterRole} className="col-3">
-        <option value="" disabled selected>Select role</option>
-          <option onChange={filterRole} value="Front-end">
-            front-end
-          </option>
-          <option onChange={filterRole} value="back-end">
-            back-end
-          </option>
-          <option onChange={filterRole} value="full-stack">
-            full-stack
-          </option>
-
-          <option onChange={filterRole} value="UI/UX Designer">
-            UI/UX Designer
-          </option>
+          <option defaultValue="">Select role</option>
+          <option value="Front-end">front-end</option>
+          <option value="back-end">back-end</option>
+          <option value="full-stack">full-stack</option>
+          <option value="UI/UX Designer">UI/UX Designer</option>
         </select>
 
         <select className="col-3" id="2" name="location" onChange={filterLoc}>
-        <option value="" disabled selected>Select location</option>
-          <option onChange={filterLoc} value="London">
-            London
-          </option>
-          <option onChange={filterLoc} value="Manchester">
-            Manchester
-          </option>
-          <option onChange={filterLoc} value="Birmingham">
-            Birmingham
-          </option>
-          <option onChange={filterLoc} value="Rome">
-            Rome
-          </option>
+          <option defaultValue="">Select location</option>
+          <option value="London">London</option>
+          <option value="Manchester">Manchester</option>
+          <option value="Birmingham">Birmingham</option>
+          <option value="Rome">Rome</option>
         </select>
         <button onClick={resetFilters} className="resetFilters">
           reset filters
