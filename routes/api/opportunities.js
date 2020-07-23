@@ -3,6 +3,8 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const mongodb = require("mongodb");
 const passport = require("passport");
+//const checkAuth= require('../../middleware/check-auth')
+
 
 // Opportunities model
 const Opportunities = require("../../models/Opportunities");
@@ -16,7 +18,16 @@ const validateOpportunitiesInput = require("../../validation/opportunities");
 // @desc    Tests post route
 // @access  Public
 
+
 router.post("/", (req, res) => {
+
+  // const { errors, isValid } = validateOpportunitiesInput(req.body);
+  // // Check Validation
+  // if (!isValid) {
+  //   // Return any errors with 400 status
+  //   return res.status(400).json(errors);
+  // }
+
   const newOpportunities = new Opportunities({
     company: req.body.company,
     role: req.body.role,
@@ -33,7 +44,7 @@ router.post("/", (req, res) => {
 // @desc    GET all the information from the POST request above
 // @access  Public
 
-router.get("/", (req, res) => {
+router.get("/",(req, res) => {
   Opportunities.find().then(Opportunities => res.json(Opportunities));
 });
 
