@@ -51,7 +51,7 @@ const ListOfOpportunities = () => {
   }, []);
   // this filter by role and sets opportunities
   const filterRole = (event) => {
-   
+   event.preventDefault();
     setRoleFilter(event.target.value)
     
     }
@@ -59,11 +59,25 @@ const ListOfOpportunities = () => {
 
   // this filter by Location and sets in opportunities state
   const filterLoc = (event) => {
+    event.preventDefault();
     setLocationFilter(event.target.value)
    
   };
   useEffect(()=>{
-    if (roleFilter) {
+if(roleFilter&&locationFilter){
+  const filterR=defaultOpportunities.filter((opp) =>
+  opp.role.toLowerCase().includes(roleFilter.toLowerCase()))
+  const filterL=filterR.filter((opp) =>
+  opp.location.toLowerCase().includes(locationFilter.toLowerCase())
+);
+setOpportunities(
+  filterL.sort(
+    (a, b) =>
+      moment(a.date).format("DD-MM-YYYY") -
+      moment(b.date).format("DD-MM-YYYY")
+  ))
+}
+    else if (roleFilter) {
     console.log('hellorole')
     const flteredByRole = opportunities.filter((opp) =>
       opp.role.toLowerCase().includes(roleFilter.toLowerCase())
@@ -74,7 +88,7 @@ const ListOfOpportunities = () => {
           moment(a.date).format("DD-MM-YYYY") -
           moment(b.date).format("DD-MM-YYYY")
       ))}
-  if (locationFilter!= null && opportunities) {
+  else if (locationFilter!= null && opportunities) {
     console.log('helloloc')
     const flteredByLocation = opportunities.filter((opp) =>
       opp.location.toLowerCase().includes(locationFilter.toLowerCase())
@@ -86,6 +100,9 @@ const ListOfOpportunities = () => {
           moment(b.date).format("DD-MM-YYYY")
       )
     );}
+    else{
+      setOpportunities(defaultOpportunities)
+    }
  },[locationFilter,roleFilter])
   async function resetFilters() {
     const res = await fetch(
@@ -109,7 +126,8 @@ const ListOfOpportunities = () => {
       <h1 className="filters">Filter opportunities</h1>
       <div className="col-12 filters">
         <select onChange={filterRole} className="col-3">
-          <option onChange={filterRole} value="front-end">
+        <option value="" disabled selected>Select role</option>
+          <option onChange={filterRole} value="Front-end">
             front-end
           </option>
           <option onChange={filterRole} value="back-end">
@@ -125,6 +143,7 @@ const ListOfOpportunities = () => {
         </select>
 
         <select className="col-3" id="2" name="location" onChange={filterLoc}>
+        <option value="" disabled selected>Select location</option>
           <option onChange={filterLoc} value="London">
             London
           </option>
