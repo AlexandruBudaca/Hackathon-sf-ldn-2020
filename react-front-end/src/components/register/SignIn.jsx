@@ -99,7 +99,11 @@ const SignIn = (props) => {
         <p className="">
           If you don’t have an account please register on the link below
         </p>
-        <Link className="link-sign-up" to="/signUp">
+        <Link
+          className="link-sign-up"
+          to="/signUp"
+          onClick={(event) => event.preventDefault()}
+        >
           Sign up here
         </Link>
       </div>

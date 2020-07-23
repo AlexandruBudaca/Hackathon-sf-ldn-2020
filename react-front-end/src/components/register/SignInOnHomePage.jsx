@@ -46,6 +46,9 @@ const SignInHomePage = (props) => {
       }).then((res) => res.json()),
     ])
       .then((res) => {
+        const res1 = res[0];
+        const res2 = res[1];
+
         res.map((res) => {
           if (res.message.includes("successful")) {
             sessionStorage.setItem("authorization", JSON.stringify(res));
@@ -57,11 +60,19 @@ const SignInHomePage = (props) => {
           if (res.message.includes("Company")) {
             props.history.push("/NewOpportunityForm/");
           }
+          console.log(res);
         });
+        if (
+          res1.message.includes("failed") &&
+          res2.message.includes("failed")
+        ) {
+          alert("The email or password is not valid!");
+        }
       })
       .catch((err) => {
         console.log(err);
       });
+
     e.preventDefault();
     e.target.reset();
   };
@@ -107,7 +118,9 @@ const SignInHomePage = (props) => {
         <p className="pleaseRegister col-4">
           If you don’t have an account please register on the link below
         </p>
-        <Link to="/signUp">Sign up here</Link>
+        <Link to="/signUp" onClick={(event) => event.preventDefault()}>
+          Sign up here{" "}
+        </Link>
       </div>
     </div>
   );
