@@ -136,7 +136,7 @@ const ListOfOpportunities = () => {
           <option value="London">London</option>
           <option value="Edinburgh">Edinburgh</option>
           <option value="Cardiff">Cardiff</option>
-          <option value="London">London</option>
+          <option value="Liverpool">Liverpool</option>
           <option value="Manchester">Manchester</option>
           <option value="Birmingham">Birmingham</option>
           <option value="Rome">Rome</option>
