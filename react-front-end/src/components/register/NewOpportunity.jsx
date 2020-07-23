@@ -6,12 +6,7 @@ import { levels } from "./data/level";
 import { locations } from "./data/location";
 import Separator from "../Separator";
 import { Link } from "react-router-dom";
-/* 
-Registration is a shorter home to fill for users to sign up 
-quickly with the minimum info needed. Once a user is created they
-can add to their profile via the Profile Edit to add fields: 
-bio, occupation, img. 
-*/
+
 const NewOpportunityForm = () => {
   const [form, setForm] = useState({
     company: "",
@@ -34,7 +29,7 @@ const NewOpportunityForm = () => {
     //Creating JSON data for POST request to DB
 
     event.preventDefault();
-    fetch(`https://ancient-hamlet-95801.herokuapp.com/api/opp`, {
+    fetch(`https://sf-hackathon-2020.herokuapp.com/api/opp`, {
       method: "POST",
       mode: "cors",
       body: JSON.stringify(form),
@@ -42,18 +37,7 @@ const NewOpportunityForm = () => {
     }).then(setUserCreated(!userCreated));
     event.target.reset();
   };
-  // const handleJobInterest = (event) => {
-  //   //checks if event is selected. If it is selected it is added to state, it unselected it is filtered out of array.
-  //   if (event.target.checked) {
-  //     form.jobInterest = [...form.jobInterest, event.target.value];
-  //   } else {
-  //     const jobInterest = form.jobInterest.filter((job) => {
-  //       return job !== event.target.value;
-  //     });
 
-  //     form.jobInterest = jobInterest;
-  //   }
-  // };
   return (
     <section className="companiesSection">
       <Separator category={"Add new opportunity"} />
