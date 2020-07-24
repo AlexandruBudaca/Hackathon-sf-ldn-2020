@@ -10,7 +10,7 @@ import programmer from "../../images/role-programmer.gif";
 import projectMannager from "../../images/role-projectmanager.gif";
 import tester from "../../images/role-tester.gif";
 import solarArchitect from "../../images/role-solarchitect.gif";
-//ths componentdisplaysjobopportunities fetched from the
+//this component displays job opportunities fetched from the
 // server and contains filters
 const ListOfOpportunities = () => {
   const [opportunities, setOpportunities] = useState([]);
@@ -144,7 +144,7 @@ const ListOfOpportunities = () => {
           reset filters
         </button>
       </div>
-
+      {/* display images for each type of role */}
       {opportunities.map((opportunity) => {
         let srcRole;
         if (opportunity.role === "Front-end Developer") {

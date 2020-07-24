@@ -3,29 +3,25 @@ import Separator from "../Separator";
 import "./index.css";
 import { Link } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
-// import './index.css'
-/* 
-Registration is a shorter home to fill for users to sign up 
-quickly with the minimum info needed. Once a user is created they
-can add to their profile via the Profile Edit to add fields: 
-bio, occupation, img. 
-*/
+
 const CompanyRegistration = () => {
   const [companyReg, setCompanyReg] = useState({
     name: "",
     email: "",
     password: "",
   });
-  // const [confirmPassword, setConfirmPassword] = useState("");
   const [companyCreated, setCompanyCreated] = useState(false);
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  /*set all the companies registration */
   const [companyData, setCompanyData] = useState([]);
 
   useEffect(() => {
+    /* get the companies registrations*/
     fetch("https://sf-hackathon-2020.herokuapp.com/api/companies")
       .then((res) => res.json())
       .then((data) => setCompanyData(data));
   }, []);
+
   let emailCompany;
   const checkForEmailCompany = () => {
     companyData.find((data) =>
@@ -45,6 +41,7 @@ const CompanyRegistration = () => {
     };
     setCompanyReg(newCompany);
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!companyReg.email.includes("@")) {

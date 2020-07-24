@@ -3,13 +3,7 @@ import Separator from "../Separator";
 import "./index.css";
 import { Link } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
-// import './index.css'
-/* 
-Registration is a shorter home to fill for users to sign up 
-quickly with the minimum info needed. Once a user is created they
-can add to their profile via the Profile Edit to add fields: 
-bio, occupation, img. 
-*/
+
 const GraduateRegistration = () => {
   const [graduate, setUser] = useState({
     firstName: "",
@@ -18,12 +12,10 @@ const GraduateRegistration = () => {
     password: "",
     password2: "",
   });
-  // const [confirmPassword, setConfirmPassword] = useState("");
+
   const [userCreated, setUserCreated] = useState(false);
   const [dataUsers, setDataUsers] = useState([]);
-  // const confirmPasswordValidation = (event) => {
-  //   setConfirmPassword(event.target.value);
-  // };
+
   useEffect(() => {
     fetch("https://sf-hackathon-2020.herokuapp.com/api/users")
       .then((res) => res.json())
@@ -63,8 +55,7 @@ const GraduateRegistration = () => {
     if (graduate.lastName.length < 2) {
       return alert("The last name should have at least 2 characters.");
     }
-
-    // Creating JSON data for POST request to DB
+    //Check if
     checkForEmailGraduate();
     emailGraduate === graduate.email
       ? alert("The email is already in the database")

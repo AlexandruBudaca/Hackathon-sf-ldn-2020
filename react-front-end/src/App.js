@@ -22,15 +22,14 @@ import GraduateRegistration from "./components/register/GraduateRegistration";
 import CompanyRegistration from "./components/register/CompanyRegistration";
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState(false);
-  {
-    /*sessionStorage */
-  }
+  /*sessionStorage */
   const [log, setLog] = useState(
     JSON.parse(sessionStorage.getItem("authorization"))
   );
+  /* set the logSession from sign in */
   const [logSession, setLogSession] = useState({});
 
+  /* Private route for Opportunity Page */
   const PrivateRouteGraduate = ({ component: Component }) => (
     <Route
       render={() =>
@@ -47,6 +46,7 @@ function App() {
       }
     />
   );
+  /* Private route for Add New Opportunity Page */
   const PrivateRouteCompany = ({ component: Component }) => (
     <Route
       render={() =>
@@ -64,8 +64,6 @@ function App() {
     <Router>
       <div className="App">
         <Nav
-          loggedInUser={loggedInUser}
-          setLoggedInUser={setLoggedInUser}
           setLog={setLog}
           log={log}
           logSession={logSession}
@@ -77,8 +75,6 @@ function App() {
             path="/"
             render={() => (
               <LandingPage
-                setLoggedInUser={setLoggedInUser}
-                loggedInUser={loggedInUser}
                 setLog={setLog}
                 log={log}
                 logSession={logSession}

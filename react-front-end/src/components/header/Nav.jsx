@@ -8,6 +8,7 @@ import { withRouter } from "react-router-dom";
 //this is smart navigation bar displaying only links available to current user type
 function Nav(props) {
   useEffect(() => {
+    /*take the token from sessionStorage */
     const logged = JSON.parse(sessionStorage.getItem("authorization"));
     props.setLog(logged);
   }, []);
@@ -54,7 +55,7 @@ function Nav(props) {
             <Link to="/Graduates" className="navStyle">
               <li className="simpleNavList">Graduates</li>
             </Link>
-
+            {/* Hide/Show Add New Opportunities Page when graduates log in*/}
             {(props.log &&
               props.log.message === "Company Authorization successful") ||
             (props.logSession &&
@@ -75,7 +76,7 @@ function Nav(props) {
                 </Link>
               </div>
             )}
-            {/* Show Sign out svg when graduates log in*/}
+            {/* Show Sign out  when graduates log in*/}
 
             {props.log || props.logSession.token ? (
               <div className="up-login-logOut">
@@ -85,6 +86,7 @@ function Nav(props) {
                     src={login}
                     alt="person logged"
                   />
+                  {/* Display the name of which user is logged in*/}
                   <div className="displayName">
                     {props.logSession &&
                     props.logSession.message ===
