@@ -23,7 +23,7 @@ const SignInHomePage = (props) => {
     setUsername(newUsername);
     setCompany(newCompany);
   };
-
+  //use promise.all method for fetch both user and companies api
   const handleSubmit = (e) => {
     Promise.all([
       fetch("https://sf-hackathon-2020.herokuapp.com/api/users/login", {

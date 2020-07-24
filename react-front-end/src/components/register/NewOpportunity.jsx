@@ -6,7 +6,7 @@ import { levels } from "./data/level";
 import { locations } from "./data/location";
 import Separator from "../Separator";
 import { Link } from "react-router-dom";
-//a component that allows posting a new jobopportunity
+//a component that allows posting a new job opportunity
 const NewOpportunityForm = () => {
   const [form, setForm] = useState({
     company: "",
