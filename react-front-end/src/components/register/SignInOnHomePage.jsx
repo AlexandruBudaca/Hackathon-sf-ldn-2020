@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+//smaller sign-in designed to fit the homepage
 const SignInHomePage = (props) => {
   const [username, setUsername] = useState({
     email: "",

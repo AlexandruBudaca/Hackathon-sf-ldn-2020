@@ -3,7 +3,7 @@ import "./index.css";
 import Separator from "../Separator";
 import Gr from "../../MockData/Graduates.json";
 import frontend from "../../images/role-frontend.gif";
-
+//this componentdisplays registered graduatesfrom code your future
 const Graduates = () => {
   const [graduates, setGraduates] = useState(Gr);
   useEffect(() => {

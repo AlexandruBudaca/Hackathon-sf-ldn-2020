@@ -1,6 +1,7 @@
 import React from "react";
 import "../header/index.css";
 import { Link } from "react-router-dom";
+// that is a footer
 const footer = () => {
   return (
     <div className="col-12 footerCol">

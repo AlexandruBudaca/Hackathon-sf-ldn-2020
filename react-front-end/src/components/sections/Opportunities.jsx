@@ -10,7 +10,8 @@ import programmer from "../../images/role-programmer.gif";
 import projectMannager from "../../images/role-projectmanager.gif";
 import tester from "../../images/role-tester.gif";
 import solarArchitect from "../../images/role-solarchitect.gif";
-
+//ths componentdisplaysjobopportunities fetched from the
+// server and contains filters
 const ListOfOpportunities = () => {
   const [opportunities, setOpportunities] = useState([]);
   const [defaultOpportunities, setDefaultOpportunities] = useState([]);

@@ -5,7 +5,7 @@ import "./index.css";
 import login from "../../images/person.png";
 import logout from "../../images/logout.png";
 import { withRouter } from "react-router-dom";
-
+//this is smart navigation bar displaying only links available to current user type
 function Nav(props) {
   useEffect(() => {
     const logged = JSON.parse(sessionStorage.getItem("authorization"));
