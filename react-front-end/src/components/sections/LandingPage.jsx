@@ -5,6 +5,7 @@ import seethefuture from "../../../src/images/seefuture (1).gif";
 import studentpic from "../../../src/images/students.jpg";
 import devsignin from "../../images/dev-signin.jpg";
 import "./index.css";
+// this components is homepage
 const LandingPage = ({
   setLoggedInUser,
   loggedInUser,

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
-
+//single company display component
 const Company = () => {
   const [company, setCompany] = useState({
     name: "Capgemini",
