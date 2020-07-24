@@ -23,6 +23,9 @@ import CompanyRegistration from "./components/register/CompanyRegistration";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(false);
+  {
+    /*sessionStorage */
+  }
   const [log, setLog] = useState(
     JSON.parse(sessionStorage.getItem("authorization"))
   );
