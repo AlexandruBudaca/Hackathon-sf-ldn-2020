@@ -52,6 +52,7 @@ const SignIn = (props) => {
           if (res.message.includes("Company")) {
             props.history.push("/NewOpportunityForm/");
           }
+          return null;
         });
         if (
           res1.message.includes("failed") &&
