@@ -6,6 +6,7 @@ import Sample from "../../../MockData/images/sample.png";
 let companiesData = require("../../../MockData/companies.json");
 // this component is designed to display all the registered companies
 const ListOfCompanies = () => {
+  // eslint-disable-next-line
   const [companies, setCompanies] = useState(companiesData);
   return (
     <section className="companiesSection">

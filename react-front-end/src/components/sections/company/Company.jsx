@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./index.css";
 //single company display component
 const Company = () => {
+  // eslint-disable-next-line
   const [company, setCompany] = useState({
     name: "Capgemini",
     Industry: "Tech",

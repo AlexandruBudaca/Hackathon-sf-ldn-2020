@@ -18,7 +18,15 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-
+  "eslintConfig": {
+    "plugins": [
+      "react"
+    ],
+    "rules": {
+      "react/jsx-uses-vars": "error",
+      "react/jsx-uses-react": "error"
+    }
+  },
   "browserslist": {
     "production": [
       ">0.2%",
