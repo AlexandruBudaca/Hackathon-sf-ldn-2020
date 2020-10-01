@@ -103,7 +103,7 @@ const ListOfOpportunities = () => {
     } else {
       setOpportunities(defaultOpportunities);
     }
-  }, [locationFilter, roleFilter]);
+  }, [locationFilter, roleFilter, defaultOpportunities, opportunities]);
   async function resetFilters() {
     const res = await fetch("https://sf-hackathon-2020.herokuapp.com/api/opp");
     const json = await res.json();

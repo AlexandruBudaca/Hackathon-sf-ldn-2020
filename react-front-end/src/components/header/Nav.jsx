@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import imgSrc from "../../images/cyf_brand.png";
 import "./index.css";
@@ -11,7 +11,7 @@ function Nav(props) {
     /*take the token from sessionStorage */
     const logged = JSON.parse(sessionStorage.getItem("authorization"));
     props.setLog(logged);
-  }, []);
+  });
 
   const handleSignOut = () => {
     props.setLogSession({});

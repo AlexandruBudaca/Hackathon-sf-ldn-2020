@@ -40,6 +40,7 @@ const SignIn = (props) => {
       .then((res) => {
         const res1 = res[0];
         const res2 = res[1];
+
         res.map((res) => {
           if (res.message.includes("successful")) {
             sessionStorage.setItem("authorization", JSON.stringify(res));
