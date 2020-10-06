@@ -83,7 +83,7 @@ function App() {
             )}
           />
           <Route exact path="/company" component={() => <Company />} />
-          <Route path="/listOfCompanies" exact component={ListOfCompanies} />
+
           <Route path="/listOfCompanies" exact component={ListOfCompanies} />
           <Route path="/Graduates" exact component={Graduates} />
           <Route path="/opportunity" exact component={Opportunity} />

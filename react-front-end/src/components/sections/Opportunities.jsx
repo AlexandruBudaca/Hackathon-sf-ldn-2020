@@ -14,7 +14,6 @@ import solarArchitect from "../../images/role-solarchitect.gif";
 // server and contains filters
 const ListOfOpportunities = () => {
   const [opportunities, setOpportunities] = useState([]);
-
   useEffect(() => {
     async function fetchData() {
       try {
@@ -33,7 +32,7 @@ const ListOfOpportunities = () => {
         console.error(error.message);
       }
     }
-    fetchData();
+
     const repeat = setTimeout(fetchData, 60000);
     return () => {
       clearTimeout(repeat);
