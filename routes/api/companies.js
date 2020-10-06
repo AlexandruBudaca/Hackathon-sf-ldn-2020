@@ -6,15 +6,14 @@ const jwt = require("jsonwebtoken");
 const secretKey = require("../../config/keys").JWT_KEY;
 const checkAuth = require("../../middleware/check-auth.js");
 
-
 //GET api/companies
-router.get("/",  (req, res) => {
+router.get("/", (req, res) => {
   Company.find().then((companies) => res.json(companies));
 });
 
 //making POST api/companies/signup
 
-router.post("/signup", (req, res)=> {
+router.post("/signup", (req, res) => {
   Company.find({
     email: req.body.email,
   })
@@ -27,7 +26,7 @@ router.post("/signup", (req, res)=> {
         });
       } else {
         //    Store hash in your password DB.
-        bcrypt.hash(req.body.password, 10, (err, hash)=> {
+        bcrypt.hash(req.body.password, 10, (err, hash) => {
           if (err) {
             res.sendStatus(500).json({ error: "err" });
           } else {
@@ -59,8 +58,6 @@ router.post("/signup", (req, res)=> {
 
 // @route   POST api/companies/login
 router.post("/login", (req, res) => {
-
-  
   Company.find({ email: req.body.email })
     .exec()
     .then((company) => {

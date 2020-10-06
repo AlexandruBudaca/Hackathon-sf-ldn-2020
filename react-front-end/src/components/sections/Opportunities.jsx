@@ -14,9 +14,7 @@ import solarArchitect from "../../images/role-solarchitect.gif";
 // server and contains filters
 const ListOfOpportunities = () => {
   const [opportunities, setOpportunities] = useState([]);
-  const [defaultOpportunities, setDefaultOpportunities] = useState([]);
-  const [roleFilter, setRoleFilter] = useState(null);
-  const [locationFilter, setLocationFilter] = useState(null);
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -31,15 +29,6 @@ const ListOfOpportunities = () => {
               moment(b.date).format("DD-MM-YYYY")
           )
         );
-        setDefaultOpportunities(
-          json
-            .sort(
-              (a, b) =>
-                moment(a.date).format("DD-MM-YYYY") -
-                moment(b.date).format("DD-MM-YYYY")
-            )
-            .reverse()
-        );
       } catch (error) {
         console.error(error.message);
       }
@@ -53,57 +42,13 @@ const ListOfOpportunities = () => {
   // this filter by role and sets opportunities
   const filterRole = (event) => {
     event.preventDefault();
-    setRoleFilter(event.target.value);
   };
 
   // this filter by Location and sets in opportunities state
   const filterLoc = (event) => {
     event.preventDefault();
-    setLocationFilter(event.target.value);
   };
-  useEffect(() => {
-    if (roleFilter && locationFilter) {
-      const filterR = defaultOpportunities.filter((opp) =>
-        opp.role.toLowerCase().includes(roleFilter.toLowerCase())
-      );
-      const filterL = filterR.filter((opp) =>
-        opp.location.toLowerCase().includes(locationFilter.toLowerCase())
-      );
-      setOpportunities(
-        filterL.sort(
-          (a, b) =>
-            moment(a.date).format("DD-MM-YYYY") -
-            moment(b.date).format("DD-MM-YYYY")
-        )
-      );
-    } else if (roleFilter) {
-      console.log("hellorole");
-      const flteredByRole = opportunities.filter((opp) =>
-        opp.role.toLowerCase().includes(roleFilter.toLowerCase())
-      );
-      setOpportunities(
-        flteredByRole.sort(
-          (a, b) =>
-            moment(a.date).format("DD-MM-YYYY") -
-            moment(b.date).format("DD-MM-YYYY")
-        )
-      );
-    } else if (locationFilter != null && opportunities) {
-      console.log("helloloc");
-      const flteredByLocation = opportunities.filter((opp) =>
-        opp.location.toLowerCase().includes(locationFilter.toLowerCase())
-      );
-      setOpportunities(
-        flteredByLocation.sort(
-          (a, b) =>
-            moment(a.date).format("DD-MM-YYYY") -
-            moment(b.date).format("DD-MM-YYYY")
-        )
-      );
-    } else {
-      setOpportunities(defaultOpportunities);
-    }
-  }, [locationFilter, roleFilter, defaultOpportunities, opportunities]);
+
   async function resetFilters() {
     const res = await fetch("https://sf-hackathon-2020.herokuapp.com/api/opp");
     const json = await res.json();
