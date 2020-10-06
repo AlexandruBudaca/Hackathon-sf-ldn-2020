@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./index.css";
 import Separator from "../Separator";
 import Gr from "../../MockData/Graduates.json";
-import frontend from "../../images/role-frontend.gif";
+// import frontend from "../../images/role-frontend.gif";
 //this component displays registered graduates from code your future
 const Graduates = () => {
   const [graduates, setGraduates] = useState(Gr);
@@ -23,22 +23,9 @@ const Graduates = () => {
   return (
     <section className="companiesSection">
       <Separator category="Graduates" />
-      {graduates.map((grad) => {
-        return (
-          <article className="opp_article row alignedTop" key={grad._id}>
-            <div className="justified">
-              <img className="companyLogo" src={frontend} alt="" />
-            </div>
-            <p className="centered justified col-3">{grad.firstName}</p>
-
-            <span className="centered justified col-3">{grad.lastName}</span>
-
-            <span className="centered justified col-3">{grad.role}</span>
-
-            <span className="centered justified col-3">{grad.description}</span>
-          </article>
-        );
-      })}
+      <div className="under">
+        <div>UNDER CONSTRUCTION</div>
+      </div>
     </section>
   );
 };

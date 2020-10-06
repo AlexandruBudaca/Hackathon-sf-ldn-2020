@@ -77,11 +77,20 @@
   margin-top: 30px;
   background-color: #fdfdfd;
   padding: 20px;
+  margin-top: 10em;
+  margin-bottom: 10em;
 }
 
 .companyLogo {
   width: 18%;
   padding-right: 15px;
+}
+
+.under {
+  display: flex;
+  justify-content: center;
+  margin-top: 10em;
+  margin-bottom: 10em;
 }
 
 .round {
