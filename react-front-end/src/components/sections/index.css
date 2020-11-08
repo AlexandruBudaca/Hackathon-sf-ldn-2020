@@ -1,0 +1,372 @@
+.main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #3f3f3f;
+}
+
+.superTitle {
+  text-align: start;
+  color: #3f3f3f;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 60px;
+  line-height: 82px;
+  z-index: 1;
+}
+
+.separator {
+  width: 50%;
+  height: 3vh;
+  margin-left: -10;
+  margin-top: -3vh;
+  margin-bottom: 1vh;
+  z-index: -1;
+  background: #ff8b8b;
+}
+
+.pleaseRegister {
+  text-align: center;
+}
+
+.superRedSeparator {
+  width: 100%;
+  height: 7vh;
+  margin-top: -5vh;
+  z-index: -1;
+  background: #d12f2f;
+}
+
+.introSection {
+  display: flex;
+  justify-items: left;
+  margin-top: 100px;
+}
+
+.firstIntro {
+  display: flex;
+}
+
+.alignRight {
+  align-self: right;
+}
+
+.navRow {
+  justify-content: space-evenly;
+}
+
+.firstBlock {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.ourStudents {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+/*Opportunities*/
+.opp_article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  background-color: #fdfdfd;
+  padding: 20px;
+  margin-top: 10em;
+  margin-bottom: 10em;
+}
+
+.companyLogo {
+  width: 18%;
+  padding-right: 15px;
+}
+
+.under {
+  display: flex;
+  justify-content: center;
+  margin-top: 10em;
+  margin-bottom: 10em;
+}
+
+.round {
+  width: 8vw;
+  height: 8vw;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.nearLogo {
+  padding-left: 25px;
+  padding-right: 25px;
+  justify-content: flex-start;
+}
+
+.oppColumn {
+  align-content: center;
+  margin-left: 50px;
+}
+
+.job-link {
+  text-decoration: none;
+  color: #373a3c;
+}
+
+.job-link:hover {
+  color: #ff8b8b;
+}
+
+.oppColumn h4 {
+  margin-bottom: 20px;
+  color: #373a3c;
+}
+
+.job-description {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.job-company-date {
+  display: flex;
+  margin-top: 10px;
+}
+
+.job-location {
+  margin-top: 10px;
+}
+
+.job-date {
+  margin-left: 20px;
+}
+
+.oppColumnApply {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.oppColumnApply button {
+  margin-top: 30px;
+  background-color: #2d9cdb;
+  width: 80px;
+  height: 25px;
+  border: 1px solid #cccccc;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
+  margin-top: 40%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.oppColumnApply button:hover {
+  color: #2d9cdb;
+  background-color: #fff;
+}
+
+/*Opportunities*/
+
+.ourStudents p {
+  width: auto;
+  height: auto;
+  font-size: 21px;
+}
+
+.studPic {
+  height: auto;
+  object-fit: cover;
+}
+
+.COLUMN {
+  display: flex;
+  flex-direction: column;
+}
+
+.justified {
+  justify-content: center;
+}
+
+.introtext {
+  /* Envision the day-to-day requirements of your future career */
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 35px;
+  line-height: 48px;
+  padding-bottom: 3em;
+  color: #3f3f3f;
+}
+
+.introHeader {
+  /* See the future */
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 70px;
+  line-height: 95px;
+  align-self: flex-start;
+  color: #d12f2f;
+}
+
+@media only screen and (max-width: 600px) {
+  .introHeader {
+    /* See the future */
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 45px;
+    align-self: flex-start;
+    color: #d12f2f;
+  }
+}
+
+.footMenu {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: left;
+  margin-top: 1rem;
+  color: #fdfdfd;
+  justify-content: space-between;
+}
+
+.leftFooterBlock {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 27px;
+
+  color: #fdfdfd;
+}
+
+.rightFooterBlock {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 27px;
+
+  color: #fdfdfd;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  background: #3f3f3f;
+  padding: 1rem;
+  margin-top: 1rem;
+  justify-items: center;
+  bottom: 0;
+}
+
+.footerCol {
+  align-items: center;
+  flex-direction: row;
+}
+
+.copyright {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  align-self: center;
+  text-align: center;
+  color: #fdfdfd;
+}
+
+.introSection {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5vw;
+  width: 50%;
+  align-items: center;
+}
+
+.badBusinessPeopleWithBulb {
+  align-self: flex-end;
+  height: auto;
+}
+
+.info {
+  margin-top: 150px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  margin-bottom: 20vh;
+}
+
+.info img {
+  height: 400px;
+}
+
+.About,
+.ourStudent {
+  width: 70vh;
+  text-align: center;
+  padding-left: 2rem;
+  text-align: left;
+}
+
+.studentText {
+  font-size: 18px;
+}
+
+.opp_main {
+  min-height: 60vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  border: 2px solid;
+  margin: 1rem auto;
+}
+
+.apply {
+  background: #3e442b;
+  padding: 0.5rem 1rem;
+  color: white;
+}
+
+.apply:hover {
+  background: rgb(135, 148, 92);
+  color: rgb(22, 24, 15);
+  cursor: pointer;
+}
+
+.job_descip {
+  line-height: 1.5rem;
+  text-align: justify;
+}
+
+.job_descip p {
+  margin: 1rem 0;
+}
+
+.opportunity_logo img {
+  width: 20%;
+}
+
+.job-date-last {
+  margin-left: 10px;
+  color: #ff8b8b;
+}

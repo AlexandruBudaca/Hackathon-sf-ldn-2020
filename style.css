@@ -1,0 +1,130 @@
+html {
+  width: 100%;
+  font-size: 30px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  width: 920px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.row {
+  border: 1px solid blue;
+
+  display: flex;
+  flex-flow: row wrap;
+  height: auto;
+}
+
+.column {
+  border: 1px solid red;
+}
+
+.box {
+  border: 1px dotted green;
+  height: 75px;
+  width: 100px;
+  text-align: center;
+}
+
+.top-header {
+  justify-content: space-between;
+  background-color: rgba(2, 48, 2, 0.6);
+}
+
+.top-header__logo {
+  align-self: stretch;
+
+  height: 150px;
+  overflow: hidden;
+  padding: 0 5px;
+  margin: 5px;
+}
+
+.top-header__logo img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.top-header__contact {
+  align-self: flex-end;
+  background-color: rgba(130, 130, 130, 0.5);
+  padding: 0 5px;
+  width: 25%;
+  min-width: 300px;
+}
+
+.top-nav {
+  justify-content: space-around;
+  background-color: rgba(204, 102, 0, 0.5);
+}
+.nav-item {
+  width: 17%;
+  min-width: 120px;
+  margin: 3px 0;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 20px;
+}
+
+.nav-item:hover {
+}
+.container {
+  /* default from breakpoint 0, until another breakpoint overrides it */
+  max-width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.main-content {
+  justify-content: center;
+  height: auto;
+}
+
+article {
+  background-color: rgba(102, 178, 255, 0.7);
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.greeting-box {
+  font-size: 35px;
+}
+div.greeting-box:first-child {
+  height: 150px;
+  background-color: rgba(255, 153, 255, 0.5);
+}
+
+
+
+
+article,
+.main-content__carousel-wrapper,
+.catalogue__pictures {
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+.box {
+  height: 150px;
+  border: 1px solid black;
+}
